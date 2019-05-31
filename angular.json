@@ -27,9 +27,18 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/assets/styles/scss/styles.scss",
+              {
+                "input": "src/assets/styles/scss/main-theme.scss"
+              },
+              "node_modules/slick-carousel/slick/slick.scss",
+              "node_modules/slick-carousel/slick/slick-theme.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/slick-carousel/slick/slick.min.js",
+              "node_modules/hammerjs/hammer.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -55,6 +64,20 @@
                   "maximumError": "5mb"
                 }
               ]
+            },
+            "en": {
+              "aot": true,
+              "outputPath": "dist/en/",
+              "i18nFile": "src/locale/messages.en.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "en",
+              "i18nMissingTranslation": "error"
+            },
+            "ka": {
+              "aot": true,
+              "outputPath": "dist/ka/",
+              "i18nLocale": "ka",
+              "i18nMissingTranslation": "error"
             }
           }
         },
@@ -66,6 +89,12 @@
           "configurations": {
             "production": {
               "browserTarget": "techinformi:build:production"
+            },
+            "ka": {
+              "browserTarget": "techinformi:build:ka"
+            },
+            "en": {
+              "browserTarget": "techinformi:build:en"
             }
           }
         },
@@ -118,6 +147,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "techinformi"
 }

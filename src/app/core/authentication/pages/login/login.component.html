@@ -1,0 +1,41 @@
+<div fxLayoutAlign="center">
+  <div fxLayoutAlign="center" fxLayout="row" fxFlex="80" fxFlex.lt-md="100">
+    <div fxFlex="40" fxFlex.lt-md="90" fxLayout="column">
+      <form (ngSubmit)="login(f)" #f='ngForm'>
+        <div>
+          <h1 class="mtavruli">შესვლა</h1>
+        </div>
+        <div fxLayoutAlign="center">
+          <mat-form-field appearance="outline" fxFlex="100" class="mtavruli" color="warn">
+            <mat-label>მომხმარებლის სახელი</mat-label>
+            <input matInput placeholder="Placeholder" ngModel name="username">
+            <mat-icon matSuffix>account_circle</mat-icon>
+          </mat-form-field>
+        </div>
+        <div fxLayoutAlign="center">
+          <mat-form-field appearance="outline" fxFlex="100" class="mtavruli" color="warn">
+            <mat-label>პაროლი</mat-label>
+            <input matInput placeholder="Placeholder" type="password" ngModel name="password">
+            <mat-icon matSuffix>lock</mat-icon>
+          </mat-form-field>
+        </div>
+        <div>
+          <div>
+            <mat-checkbox fxFlex="100" class="mtavruli" checked color="primary">დამიმახსოვრე</mat-checkbox>
+            <a fxFlex="100" fxLayoutAlign="end" class="color-black mtavruli" routerLink="/auth/forgot-password">პაროლი
+              დაგავიწყდა?</a>
+          </div>
+        </div>
+        <div class="margin-top-3">
+          <button fxFlex="30" mat-raised-button color="warn" class="padding-1 mtavruli" type="submit">
+            შესვლა
+          </button>
+        </div>
+        <div class="margin-top-4">
+          <a fxFlex="100" class="text-decoration-none color-gray mtavruli" routerLink="/auth/register">არ ხარ
+            რეგისტრირებული? </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
