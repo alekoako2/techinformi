@@ -4,6 +4,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {MaterialModule} from '../material/material.module';
 import {LayoutContainerModule} from '../layout-container/layout-container.module';
 import {SpinnerModule} from '../spinner/spinner.module';
+import {FirebaseModule} from '../firebase/firebase.module';
 
 @NgModule({
   declarations: [],
@@ -12,7 +13,8 @@ import {SpinnerModule} from '../spinner/spinner.module';
     FlexLayoutModule,
     MaterialModule,
     LayoutContainerModule,
-    SpinnerModule
+    SpinnerModule,
+    FirebaseModule
   ],
   exports: [
     FlexLayoutModule,

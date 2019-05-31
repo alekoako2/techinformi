@@ -14,8 +14,6 @@ import {MaterialModule} from './shared/modules/material/material.module';
 import {HeaderModule} from './core/header/header.module';
 import {HideMissingLanguageElementModule} from './shared/modules/hide-missing-language-element/hide-missing-language-element.module';
 import {SlickCarouselModule} from 'ngx-slick-carousel';
-import {AngularFireModule} from '@angular/fire';
-import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
@@ -35,9 +33,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     SlickCarouselModule,
     AppRoutingModule,
     HeaderModule,
-    HideMissingLanguageElementModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
+    HideMissingLanguageElementModule
   ],
   providers: [],
   bootstrap: [AppComponent]

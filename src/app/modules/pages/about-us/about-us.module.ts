@@ -11,6 +11,7 @@ import {PageTitleBarModule} from '../../../shared/modules/page-title-bar/page-ti
 import {HideMissingLanguageElementModule} from '../../../shared/modules/hide-missing-language-element/hide-missing-language-element.module';
 import {SharedModule} from '../../../shared/modules/shared/shared.module';
 import {SanitizeHtmlModule} from '../../../shared/modules/sanitize-html/sanitize-html.module';
+import {FirebaseModule} from '../../../shared/modules/firebase/firebase.module';
 
 @NgModule({
   declarations: [
