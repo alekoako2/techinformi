@@ -6,7 +6,10 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./layout-container.component.scss']
 })
 export class LayoutContainerComponent implements OnInit {
+  @Input() backgroundColor?;
+
   @Input() layoutStyle?;
+  @Input() ltLg?;
 
   constructor() {
   }

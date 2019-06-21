@@ -2,7 +2,6 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
-import {environment} from '../environments/environment';
 import {AppRoutingModule} from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -15,6 +14,10 @@ import {HeaderModule} from './core/header/header.module';
 import {HideMissingLanguageElementModule} from './shared/modules/hide-missing-language-element/hide-missing-language-element.module';
 import {SlickCarouselModule} from 'ngx-slick-carousel';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {registerLocaleData} from '@angular/common';
+import localeKa from '@angular/common/locales/ka';
+
+registerLocaleData(localeKa, 'ka');
 
 @NgModule({
   declarations: [

@@ -1,10 +1,10 @@
-<mat-sidenav-container class="sidenav-container">
+<mat-sidenav-container>
 
   <mat-sidenav #sidenav role="navigat ion" mode="push">
     <app-sidenav-list></app-sidenav-list>
   </mat-sidenav>
 
-  <mat-sidenav-content id="sidenav-content">
+  <mat-sidenav-content>
     <div class="mat-elevation-z3 toolbars-wrapper">
       <app-top-toolbar (sidenavToggle)="sidenav.toggle()"></app-top-toolbar>
 
