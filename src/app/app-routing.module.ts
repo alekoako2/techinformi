@@ -51,6 +51,16 @@ const appRoutes: Routes = [
         .then(mod => mod.QrjModule)
   },
   {
+    path: 'databases', loadChildren:
+      () => import( './modules/pages/databases/databases.module')
+        .then(mod => mod.DatabasesModule)
+  },
+  {
+    path: 'qrj-publication', loadChildren:
+      () => import( './modules/pages/qrj-publication/qrj-publication.module')
+        .then(mod => mod.QrjPublicationModule)
+  },
+  {
     path: 'product-details', loadChildren:
       () => import( './modules/pages/product-details/product-details.module')
         .then(mod => mod.ProductDetailsModule)

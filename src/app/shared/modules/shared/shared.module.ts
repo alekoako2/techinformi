@@ -5,6 +5,7 @@ import {MaterialModule} from '../material/material.module';
 import {LayoutContainerModule} from '../layout-container/layout-container.module';
 import {SpinnerModule} from '../spinner/spinner.module';
 import {FirebaseModule} from '../firebase/firebase.module';
+import {CustomInputsModule} from '../custom-inputs/custom-inputs.module';
 
 @NgModule({
   declarations: [],
@@ -14,7 +15,8 @@ import {FirebaseModule} from '../firebase/firebase.module';
     MaterialModule,
     LayoutContainerModule,
     SpinnerModule,
-    FirebaseModule
+    FirebaseModule,
+    CustomInputsModule
   ],
   exports: [
     FlexLayoutModule,

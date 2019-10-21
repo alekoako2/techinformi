@@ -16,6 +16,9 @@ import {SlickCarouselModule} from 'ngx-slick-carousel';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {registerLocaleData} from '@angular/common';
 import localeKa from '@angular/common/locales/ka';
+import {GraphQLModule} from './graphql.module';
+import {NgxsModule} from '@ngxs/store';
+import {NgxsReduxDevtoolsPluginModule} from '@ngxs/devtools-plugin';
 
 registerLocaleData(localeKa, 'ka');
 
@@ -36,7 +39,12 @@ registerLocaleData(localeKa, 'ka');
     SlickCarouselModule,
     AppRoutingModule,
     HeaderModule,
-    HideMissingLanguageElementModule
+    HideMissingLanguageElementModule,
+    GraphQLModule,
+    NgxsModule.forRoot([], {developmentMode: true}),
+    // NgxsFormPluginModule.forRoot(),
+    NgxsReduxDevtoolsPluginModule.forRoot(),
+    // NgxsLoggerPluginModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

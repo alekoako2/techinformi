@@ -1,0 +1,89 @@
+<div fxLayoutAlign="center" class="padding-5">
+  <div fxLayout="column" fxFlex="80" class="buttons-wrapper">
+
+    <div>
+      <div class="overflow-auto" fxLayoutAlign="center">
+        <div class="width-max-content">
+          <form #myForm="ngForm">
+            <app-input-text
+              fxFlex="50"
+              class="margin-right-2"
+              placeholder="ავტორი"
+              name="author"
+              [(inputModel)]="author"
+            ></app-input-text>
+            <app-input-text
+              fxFlex="50"
+              class="margin-x-2"
+              placeholder="სტატიის დასახელება"
+              name="title"
+              [(inputModel)]="title"
+            ></app-input-text>
+            <app-input-select
+              fxFlex="50"
+              class="margin-x-2"
+              label="სამეცნიერო მიმართულება (OECD)"
+              [array]="oecdList"
+              name="oecd"
+              [(inputSelectModel)]="oecd"
+            >
+            </app-input-select>
+            <app-input-select
+              fxFlex="50"
+              class="margin-x-2"
+              label="გამოცემის დასახელება"
+              [array]="qrjJournalList"
+              name="qrjJournal"
+              [(inputSelectModel)]="qrjJournal"
+            >
+            </app-input-select>
+          </form>
+        </div>
+      </div>
+      <div fxFlexAlign="middle" fxLayoutAlign="center">
+        <button mat-raised-button color="primary" class="mtavruli" fxFlexAlign="center" (click)="loadQrjPublications()">
+          ძიება
+        </button>
+      </div>
+    </div>
+
+    <div class="list-wrapper">
+      <div *ngFor="let item of qrjPublications$|async"
+           class="border-radius-2 padding-3 margin-y-3 mat-elevation-z2">
+        <div>
+          <span class="mtavruli">სტატიის დასახელება</span>
+          <p>{{item?.translation[0]?.title}}</p>
+        </div>
+        <div>
+          <span class="mtavruli">ავტორ(ებ)ი</span>
+          <p>{{item?.translation[0]?.publicationAuthor}}</p>
+        </div>
+        <div>
+          <span class="mtavruli">სამეცნიერო მიმართულება (OECD)</span>
+          <p>{{item?.oecd?.code}} {{item?.oecd?.translation[0]?.name}}</p>
+        </div>
+        <div>
+          <span class="mtavruli">გამოცემის დასახელება</span>
+          <p>{{item?.journal?.code}} {{item?.journal?.translation[0]?.name}}</p>
+        </div>
+        <div>
+          <p>{{item?.year}} {{item?.number}} {{item?.pages}} {{item?.translation[0]?.publicationLang}}</p>
+        </div>
+        <div>
+          <span class="mtavruli">რეფერატი</span>
+          <p>{{item?.translation[0]?.abstract}}</p>
+        </div>
+      </div>
+    </div>
+
+    <mat-paginator [length]="countQrjPublications$ | async"
+                   [pageIndex]="0"
+                   [pageSize]="12"
+                   [pageSizeOptions]="[8, 20, 50, 100]"
+                   (page)="loadQrjPublications($event.pageIndex,$event.pageSize)"
+    >
+    </mat-paginator>
+
+  </div>
+</div>
+
