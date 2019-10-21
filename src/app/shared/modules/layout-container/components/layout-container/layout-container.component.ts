@@ -7,8 +7,8 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class LayoutContainerComponent implements OnInit {
   @Input() backgroundColor?;
-
-  @Input() layoutStyle?;
+  @Input() flexWidth = 80;
+  @Input() layoutStyle = 'column';
   @Input() ltLg?;
 
   constructor() {

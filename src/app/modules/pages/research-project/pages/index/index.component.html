@@ -1,0 +1,120 @@
+<div fxLayoutAlign="center" class="padding-5">
+  <div fxLayout="column" fxFlex="80" class="buttons-wrapper">
+
+    <div>
+      <div class="overflow-auto" fxLayoutAlign="center">
+        <div class="width-max-content">
+          <form #myForm="ngForm">
+            <app-input-text
+              fxFlex="50"
+              class="margin-right-2"
+              placeholder="სათაური"
+              name="title"
+              [(inputModel)]="title"
+            ></app-input-text>
+            <app-input-text
+              fxFlex="50"
+              class="margin-right-2"
+              placeholder="ხელმძღვანელი/შემსრულებლები"
+              name="researchExecutors"
+              [(inputModel)]="researchExecutors"
+            ></app-input-text>
+            <app-input-text
+              fxFlex="50"
+              class="margin-right-2"
+              placeholder="საკვანძო სიტყვები"
+              name="keyword"
+              [(inputModel)]="keyword"
+            ></app-input-text>
+            <app-input-text
+              fxFlex="50"
+              class="margin-right-2"
+              placeholder="ძირითადი შემსრულებელი ორგანიზაცია"
+              name="organizationName"
+              [(inputModel)]="organizationName"
+            ></app-input-text>
+            <app-input-select
+              fxFlex="50"
+              class="margin-x-2"
+              label="სამეცნიერო მიმართულება (OECD)"
+              [array]="oecdList"
+              name="oecd"
+              [(inputSelectModel)]="oecd"
+            >
+            </app-input-select>
+          </form>
+        </div>
+      </div>
+      <div fxFlexAlign="middle" fxLayoutAlign="center">
+        <button mat-raised-button color="primary" class="mtavruli" fxFlexAlign="center"
+                (click)="loadResearchProjects()">
+          ძიება
+        </button>
+      </div>
+    </div>
+
+    <div class="list-wrapper">
+      <div *ngFor="let item of researchProjects$|async"
+           class="border-radius-2 padding-3 margin-y-3 mat-elevation-z2">
+        <div *ngIf="item?.translation[0]?.title">
+          <span class="mtavruli">სათაური</span>
+          <p>{{item?.translation[0]?.title}}</p>
+        </div>
+        <div *ngIf="item?.researchDirection">
+          <span class="mtavruli">სამეცნიერო კვლევის კატეგორია</span>
+          <p>{{item?.researchDirection}}</p>
+        </div>
+        <div *ngIf="item?.oecds">
+          <span class="mtavruli">სამეცნიერო მიმართულება (OECD)</span>
+          <p *ngFor="let oecd of item?.oecds">{{oecd?.code}} {{oecd?.translation[0].name}}</p>
+        </div>
+        <div *ngIf="item?.startDate">
+          <span class="mtavruli">სამუშაოს დაწყების თარიღი</span>
+          <p>{{item?.startDate}}</p>
+        </div>
+        <div *ngIf="item?.endDate">
+          <span class="mtavruli">სამუშაოს დასრულების თარიღი</span>
+          <p>{{item?.endDate}}</p>
+        </div>
+        <div *ngIf="item?.leaderName">
+          <span class="mtavruli">ხელმძღვანელი</span>
+          <p>{{item?.leaderName}}</p>
+        </div>
+        <div *ngIf="item?.researchExecutors">
+          <span class="mtavruli">კვლევითი სამუშაოს შემსრულებლები</span>
+          <p>{{item?.researchExecutors}}</p>
+        </div>
+        <div *ngIf="item?.organizationName">
+          <span class="mtavruli">ძირითადი შემსრულებელი ორგანიზაცია</span>
+          <p>{{item?.organizationName}}</p>
+        </div>
+        <div *ngIf="item?.researchExecutionBasis">
+          <span class="mtavruli">სამუშაოს შესრულების საფუძველი</span>
+          <p>{{item?.researchExecutionBasis}}</p>
+        </div>
+        <div *ngIf="item?.translation[0]?.key">
+          <span class="mtavruli">საკვანძო სიტყვები</span>
+          <p><span *ngFor="let key of item?.translation[0]?.key">{{key?.name}}</span></p>
+        </div>
+        <div *ngIf="item?.organizationCity">
+          <span class="mtavruli">ქალაქი</span>
+          <p>{{item?.organizationCity}}</p>
+        </div>
+        <div *ngIf="item?.abstract">
+          <span class="mtavruli">რეფერატი</span>
+          <p>{{item?.abstract}}</p>
+        </div>
+      </div>
+    </div>
+
+    <mat-paginator [length]="countResearchProjects$ | async"
+                   [pageIndex]="0"
+                   [pageSize]="12"
+                   [pageSizeOptions]="[8, 20, 50, 100]"
+                   (page)="loadResearchProjects($event.pageIndex,$event.pageSize)"
+    >
+    </mat-paginator>
+
+  </div>
+</div>
+

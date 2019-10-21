@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {
   MatBadgeModule,
-  MatButtonModule, MatCardModule, MatCheckboxModule, MatDialogModule, MatExpansionModule,
+  MatButtonModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDialogModule, MatExpansionModule,
   MatFormFieldModule, MatGridListModule,
   MatIconModule, MatInputModule,
   MatListModule,
@@ -37,7 +37,8 @@ import {
     MatSnackBarModule,
     MatCheckboxModule,
     MatDialogModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatChipsModule
   ],
   exports: [
     MatSidenavModule,
@@ -62,7 +63,8 @@ import {
     MatSnackBarModule,
     MatCheckboxModule,
     MatDialogModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatChipsModule
   ]
 })
 export class MaterialModule {
