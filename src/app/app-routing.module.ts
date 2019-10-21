@@ -61,6 +61,16 @@ const appRoutes: Routes = [
         .then(mod => mod.QrjPublicationModule)
   },
   {
+    path: 'scientists-experts', loadChildren:
+      () => import( './modules/pages/expert/expert.module')
+        .then(mod => mod.ExpertModule)
+  },
+  {
+    path: 'research-project', loadChildren:
+      () => import( './modules/pages/research-project/research-project.module')
+        .then(mod => mod.ResearchProjectModule)
+  },
+  {
     path: 'product-details', loadChildren:
       () => import( './modules/pages/product-details/product-details.module')
         .then(mod => mod.ProductDetailsModule)

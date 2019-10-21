@@ -4,64 +4,56 @@
 // This file was automatically generated and should not be edited.
 
 // ====================================================
-// GraphQL query operation: CountQrjPublicationsQuery
+// GraphQL query operation: ExpertsQuery
 // ====================================================
 
-export interface CountQrjPublicationsQuery {
-  countQrjPublications: number | null;
+export interface ExpertsQuery_experts_translation {
+  fullName: string | null;
+  qualification: string | null;
+  academicDegree: string | null;
+  specialization: string | null;
+  workingPlace: string | null;
+  position: string | null;
 }
 
-
-/* tslint:disable */
-// This file was automatically generated and should not be edited.
-
-// ====================================================
-// GraphQL query operation: QrjPublicationQuery
-// ====================================================
-
-export interface QrjPublicationQuery_qrjPublication_journal_translation {
+export interface ExpertsQuery_experts_oecds_translation {
   name: string | null;
 }
 
-export interface QrjPublicationQuery_qrjPublication_journal {
+export interface ExpertsQuery_experts_oecds {
   code: string | null;
-  translation: (QrjPublicationQuery_qrjPublication_journal_translation | null)[] | null;
+  translation: (ExpertsQuery_experts_oecds_translation | null)[] | null;
 }
 
-export interface QrjPublicationQuery_qrjPublication_oecd_translation {
+export interface ExpertsQuery_experts_languages {
+  code: LanguageCode | null;
   name: string | null;
 }
 
-export interface QrjPublicationQuery_qrjPublication_oecd {
-  code: string | null;
-  translation: (QrjPublicationQuery_qrjPublication_oecd_translation | null)[] | null;
-}
-
-export interface QrjPublicationQuery_qrjPublication_translation {
-  title: string | null;
-  publicationAuthor: string | null;
-  publicationLang: string | null;
-  abstract: string | null;
-}
-
-export interface QrjPublicationQuery_qrjPublication {
+export interface ExpertsQuery_experts {
   id: string;
-  index: string | null;
-  year: string | null;
-  number: string | null;
-  pages: string | null;
-  inputDate: string | null;
-  journal: QrjPublicationQuery_qrjPublication_journal | null;
-  oecd: QrjPublicationQuery_qrjPublication_oecd | null;
-  translation: (QrjPublicationQuery_qrjPublication_translation | null)[] | null;
+  workExperience: string | null;
+  inpDate: string | null;
+  email: string | null;
+  web: string | null;
+  tel: string | null;
+  mobile: string | null;
+  publications: string | null;
+  translation: (ExpertsQuery_experts_translation | null)[] | null;
+  oecds: (ExpertsQuery_experts_oecds | null)[] | null;
+  languages: (ExpertsQuery_experts_languages | null)[] | null;
 }
 
-export interface QrjPublicationQuery {
-  qrjPublication: QrjPublicationQuery_qrjPublication;
+export interface ExpertsQuery {
+  experts: ExpertsQuery_experts[];
+  countExperts: number | null;
 }
 
-export interface QrjPublicationQueryVariables {
-  id: string;
+export interface ExpertsQueryVariables {
+  languageCode?: LanguageCode | null;
+  first?: number | null;
+  skip?: number | null;
+  query?: expertQueryInput | null;
 }
 
 
@@ -119,6 +111,85 @@ export interface QrjPublicationsQueryVariables {
   first?: number | null;
   skip?: number | null;
   query?: qrjPublicationQueryInput | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
+// GraphQL query operation: ResearchProjectsQuery
+// ====================================================
+
+export interface ResearchProjectsQuery_researchProjects_translation_key {
+  name: string | null;
+}
+
+export interface ResearchProjectsQuery_researchProjects_translation {
+  title: string | null;
+  key: (ResearchProjectsQuery_researchProjects_translation_key | null)[] | null;
+}
+
+export interface ResearchProjectsQuery_researchProjects_oecds_translation {
+  name: string | null;
+}
+
+export interface ResearchProjectsQuery_researchProjects_oecds {
+  code: string | null;
+  translation: (ResearchProjectsQuery_researchProjects_oecds_translation | null)[] | null;
+}
+
+export interface ResearchProjectsQuery_researchProjects {
+  id: string | null;
+  inpDate: string | null;
+  regDate: string | null;
+  startDate: string | null;
+  endDate: string | null;
+  regNumb: string | null;
+  research: string | null;
+  researchDirection: string | null;
+  researchExecutionBasis: string | null;
+  abstract: string | null;
+  annotation: string | null;
+  budget: number | null;
+  organizationName: string | null;
+  organizationShortName: string | null;
+  organizationCode: string | null;
+  organizationHead: string | null;
+  organizationCity: string | null;
+  organizationAddress: string | null;
+  organizationIndex: string | null;
+  organizationTel: string | null;
+  organizationWeb: string | null;
+  participatingInstitutionName: string | null;
+  participatingInstitutionCountryCity: string | null;
+  participatingInstitutionTel: string | null;
+  participatingInstitutionEmail: string | null;
+  participatingInstitutionWeb: string | null;
+  leaderName: string | null;
+  leaderPosition: string | null;
+  leaderAcademicDegree: string | null;
+  leaderTel: string | null;
+  leaderMobile: string | null;
+  leaderEmail: string | null;
+  researchExecutors: string | null;
+  financing: string | null;
+  note: string | null;
+  pincode: string | null;
+  translation: (ResearchProjectsQuery_researchProjects_translation | null)[] | null;
+  oecds: (ResearchProjectsQuery_researchProjects_oecds | null)[] | null;
+}
+
+export interface ResearchProjectsQuery {
+  researchProjects: ResearchProjectsQuery_researchProjects[];
+  countResearchProjects: number | null;
+}
+
+export interface ResearchProjectsQueryVariables {
+  languageCode?: LanguageCode | null;
+  first?: number | null;
+  skip?: number | null;
+  query?: ResearchProjectQueryInput | null;
 }
 
 
@@ -198,6 +269,13 @@ export enum LanguageCode {
 }
 
 // null
+export interface expertQueryInput {
+  fullName?: string | null;
+  oecd?: string | null;
+  specialization?: string | null;
+}
+
+// null
 export interface qrjPublicationQueryInput {
   author?: string | null;
   title?: string | null;
@@ -206,6 +284,15 @@ export interface qrjPublicationQueryInput {
   keywords?: (string | null)[] | null;
   yearStart?: string | null;
   yearEnd?: string | null;
+}
+
+// null
+export interface ResearchProjectQueryInput {
+  title?: string | null;
+  researchExecutors?: string | null;
+  keyword?: string | null;
+  organizationName?: string | null;
+  oecd?: string | null;
 }
 
 //==============================================================

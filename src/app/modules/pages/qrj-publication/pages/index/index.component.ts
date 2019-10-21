@@ -7,7 +7,7 @@ import {
   QrjJournalsQuery_qrjJournals,
   QrjPublicationsQuery_qrjPublications
 } from '../../../../../types/operation-result-types';
-import {CountQrjPublications, LoadQrjPublications} from '../../state/qrj-publication.actions';
+import {LoadQrjPublications} from '../../state/qrj-publication.actions';
 import {OecdService} from '../../../../../shared/services/oecd/oecd.service';
 import {QrjJournalService} from '../../../../../shared/services/qrj-journal/qrj-journal.service';
 
@@ -53,5 +53,5 @@ export class IndexComponent implements OnInit {
       }, index, limit
     }));
   }
-  
+
 }
