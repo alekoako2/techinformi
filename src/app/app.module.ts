@@ -14,11 +14,12 @@ import {HeaderModule} from './core/header/header.module';
 import {HideMissingLanguageElementModule} from './shared/modules/hide-missing-language-element/hide-missing-language-element.module';
 import {SlickCarouselModule} from 'ngx-slick-carousel';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import {registerLocaleData} from '@angular/common';
+import {HashLocationStrategy, LocationStrategy, registerLocaleData} from '@angular/common';
 import localeKa from '@angular/common/locales/ka';
 import {GraphQLModule} from './graphql.module';
 import {NgxsModule} from '@ngxs/store';
 import {NgxsReduxDevtoolsPluginModule} from '@ngxs/devtools-plugin';
+import {environment} from '../environments/environment';
 
 registerLocaleData(localeKa, 'ka');
 
@@ -41,12 +42,12 @@ registerLocaleData(localeKa, 'ka');
     HeaderModule,
     HideMissingLanguageElementModule,
     GraphQLModule,
-    NgxsModule.forRoot([], {developmentMode: true}),
+    NgxsModule.forRoot([], {developmentMode: !environment.production}),
     // NgxsFormPluginModule.forRoot(),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     // NgxsLoggerPluginModule.forRoot()
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule {
