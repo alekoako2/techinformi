@@ -43,9 +43,7 @@ registerLocaleData(localeKa, 'ka');
     HideMissingLanguageElementModule,
     GraphQLModule,
     NgxsModule.forRoot([], {developmentMode: !environment.production}),
-    // NgxsFormPluginModule.forRoot(),
-    NgxsReduxDevtoolsPluginModule.forRoot(),
-    // NgxsLoggerPluginModule.forRoot()
+    NgxsReduxDevtoolsPluginModule.forRoot({disabled: environment.production})
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
