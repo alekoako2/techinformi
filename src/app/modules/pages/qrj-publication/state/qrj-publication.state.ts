@@ -7,10 +7,16 @@ import {first, take, tap} from 'rxjs/operators';
 export class QrjPublicationStateModel {
   public qrjPublications: QrjPublicationsQuery_qrjPublications[];
   public count: number;
+  public showSpinner: boolean;
 }
 
 @State<QrjPublicationStateModel>({
   name: 'qrjPublication',
+  defaults: {
+    showSpinner: true,
+    qrjPublications: null,
+    count: null
+  }
 })
 export class QrjPublicationState {
   constructor(private store: Store, private qrjPublicationsService: QrjPublicationService) {
@@ -25,8 +31,7 @@ export class QrjPublicationState {
 
 
     return this.qrjPublicationsService.loadQrjPublications(query, index, limit).pipe(take(1), tap(res => {
-      patchState({qrjPublications: res.qrjPublications, count: res.countQrjPublications});
-
+      patchState({qrjPublications: res.qrjPublications, count: res.countQrjPublications, showSpinner: false});
     }));
   }
 

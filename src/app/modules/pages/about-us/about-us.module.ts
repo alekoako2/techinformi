@@ -12,6 +12,7 @@ import {HideMissingLanguageElementModule} from '../../../shared/modules/hide-mis
 import {SharedModule} from '../../../shared/modules/shared/shared.module';
 import {SanitizeHtmlModule} from '../../../shared/modules/sanitize-html/sanitize-html.module';
 import {FirebaseModule} from '../../../shared/modules/firebase/firebase.module';
+import { EmployeesStructureDialogComponent } from './pages/employees-structure/components/employees-structure-dialog/employees-structure-dialog.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {FirebaseModule} from '../../../shared/modules/firebase/firebase.module';
     EmployeesStructureComponent,
     RegulationComponent,
     NormativeDocumentationComponent,
-    EmployeesComponent
+    EmployeesComponent,
+    EmployeesStructureDialogComponent
   ],
   exports: [],
   imports: [

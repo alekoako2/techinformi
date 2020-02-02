@@ -277,6 +277,7 @@ export interface expertQueryInput {
 
 // null
 export interface qrjPublicationQueryInput {
+  index?: string | null;
   author?: string | null;
   title?: string | null;
   qrjJournal?: string | null;

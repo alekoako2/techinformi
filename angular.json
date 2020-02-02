@@ -66,18 +66,18 @@
               ]
             },
             "en": {
-              "aot": true,
               "outputPath": "dist/en/",
               "i18nFile": "src/locale/messages.en.xlf",
               "i18nFormat": "xlf",
               "i18nLocale": "en",
-              "i18nMissingTranslation": "error"
+              "i18nMissingTranslation": "error",
+              "aot": true
             },
             "ka": {
-              "aot": true,
               "outputPath": "dist/ka/",
               "i18nLocale": "ka",
-              "i18nMissingTranslation": "error"
+              "i18nMissingTranslation": "error",
+              "aot": true
             }
           }
         },
@@ -90,11 +90,17 @@
             "production": {
               "browserTarget": "techinformi:build:production"
             },
+            "en": {
+              "hmr": true,
+              "browserTarget": "techinformi:build:en"
+            },
             "ka": {
+              "hmr": true,
               "browserTarget": "techinformi:build:ka"
             },
-            "en": {
-              "browserTarget": "techinformi:build:en"
+            "hmr": {
+              "hmr": true,
+              "browserTarget": "techinformi:build:hmr"
             }
           }
         },

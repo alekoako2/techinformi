@@ -20,7 +20,7 @@ export class SlickCarouselComponent implements OnInit {
     arrows: false,
     centerPadding: window.innerWidth <= 1300 ? 0 : 15 + '%',
     speed: 1000,
-    // autoplay: true
+    autoplay: true
   };
 
   constructor(@Inject(LOCALE_ID) public localeId: string, public slidesService: SliderContentService, private db: AngularFirestore) {
