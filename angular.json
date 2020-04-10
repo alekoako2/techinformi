@@ -4,6 +4,14 @@
   "newProjectRoot": "projects",
   "projects": {
     "techinformi": {
+      "i18n": {
+        "locales": {
+          "en": {
+            "translation": "src/locale/messages.en.xlf",
+            "baseHref": ""
+          }
+        }
+      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,6 +25,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/techinformi",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -62,20 +71,38 @@
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
                 }
               ]
             },
             "en": {
-              "outputPath": "dist/en/",
-              "i18nFile": "src/locale/messages.en.xlf",
-              "i18nFormat": "xlf",
-              "i18nLocale": "en",
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
+            "localize": [
+              "en"
+            ],
+              "outputPath": "dist",
               "i18nMissingTranslation": "error",
               "aot": true
             },
             "ka": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
+            "localize": [
+              "ka"
+            ],
               "outputPath": "dist/ka/",
-              "i18nLocale": "ka",
               "i18nMissingTranslation": "error",
               "aot": true
             }
