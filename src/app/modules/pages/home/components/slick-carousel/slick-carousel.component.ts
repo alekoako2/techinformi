@@ -27,6 +27,7 @@ export class SlickCarouselComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.localeId);
     this.db
       .collection('slides')
       .snapshotChanges()

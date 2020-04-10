@@ -1,5 +1,5 @@
 import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
-import {MatDialog} from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import {EmployeesStructureDialogComponent} from './components/employees-structure-dialog/employees-structure-dialog.component';
 
 @Component({

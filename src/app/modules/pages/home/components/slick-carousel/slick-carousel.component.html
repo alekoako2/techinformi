@@ -14,10 +14,10 @@
             <div class="mtavruli">
               <h2>
                 <button mat-button [routerLink]="slide.url" color="primary"
-                        tabindex="0">{{slide.translatedData.title}}</button>
+                        tabindex="0">{{slide.translatedData?.title}}</button>
               </h2>
 
-              <div [innerHTML]="slide.translatedData.text|sanitizeHtml"></div>
+              <div [innerHTML]="slide.translatedData?.text|sanitizeHtml"></div>
             </div>
           </div>
         </div>
