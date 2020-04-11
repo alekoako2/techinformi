@@ -1,6 +1,6 @@
 import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
 import {AngularFirestore} from '@angular/fire/firestore';
-import {MatDialog} from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import {PartnershipDialogComponent} from '../../components/partnership-dialog/partnership-dialog.component';
 
 @Component({

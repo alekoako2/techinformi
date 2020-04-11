@@ -1,7 +1,7 @@
 import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
 import {QrjDialogComponent} from '../qrj-dialog/qrj-dialog.component';
 import {AngularFirestore} from '@angular/fire/firestore';
-import {MatDialog} from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-description',

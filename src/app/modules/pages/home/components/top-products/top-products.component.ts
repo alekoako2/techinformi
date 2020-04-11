@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {MatSnackBar, MatSnackBarConfig} from '@angular/material';
+import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 
 export interface TopProduct {
   img: string;
