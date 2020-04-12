@@ -1,15 +1,14 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {InputTextComponent} from './input-text/input-text.component';
-import {InputTextAreaComponent} from './input-text-area/input-text-area.component';
-import {InputSelectComponent} from './input-select/input-select.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MaterialModule} from '../material/material.module';
-import {FlexLayoutModule} from '@angular/flex-layout';
-import {LayoutContainerModule} from '../layout-container/layout-container.module';
-import {InputMultipleSelectComponent} from './input-multiple-select/input-multiple-select.component';
-import {InputChipsComponent} from './input-chips/input-chips.component';
-
+import { NgModule } from '@angular/core'
+import { CommonModule } from '@angular/common'
+import { InputTextComponent } from './input-text/input-text.component'
+import { InputTextAreaComponent } from './input-text-area/input-text-area.component'
+import { InputSelectComponent } from './input-select/input-select.component'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { MaterialModule } from '../material/material.module'
+import { FlexLayoutModule } from '@angular/flex-layout'
+import { LayoutContainerModule } from '../layout-container/layout-container.module'
+import { InputMultipleSelectComponent } from './input-multiple-select/input-multiple-select.component'
+import { InputChipsComponent } from './input-chips/input-chips.component'
 
 @NgModule({
   declarations: [
@@ -17,14 +16,14 @@ import {InputChipsComponent} from './input-chips/input-chips.component';
     InputTextAreaComponent,
     InputSelectComponent,
     InputMultipleSelectComponent,
-    InputChipsComponent
+    InputChipsComponent,
   ],
   exports: [
     InputTextComponent,
     InputTextAreaComponent,
     InputSelectComponent,
     InputMultipleSelectComponent,
-    InputChipsComponent
+    InputChipsComponent,
   ],
   imports: [
     CommonModule,
@@ -32,8 +31,7 @@ import {InputChipsComponent} from './input-chips/input-chips.component';
     MaterialModule,
     LayoutContainerModule,
     ReactiveFormsModule,
-    FlexLayoutModule
-  ]
+    FlexLayoutModule,
+  ],
 })
-export class CustomInputsModule {
-}
+export class CustomInputsModule {}

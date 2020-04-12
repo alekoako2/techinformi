@@ -1,11 +1,11 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {FlexLayoutModule} from '@angular/flex-layout';
-import {MaterialModule} from '../material/material.module';
-import {LayoutContainerModule} from '../layout-container/layout-container.module';
-import {SpinnerModule} from '../spinner/spinner.module';
-import {FirebaseModule} from '../firebase/firebase.module';
-import {CustomInputsModule} from '../custom-inputs/custom-inputs.module';
+import { NgModule } from '@angular/core'
+import { CommonModule } from '@angular/common'
+import { FlexLayoutModule } from '@angular/flex-layout'
+import { MaterialModule } from '../material/material.module'
+import { LayoutContainerModule } from '../layout-container/layout-container.module'
+import { SpinnerModule } from '../spinner/spinner.module'
+import { FirebaseModule } from '../firebase/firebase.module'
+import { CustomInputsModule } from '../custom-inputs/custom-inputs.module'
 
 @NgModule({
   declarations: [],
@@ -16,14 +16,13 @@ import {CustomInputsModule} from '../custom-inputs/custom-inputs.module';
     LayoutContainerModule,
     SpinnerModule,
     FirebaseModule,
-    CustomInputsModule
+    CustomInputsModule,
   ],
   exports: [
     FlexLayoutModule,
     MaterialModule,
     LayoutContainerModule,
-    SpinnerModule
-  ]
+    SpinnerModule,
+  ],
 })
-export class SharedModule {
-}
+export class SharedModule {}

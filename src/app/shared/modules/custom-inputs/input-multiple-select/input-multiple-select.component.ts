@@ -13,7 +13,7 @@ export class InputMultipleSelectComponent implements OnInit {
   @Input() placeholder: string;
 
   @Input() name: string;
-  @Input() required: boolean = false;
+  @Input() required = false;
   array = [];
 
   @Input() list;
@@ -32,7 +32,7 @@ export class InputMultipleSelectComponent implements OnInit {
   }
 
   onChange(event) {
-    let items = [];
+    const items = [];
     for (let i = 0; i < event.length; i++) {
       items.push({code: event[i]});
     }

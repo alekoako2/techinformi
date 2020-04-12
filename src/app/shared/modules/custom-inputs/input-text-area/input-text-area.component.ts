@@ -12,7 +12,7 @@ export class InputTextAreaComponent implements OnInit {
   @Output() inputTextAreaModelChange = new EventEmitter<string>();
   @Input() placeholder: string;
   @Input() name: string;
-  @Input() required: boolean = false;
+  @Input() required = false;
 
 
   constructor(private controlContainer: ControlContainer) {

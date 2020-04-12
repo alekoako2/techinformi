@@ -1,4 +1,4 @@
-import { enableProdMode, LOCALE_ID } from '@angular/core'
+import { enableProdMode, NgModuleRef } from '@angular/core'
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'
 
 import { AppModule } from './app/app.module'
@@ -9,7 +9,8 @@ if (environment.production) {
   enableProdMode()
 }
 
-const bootstrap = () => platformBrowserDynamic().bootstrapModule(AppModule)
+const bootstrap = (): Promise<NgModuleRef<AppModule>> =>
+  platformBrowserDynamic().bootstrapModule(AppModule)
 
 if (environment.hmr) {
   if (module['hot']) {
@@ -19,5 +20,5 @@ if (environment.hmr) {
     console.log('Are you using the --hmr flag for ng serve?')
   }
 } else {
-  bootstrap().catch(err => console.log(err))
+  bootstrap().catch((err) => console.log(err))
 }

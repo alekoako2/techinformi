@@ -13,8 +13,8 @@ export class InputTextComponent implements OnInit {
   @Output() inputModelChange = new EventEmitter<string>();
   @Input() placeholder: string;
   @Input() name: string;
-  @Input() required: boolean = false;
-  @Input() type: string = 'text';
+  @Input() required = false;
+  @Input() type = 'text';
 
   constructor() {
   }
