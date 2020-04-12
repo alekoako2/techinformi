@@ -1,8 +1,8 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {AngularFireModule} from '@angular/fire';
-import {environment} from '../../../../environments/environment';
-import {AngularFirestoreModule} from '@angular/fire/firestore';
+import { NgModule } from '@angular/core'
+import { CommonModule } from '@angular/common'
+import { AngularFireModule } from '@angular/fire'
+import { environment } from '../../../../environments/environment'
+import { AngularFirestoreModule } from '@angular/fire/firestore'
 
 @NgModule({
   declarations: [],
@@ -11,7 +11,6 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
   ],
-  exports: []
+  exports: [],
 })
-export class FirebaseModule {
-}
+export class FirebaseModule {}

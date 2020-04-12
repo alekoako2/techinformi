@@ -16,7 +16,7 @@ export class InputChipsComponent implements OnInit {
   @Output() inputModelChange = new EventEmitter<string[]>();
   @Input() placeholder: string;
   @Input() name: string;
-  @Input() required: boolean = false;
+  @Input() required = false;
 
   visible = true;
   selectable = true;

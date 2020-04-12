@@ -1,9 +1,9 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {SpinnerComponent} from './spinner/spinner.component';
-import {MaterialModule} from '../material/material.module';
-import {FlexLayoutModule} from '@angular/flex-layout';
-import {LayoutContainerModule} from '../layout-container/layout-container.module';
+import { NgModule } from '@angular/core'
+import { CommonModule } from '@angular/common'
+import { SpinnerComponent } from './spinner/spinner.component'
+import { MaterialModule } from '../material/material.module'
+import { FlexLayoutModule } from '@angular/flex-layout'
+import { LayoutContainerModule } from '../layout-container/layout-container.module'
 
 @NgModule({
   declarations: [SpinnerComponent],
@@ -11,11 +11,8 @@ import {LayoutContainerModule} from '../layout-container/layout-container.module
     CommonModule,
     FlexLayoutModule,
     LayoutContainerModule,
-    MaterialModule
+    MaterialModule,
   ],
-  exports: [
-    SpinnerComponent
-  ]
+  exports: [SpinnerComponent],
 })
-export class SpinnerModule {
-}
+export class SpinnerModule {}

@@ -9,6 +9,6 @@ export const environment = {
     projectId: 'techinform-40dd4',
     storageBucket: 'techinform-40dd4.appspot.com',
     messagingSenderId: '205412723156',
-    appId: '1:205412723156:web:e9f9f47d757619e4'
-  }
-};
+    appId: '1:205412723156:web:e9f9f47d757619e4',
+  },
+}

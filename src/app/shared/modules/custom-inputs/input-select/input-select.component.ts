@@ -14,7 +14,7 @@ export class InputSelectComponent implements OnInit {
   @Input() label: string;
   @Input() array: any[];
   @Input() name: string;
-  @Input() required: boolean = false;
+  @Input() required = false;
 
 
   constructor(private controlContainer: ControlContainer) {
