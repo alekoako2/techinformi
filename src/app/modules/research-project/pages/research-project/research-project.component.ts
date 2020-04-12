@@ -1,38 +1,42 @@
-import {Component, OnInit} from '@angular/core';
-import {Select, Store} from '@ngxs/store';
-import {Observable} from 'rxjs';
-import {ResearchProjectsQuery_researchProjects, OecdsQuery_oecds} from '../../../../types/operation-result-types';
-import {OecdService} from '../../../../core/services/oecd-service/oecd.service';
+import { Component, OnInit } from '@angular/core'
+import { Select, Store } from '@ngxs/store'
+import { Observable } from 'rxjs'
+import {
+  ResearchProjectsQuery_researchProjects,
+  OecdsQuery_oecds,
+} from '../../../../types/operation-result-types'
+import { OecdService } from '../../../../core/services/oecd-service/oecd.service'
 
 @Component({
-  selector: 'app-research-project',
+  selector: 'research-project',
   templateUrl: './research-project.component.html',
-  styleUrls: ['./research-project.component.scss']
+  styleUrls: ['./research-project.component.scss'],
 })
 export class ResearchProjectComponent implements OnInit {
-  @Select(state => state.researchProject.researchProjects) researchProjects$: Observable<ResearchProjectsQuery_researchProjects[]>;
-  @Select(state => state.researchProject.count) countResearchProjects$: Observable<number>;
+  @Select((state) => state.researchProject.researchProjects)
+  researchProjects$: Observable<ResearchProjectsQuery_researchProjects[]>
+  @Select((state) => state.researchProject.count)
+  countResearchProjects$: Observable<number>
 
-  oecdList: OecdsQuery_oecds[];
+  oecdList: OecdsQuery_oecds[]
 
-  title: string;
-  researchExecutors: string;
-  keyword: string;
-  organizationName: string;
-  oecd: string;
+  title: string
+  researchExecutors: string
+  keyword: string
+  organizationName: string
+  oecd: string
 
-  constructor(private store: Store, private oecdService: OecdService) {
+  constructor(private store: Store, private oecdService: OecdService) {}
+
+  ngOnInit(): void {
+    this.loadResearchProjects()
+
+    this.oecdService.loadOecds('', 0, 999).subscribe((res: { oecds }) => {
+      this.oecdList = res.oecds
+    })
   }
 
-  ngOnInit() {
-    this.loadResearchProjects();
-
-    this.oecdService.loadOecds('', 0, 999).subscribe(res => {
-      this.oecdList = res.oecds;
-    });
-  }
-
-  loadResearchProjects(index = 0, limit = 12) {
+  loadResearchProjects(index = 0, limit = 12): void {
     // this.store.dispatch(new LoadResearchProjects({
     //   query: {
     //     title: this.title,

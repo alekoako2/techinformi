@@ -3,6 +3,7 @@ import { Apollo } from 'apollo-angular'
 import { oecdsQuery } from './gql/oecd-query'
 import { map } from 'rxjs/operators'
 import { OecdsQuery } from '../../../types/operation-result-types'
+import { Observable } from 'rxjs'
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +14,7 @@ export class OecdService {
     @Inject(LOCALE_ID) public localeId: string
   ) {}
 
-  loadOecds(searchText = '', index = 0, limit = 10) {
+  loadOecds(searchText = '', index = 0, limit = 10): Observable<{}> {
     return this.apollo
       .watchQuery<OecdsQuery>({
         variables: {

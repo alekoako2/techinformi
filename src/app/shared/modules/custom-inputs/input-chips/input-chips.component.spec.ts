@@ -1,25 +1,24 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { InputChipsComponent } from './input-chips.component';
+import { InputChipsComponent } from './input-chips.component'
 
 describe('InputChipsComponent', () => {
-  let component: InputChipsComponent;
-  let fixture: ComponentFixture<InputChipsComponent>;
+  let component: InputChipsComponent
+  let fixture: ComponentFixture<InputChipsComponent>
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ InputChipsComponent ]
-    })
-    .compileComponents();
-  }));
+      declarations: [InputChipsComponent],
+    }).compileComponents()
+  }))
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InputChipsComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    fixture = TestBed.createComponent(InputChipsComponent)
+    component = fixture.componentInstance
+    fixture.detectChanges()
+  })
 
   it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+    expect(component).toBeTruthy()
+  })
+})

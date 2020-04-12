@@ -1,26 +1,17 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {ControlContainer, FormControl, FormGroup, NgForm} from '@angular/forms';
+import { Component, EventEmitter, Input, Output } from '@angular/core'
+import { ControlContainer, NgForm } from '@angular/forms'
 
 @Component({
-  selector: 'app-input-select',
+  selector: 'input-select',
   templateUrl: './input-select.component.html',
   styleUrls: ['./input-select.component.scss'],
-  viewProviders: [{provide: ControlContainer, useExisting: NgForm}]
+  viewProviders: [{ provide: ControlContainer, useExisting: NgForm }],
 })
-export class InputSelectComponent implements OnInit {
-
-  @Input() inputSelectModel: any;
-  @Output() inputSelectModelChange = new EventEmitter<string>();
-  @Input() label: string;
-  @Input() array: any[];
-  @Input() name: string;
-  @Input() required = false;
-
-
-  constructor(private controlContainer: ControlContainer) {
-  }
-
-  ngOnInit() {
-  }
-
+export class InputSelectComponent {
+  @Input() inputSelectModel: string
+  @Output() inputSelectModelChange = new EventEmitter<string>()
+  @Input() label: string
+  @Input() array: []
+  @Input() name: string
+  @Input() required = false
 }

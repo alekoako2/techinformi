@@ -1,39 +1,77 @@
 <div class="example-container">
   <div>
     <mat-form-field fxFlex="100">
-      <input class="mtavruli" i18n-placeholder="@@first_name" matInput placeholder="სახელი">
+      <input i18n-placeholder="@@first_name"
+             matInput placeholder="სახელი"
+             class="mtavruli">
     </mat-form-field>
   </div>
   <div>
     <mat-form-field fxFlex="100">
-      <input class="mtavruli" i18n-placeholder="@@last_name" matInput placeholder="გვარი">
+      <input i18n-placeholder="@@last_name"
+             matInput placeholder="გვარი"
+             class="mtavruli">
     </mat-form-field>
   </div>
   <div>
     <mat-form-field fxFlex="100">
-      <input class="mtavruli" i18n-placeholder="@@email" matInput placeholder="ელ.ფოსტა" [formControl]="email" required>
-      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+      <input matInput placeholder="ელ.ფოსტა"
+             i18n-placeholder="@@email"
+             [formControl]="email"
+             class="mtavruli"
+             required>
+      <mat-error *ngIf="email.invalid">
+        {{getErrorMessage()}}
+      </mat-error>
     </mat-form-field>
   </div>
   <div>
     <mat-form-field fxFlex="100">
-      <mat-label i18n="@@topic">თემა</mat-label>
+      <mat-label i18n="@@topic">
+        თემა
+      </mat-label>
       <mat-select>
-        <mat-option value="" i18n="@@qrj">ქრჯ</mat-option>
-        <mat-option value="" i18n="@@scientific_and_business_information">სამეცნიერო და ბიზნეს ინფორმაცია</mat-option>
-        <mat-option value="" i18n="@@agro_information">აგროინფორმაცია</mat-option>
-        <mat-option value="" i18n="@@informational_service">საცნობარო მომსახურება</mat-option>
-        <mat-option value="" i18n="@@translate">თარგმნა</mat-option>
-        <mat-option value="" i18n="@@other">სხვადასხვა...</mat-option>
+        <mat-option i18n="@@qrj"
+                    value="">
+          ქრჯ
+        </mat-option>
+        <mat-option i18n="@@scientific_and_business_information"
+                    value="">
+          სამეცნიერო და ბიზნეს ინფორმაცია
+        </mat-option>
+        <mat-option i18n="@@agro_information"
+                    value="">
+          აგროინფორმაცია
+        </mat-option>
+        <mat-option i18n="@@informational_service"
+                    value="">
+          საცნობარო მომსახურება
+        </mat-option>
+        <mat-option i18n="@@translate"
+                    value="">
+          თარგმნა
+        </mat-option>
+        <mat-option i18n="@@other"
+                    value="">
+          სხვადასხვა...
+        </mat-option>
       </mat-select>
     </mat-form-field>
   </div>
   <div>
     <mat-form-field fxFlex="100">
-      <textarea matInput i18n-placeholder="@@your_text" placeholder="თქვენი ტექსტი..."></textarea>
+      <textarea i18n-placeholder="@@your_text"
+                placeholder="თქვენი ტექსტი..."
+                matInput
+      ></textarea>
     </mat-form-field>
   </div>
   <div>
-    <button mat-raised-button i18n="@@send" color="primary" class="mtavruli">გაგზავნა</button>
+    <button mat-raised-button
+            class="mtavruli"
+            color="primary"
+            i18n="@@send">
+      გაგზავნა
+    </button>
   </div>
 </div>

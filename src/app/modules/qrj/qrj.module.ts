@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common'
 import { QrjRoutingModule } from './qrj-routing.module'
 import { QrjComponent } from './pages/qrj/qrj.component'
 import { PageTitleBarModule } from '../../shared/modules/page-title-bar/page-title-bar.module'
-import { DescriptionComponent } from './components/description/description.component'
+import { QrjDescriptionComponent } from './components/qrj-description/qrj-description.component'
 import { SharedModule } from '../../shared/modules/shared/shared.module'
 import { QrjDialogComponent } from './components/qrj-dialog/qrj-dialog.component'
 import { DialogModule } from '../../shared/modules/dialog/dialog.module'
@@ -14,7 +14,7 @@ import { FilterOecdPipe } from './components/qrj-dialog/pipes/filter-oecd.pipe'
 @NgModule({
   declarations: [
     QrjComponent,
-    DescriptionComponent,
+    QrjDescriptionComponent,
     QrjDialogComponent,
     FilterOecdPipe,
     FilterOecdPipe,

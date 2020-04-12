@@ -1,19 +1,25 @@
 import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
-import { ScientificDirectionsComponent } from './pages/scientific-directions/scientific-directions.component'
-import { ProjectsComponent } from './pages/projects/projects.component'
-import { PublicationsComponent } from './pages/publications/publications.component'
+import { ScientificActivityDirectionsComponent } from './pages/scientific-activity-directions/scientific-activity-directions.component'
+import { ScientificActivityProjectsComponent } from './pages/scientific-activity-projects/scientific-activity-projects.component'
+import { ScientificActivityPublicationsComponent } from './pages/scientific-activity-publications/scientific-activity-publications.component'
 
 const routes: Routes = [
   {
     path: '',
     children: [
       {
-        path: 'scientific-directions',
-        component: ScientificDirectionsComponent,
+        path: 'scientific-activity-directions',
+        component: ScientificActivityDirectionsComponent,
       },
-      { path: 'projects', component: ProjectsComponent },
-      { path: 'publications', component: PublicationsComponent },
+      {
+        path: 'scientific-activity-projects',
+        component: ScientificActivityProjectsComponent,
+      },
+      {
+        path: 'publications',
+        component: ScientificActivityPublicationsComponent,
+      },
     ],
   },
 ]

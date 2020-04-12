@@ -1,25 +1,11 @@
-import {
-  Component,
-  Input,
-  OnInit,
-} from '@angular/core';
-
+import { Component, Input } from '@angular/core'
 
 @Component({
-  selector: 'app-page-title-bar',
+  selector: 'page-title-bar',
   templateUrl: './page-title-bar.component.html',
-  styleUrls: ['./page-title-bar.component.scss']
+  styleUrls: ['./page-title-bar.component.scss'],
 })
-
-export class PageTitleBarComponent implements OnInit {
-
-  @Input() title: string;
-  @Input() description?: string;
-
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
-
+export class PageTitleBarComponent {
+  @Input() title: string
+  @Input() description?: string
 }

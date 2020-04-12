@@ -1,44 +1,37 @@
-import {ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core'
 
 @Component({
-  selector: 'app-input-multiple-select',
+  selector: 'input-multiple-select',
   templateUrl: './input-multiple-select.component.html',
-  styleUrls: ['./input-multiple-select.component.scss']
+  styleUrls: ['./input-multiple-select.component.scss'],
 })
 export class InputMultipleSelectComponent implements OnInit {
-  @Input() inputModel: any[];
-  inputModel2 = [];
-  @Output() inputModelChange = new EventEmitter<any[]>();
+  @Input() inputModel: [{}][]
+  inputModel2 = []
+  @Output() inputModelChange = new EventEmitter<[{}][]>()
 
-  @Input() placeholder: string;
+  @Input() placeholder: string
 
-  @Input() name: string;
-  @Input() required = false;
-  array = [];
+  @Input() name: string
+  @Input() required = false
+  array = []
 
-  @Input() list;
-  @Input() listFieldName;
-  @Input() listFieldValueName;
+  @Input() list
+  @Input() listFieldName
+  @Input() listFieldValueName
 
-  constructor() {
-  }
-
-  ngOnInit() {
-    console.log(this.inputModel);
+  ngOnInit(): void {
     for (let i = 0; i < this.inputModel.length; i++) {
-      this.inputModel2.push(this.inputModel[i][this.listFieldValueName]);
+      this.inputModel2.push(this.inputModel[i][this.listFieldValueName])
     }
-    this.inputModel = this.array;
+    this.inputModel = this.array
   }
 
-  onChange(event) {
-    const items = [];
+  onChange(event): void {
+    const items = []
     for (let i = 0; i < event.length; i++) {
-      items.push({code: event[i]});
+      items.push({ code: event[i] })
     }
-    this.inputModelChange.emit(items);
-
+    this.inputModelChange.emit(items)
   }
-
-
 }

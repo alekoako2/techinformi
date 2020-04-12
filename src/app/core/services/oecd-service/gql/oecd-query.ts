@@ -1,12 +1,18 @@
-import gql from 'graphql-tag';
+import gql from 'graphql-tag'
 
 export const oecdsQuery = gql`
-    query OecdsQuery($languageCode:LanguageCode, $first:Int, $skip:Int, $query:String){
-        oecds(query:$query, first:$first, skip:$skip){
-            id
-            code
-            translation(language: $languageCode){
-                name
-            }
-        }
-    }`;
+  query OecdsQuery(
+    $languageCode: LanguageCode
+    $first: Int
+    $skip: Int
+    $query: String
+  ) {
+    oecds(query: $query, first: $first, skip: $skip) {
+      id
+      code
+      translation(language: $languageCode) {
+        name
+      }
+    }
+  }
+`

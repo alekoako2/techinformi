@@ -1,18 +1,24 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #sidenav role="navigation" mode="push">
-    <app-sidenav-list></app-sidenav-list>
+  <mat-sidenav #sidenav
+               role="navigation"
+               mode="push">
+    <header-sidenav-list></header-sidenav-list>
   </mat-sidenav>
 
   <mat-sidenav-content>
     <div class="mat-elevation-z3 toolbars-wrapper">
-      <app-top-toolbar (sidenavToggle)="sidenav.toggle()"></app-top-toolbar>
+      <header-top-toolbar (sidenavToggle)="sidenav.toggle()">
+      </header-top-toolbar>
 
-      <app-bottom-toolbar fxHide.lt-lg></app-bottom-toolbar>
+      <header-bottom-toolbar fxHide.lt-lg>
+      </header-bottom-toolbar>
     </div>
     <div class="margin-bottom-3 main-outlet-wrapper">
       <router-outlet></router-outlet>
     </div>
 
-    <app-footer class="margin-top-5" fxHide.lt-lg></app-footer>
+    <footer class="margin-top-5"
+            fxHide.lt-lg>
+    </footer>
   </mat-sidenav-content>
 </mat-sidenav-container>

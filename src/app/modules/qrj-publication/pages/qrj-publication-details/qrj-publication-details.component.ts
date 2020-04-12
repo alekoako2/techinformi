@@ -1,15 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core'
 
 @Component({
-  selector: 'app-qrj-publication-details',
+  selector: 'qrj-publication-details',
   templateUrl: './qrj-publication-details.component.html',
-  styleUrls: ['./qrj-publication-details.component.scss']
+  styleUrls: ['./qrj-publication-details.component.scss'],
 })
-export class QrjPublicationDetailsComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
+export class QrjPublicationDetailsComponent {}

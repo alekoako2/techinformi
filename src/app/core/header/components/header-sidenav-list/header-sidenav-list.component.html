@@ -1,0 +1,161 @@
+<div class="sidenav-wrapper">
+  <div>
+    <mat-accordion>
+      <mat-expansion-panel class="mat-elevation-z0"
+                           fxFlex="100">
+        <mat-expansion-panel-header class="padding-left-3">
+          <mat-panel-title i18n="@@about_us"
+                           class="mtavruli">
+            ჩვენს შესახებ
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <button routerLink="/about-us/general"
+                i18n="@@general"
+                mat-menu-item
+        >
+          ზოგადი
+        </button>
+        <button i18n="@@regulation"
+                mat-menu-item>
+          დებულება
+        </button>
+        <button i18n="@@structure"
+                mat-menu-item>
+          სტრუქტურა
+        </button>
+        <button i18n="@@employees"
+                mat-menu-item>
+          თანამშრომლები
+        </button>
+        <button i18n="@@normative_documentation"
+                mat-menu-item>
+          ნორმატიული დოკუმენტაცია
+        </button>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+  <div>
+    <mat-accordion>
+      <mat-expansion-panel class="mat-elevation-z0"
+                           fxFlex="100">
+        <mat-expansion-panel-header class="padding-left-3">
+          <mat-panel-title i18n="@@scientific_activity"
+                           class="mtavruli">
+            სამეცნიერო საქმიანობა
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <button i18n="@@scientific_directions"
+                mat-menu-item>
+          სამეცნიერო მიმართულებები
+        </button>
+        <button i18n="@@projects"
+                mat-menu-item>
+          პროექტები
+        </button>
+        <button i18n="@@publications"
+                mat-menu-item>
+          პუბლიკაციები
+        </button>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+  <div>
+    <mat-accordion>
+      <mat-expansion-panel class="mat-elevation-z0"
+                           fxFlex="100">
+        <mat-expansion-panel-header class="padding-left-3">
+          <mat-panel-title i18n="@@resources"
+                           class="mtavruli">
+            რესურსები
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div>
+          <mat-accordion>
+            <mat-expansion-panel class="mat-elevation-z0"
+                                 fxFlex="100">
+              <mat-expansion-panel-header class="padding-left-3">
+                <mat-panel-title i18n="@@electronic_resources"
+                                 class="mtavruli">
+                  ელექტრონული რესურსები
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <button routerLink="/about-us"
+                      fxLayoutAlign="start"
+                      i18n="@@databases"
+                      class="mtavruli"
+                      fxFlex="100"
+                      mat-button>
+                მონაცემთა ბაზები
+              </button>
+            </mat-expansion-panel>
+          </mat-accordion>
+          <mat-accordion>
+            <mat-expansion-panel class="mat-elevation-z0"
+                                 fxFlex="100">
+              <mat-expansion-panel-header class="padding-left-3">
+                <mat-panel-title i18n="@@printed_resources"
+                                 class="mtavruli">
+                  ბეჭდური რესურსები
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div>
+                <button fxLayoutAlign="start"
+                        class="mtavruli"
+                        fxFlex="100"
+                        mat-button>
+                  საგალობლები
+                </button>
+              </div>
+              <div>
+                <button fxLayoutAlign="start"
+                        class="mtavruli"
+                        fxFlex="100"
+                        mat-button>
+                  ფოლკლორი
+                </button>
+              </div>
+              <div>
+                <button fxLayoutAlign="start"
+                        class="mtavruli"
+                        fxFlex="100"
+                        mat-button>
+                  ქართული კლასიკა
+                </button>
+              </div>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+  <div>
+    <button routerLink="/about-us"
+            fxLayoutAlign="start"
+            i18n="@@service"
+            class="mtavruli"
+            fxFlex="100"
+            mat-button>
+      მომსახურება
+    </button>
+  </div>
+  <div>
+    <button fxLayoutAlign="start"
+            routerLink="/contact"
+            i18n="@@partnership"
+            class="mtavruli"
+            fxFlex="100"
+            mat-button>
+      თანამშრომლობა
+    </button>
+  </div>
+  <div>
+    <button fxLayoutAlign="start"
+            routerLink="/faq"
+            class="mtavruli"
+            i18n="@@contact"
+            fxFlex="100"
+            mat-button>
+      კონტაქტი
+    </button>
+  </div>
+</div>

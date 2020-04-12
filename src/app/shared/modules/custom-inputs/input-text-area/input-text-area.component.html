@@ -1,17 +1,15 @@
 <mat-form-field fxFlex="100">
-                    <textarea
-                      matInput
-                      [placeholder]="placeholder"
-                      [(ngModel)]="inputTextAreaModel"
-                      (ngModelChange)="inputTextAreaModelChange.emit(inputTextAreaModel)"
-                      [required]="required"
-                      [name]="name"
-                      #input="ngModel"
-                      cdkTextareaAutosize
-                      #autosize="cdkTextareaAutosize"
-                      cdkAutosizeMinRows="1"
-                      cdkAutosizeMaxRows="5"
-                    >
+                    <textarea (ngModelChange)="inputTextAreaModelChange.emit(inputTextAreaModel)"
+                              [(ngModel)]="inputTextAreaModel"
+                              [placeholder]="placeholder"
+                              [required]="required"
+                              [name]="name"
+                              #autosize="cdkTextareaAutosize"
+                              #input="ngModel"
+                              cdkAutosizeMinRows="1"
+                              cdkAutosizeMaxRows="5"
+                              cdkTextareaAutosize
+                              matInput>
                     </textarea>
 
   <mat-error *ngIf="!input.valid && input.touched">

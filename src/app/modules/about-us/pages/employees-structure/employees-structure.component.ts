@@ -1,29 +1,23 @@
-import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import {EmployeesStructureDialogComponent} from './components/employees-structure-dialog/employees-structure-dialog.component';
+import { Component, Inject, LOCALE_ID } from '@angular/core'
+import { MatDialog } from '@angular/material/dialog'
+import { EmployeesStructureDialogComponent } from './components/employees-structure-dialog/employees-structure-dialog.component'
 
 @Component({
-  selector: 'app-employees-structure',
+  selector: 'employees-structure',
   templateUrl: './employees-structure.component.html',
-  styleUrls: ['./employees-structure.component.scss']
+  styleUrls: ['./employees-structure.component.scss'],
 })
-export class EmployeesStructureComponent implements OnInit {
-  title: string;
+export class EmployeesStructureComponent {
+  title: string
 
-  constructor(@Inject(LOCALE_ID) public localeId: string, public dialog: MatDialog) {
-  }
+  constructor(
+    @Inject(LOCALE_ID) public localeId: string,
+    public dialog: MatDialog
+  ) {}
 
-  ngOnInit() {
-  }
-
-  openDialog(depName): void {
-
+  openDialog(): void {
     this.dialog.open(EmployeesStructureDialogComponent, {
       width: '550px',
-      // data: {title: collectionName}
-    });
-
-
+    })
   }
-
 }

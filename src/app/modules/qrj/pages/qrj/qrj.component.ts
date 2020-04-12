@@ -1,17 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import { Component } from '@angular/core'
 
 @Component({
-  selector: 'app-qrj',
+  selector: 'qrj',
   templateUrl: './qrj.component.html',
-  styleUrls: ['./qrj.component.scss']
+  styleUrls: ['./qrj.component.scss'],
 })
-export class QrjComponent implements OnInit {
-
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
-
-
-}
+export class QrjComponent {}

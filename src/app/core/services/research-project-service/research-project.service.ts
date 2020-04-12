@@ -2,7 +2,8 @@ import { Inject, Injectable, LOCALE_ID } from '@angular/core'
 import { Apollo } from 'apollo-angular'
 import { ResearchProjectsQuery } from '../../../types/operation-result-types'
 import { map } from 'rxjs/operators'
-import { researchProjectsQuery } from './research-project-query'
+import { researchProjectsQuery } from './gql/research-project-query'
+import { Observable } from 'rxjs'
 
 @Injectable({
   providedIn: 'root',
@@ -23,7 +24,7 @@ export class ResearchProjectService {
     },
     index = 0,
     limit = 12
-  ) {
+  ): Observable<{}> {
     return this.apollo
       .watchQuery<ResearchProjectsQuery>({
         variables: {

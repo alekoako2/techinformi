@@ -1,8 +1,13 @@
-<app-page-title-bar title="დებულება" i18n-title="@@regulation"></app-page-title-bar>
-<app-layout-container>
-  <ul style="list-style: none;height: 800px" class="overflow-auto padding-0">
+<page-title-bar i18n-title="@@regulation"
+                title="დებულება">
+</page-title-bar>
+
+<layout-container>
+  <ul class="overflow-auto padding-0">
     <li *ngFor="let number of urls[localeId]">
-      <img src="./assets/documents/debuleba/{{localeId}}/regulations-{{number}}.jpg" alt="" width="100%">
+      <img src="./assets/documents/debuleba/{{ localeId }}/regulations-{{number}}.jpg"
+           width="100%"
+           alt=""/>
     </li>
   </ul>
-</app-layout-container>
+</layout-container>

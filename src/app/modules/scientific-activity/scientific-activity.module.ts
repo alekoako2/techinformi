@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 
 import { ScientificActivityRoutingModule } from './scientific-activity-routing.module'
-import { ScientificDirectionsComponent } from './pages/scientific-directions/scientific-directions.component'
-import { ProjectsComponent } from './pages/projects/projects.component'
-import { PublicationsComponent } from './pages/publications/publications.component'
+import { ScientificActivityDirectionsComponent } from './pages/scientific-activity-directions/scientific-activity-directions.component'
+import { ScientificActivityProjectsComponent } from './pages/scientific-activity-projects/scientific-activity-projects.component'
+import { ScientificActivityPublicationsComponent } from './pages/scientific-activity-publications/scientific-activity-publications.component'
 import { SlickCarouselModule } from 'ngx-slick-carousel'
 import { PageTitleBarModule } from '../../shared/modules/page-title-bar/page-title-bar.module'
 import { SharedModule } from '../../shared/modules/shared/shared.module'
@@ -12,9 +12,9 @@ import { SanitizeHtmlModule } from '../../shared/modules/sanitize-html/sanitize-
 
 @NgModule({
   declarations: [
-    ScientificDirectionsComponent,
-    ProjectsComponent,
-    PublicationsComponent,
+    ScientificActivityDirectionsComponent,
+    ScientificActivityProjectsComponent,
+    ScientificActivityPublicationsComponent,
   ],
   imports: [
     CommonModule,

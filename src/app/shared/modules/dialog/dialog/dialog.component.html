@@ -4,7 +4,14 @@
 <div mat-dialog-content>
   <ng-content select="[body]"></ng-content>
 </div>
-<div mat-dialog-actions fxLayoutAlign="end" class="padding-bottom-5">
-  <button mat-raised-button color="primary" (click)="onNoClick()" i18n="@@close">დახურვა</button>
+<div class="padding-bottom-5"
+     fxLayoutAlign="end"
+     mat-dialog-actions>
+  <button (click)="onNoClick()"
+          mat-raised-button
+          color="primary"
+          i18n="@@close">
+    დახურვა
+  </button>
   <ng-content select="[footer]"></ng-content>
 </div>

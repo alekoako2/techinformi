@@ -5,10 +5,10 @@ import { AppComponent } from './app.component'
 import { AppRoutingModule } from './app-routing.module'
 import { HttpClientModule } from '@angular/common/http'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { BackToTopComponent } from './core/footer/back-to-top/back-to-top.component'
+import { FooterBackToTopComponent } from './core/footer/components/footer-back-to-top/footer-back-to-top.component'
 import { NotFoundComponent } from './shared/components/not-found/not-found.component'
-import { FooterComponent } from './core/footer/footer.component'
-import { FixedBottomToolbarComponent } from './core/footer/fixed-bottom-toolbar/fixed-bottom-toolbar.component'
+import { FooterComponent } from './core/footer/components/footer/footer.component'
+import { FooterToolbarComponent } from './core/footer/components/footer-toolbar/footer-toolbar.component'
 import { MaterialModule } from './shared/modules/material/material.module'
 import { HeaderModule } from './core/header/header.module'
 import { HideMissingLanguageElementModule } from './shared/modules/hide-missing-language-element/hide-missing-language-element.module'
@@ -32,8 +32,8 @@ registerLocaleData(localeKa, 'ka', localeKaExtra)
     AppComponent,
     FooterComponent,
     NotFoundComponent,
-    BackToTopComponent,
-    FixedBottomToolbarComponent,
+    FooterBackToTopComponent,
+    FooterToolbarComponent,
   ],
   imports: [
     BrowserModule,

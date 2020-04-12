@@ -1,0 +1,27 @@
+<button [matMenuTriggerFor]="languages"
+        class="overflow-hidden"
+        id="tools-button"
+        mat-mini-fab>
+  <img src="./assets/images/content/languages/ge.svg"
+       *ngIf="localeId=='ka'"
+       width="100%"
+       alt="">
+  <img src="./assets/images/content/languages/ge.svg"
+       *ngIf="localeId=='en'"
+       width="100%"
+       alt="">
+</button>
+<mat-menu #languages="matMenu">
+  <a *ngIf="localeId=='ka'"
+     class="mtavruli"
+     mat-menu-item
+     href="/en">
+    English
+  </a>
+  <a *ngIf="localeId=='en'"
+     class="mtavruli"
+     mat-menu-item
+     href="/ka">
+    ქართული
+  </a>
+</mat-menu>

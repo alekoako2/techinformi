@@ -1,15 +1,12 @@
-import {Directive, ElementRef, Inject, LOCALE_ID, OnInit} from '@angular/core';
+import { Directive, ElementRef, OnInit } from '@angular/core'
 
 @Directive({
   selector: '[appHideNotImplemented]',
 })
 export class HideNotImplementedDirective implements OnInit {
-
-  constructor(private el: ElementRef) {
-  }
+  constructor(private el: ElementRef) {}
 
   ngOnInit(): void {
-    this.el.nativeElement.style.display = 'none';
+    this.el.nativeElement.style.display = 'none'
   }
-
 }

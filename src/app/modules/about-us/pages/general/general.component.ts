@@ -1,21 +1,23 @@
-import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
-import {AngularFirestore} from '@angular/fire/firestore';
+import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core'
+import { AngularFirestore } from '@angular/fire/firestore'
 
 @Component({
-  selector: 'app-general',
+  selector: 'general',
   templateUrl: './general.component.html',
-  styleUrls: ['./general.component.scss']
+  styleUrls: ['./general.component.scss'],
 })
 export class GeneralComponent implements OnInit {
-  showSpinner = true;
+  showSpinner = true
 
-  title: string;
-  content: string;
+  title: string
+  content: string
 
-  constructor(@Inject(LOCALE_ID) public localeId: string, private db: AngularFirestore) {
-  }
+  constructor(
+    @Inject(LOCALE_ID) public localeId: string,
+    private db: AngularFirestore
+  ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.db
       .collection('page_content')
       .doc('about_us')
@@ -23,10 +25,9 @@ export class GeneralComponent implements OnInit {
       .doc(this.localeId)
       .valueChanges()
       .subscribe((data) => {
-        this.showSpinner = false;
-        const key = 'content';
-        this.content = data[key];
-      });
+        this.showSpinner = false
+        const key = 'content'
+        this.content = data[key]
+      })
   }
-
 }

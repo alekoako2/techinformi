@@ -1,5 +1,8 @@
-<div fxLayoutAlign="center" [class]="backgroundColor">
-  <div [fxFlex]="flexWidth" [fxLayout]="layoutStyle" [fxFlex.lt-lg]="ltLg">
+<div [class]="backgroundColor"
+     fxLayoutAlign="center">
+  <div [fxLayout]="layoutStyle"
+       [fxFlex.lt-lg]="ltLg"
+       [fxFlex]="flexWidth">
     <ng-content></ng-content>
   </div>
 </div>

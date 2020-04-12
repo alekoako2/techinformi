@@ -9,11 +9,11 @@ export class SnackbarDirective {
 
   constructor(private snackBar: MatSnackBar) {}
 
-  @HostListener('click') onClick() {
+  @HostListener('click') onClick(): void {
     this.openSnackBar()
   }
 
-  openSnackBar() {
+  openSnackBar(): void {
     const config = new MatSnackBarConfig()
     config.duration = 2000
     config.panelClass = ['custom-snackbar']

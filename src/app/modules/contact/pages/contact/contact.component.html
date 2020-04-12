@@ -1,8 +1,17 @@
-<app-page-title-bar title="კონტაქტი" i18n-title="@@contact"></app-page-title-bar>
-<app-map></app-map>
+<page-title-bar i18n-title="@@contact"
+                title="კონტაქტი">
+</page-title-bar>
+<contact-map></contact-map>
 <div fxLayoutAlign="center">
-  <div fxFlex="80" fxFlex.lt-md="90" fxLayout="row" fxLayout.lt-sm="column">
-    <app-contact-info fxFlex="50" fxFlex.lt-md="100"></app-contact-info>
-    <app-contact-form fxFlex="50" fxFlex.lt-md="100"></app-contact-form>
+  <div fxLayout.lt-sm="column"
+       fxFlex.lt-md="90"
+       fxLayout="row"
+       fxFlex="80">
+    <contact-info fxFlex.lt-md="100"
+                  fxFlex="50">
+    </contact-info>
+    <contact-form fxFlex.lt-md="100"
+                  fxFlex="50">
+    </contact-form>
   </div>
 </div>

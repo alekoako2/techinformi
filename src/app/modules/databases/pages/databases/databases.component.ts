@@ -1,15 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core'
 
 @Component({
-  selector: 'app-databases',
+  selector: 'databases',
   templateUrl: './databases.component.html',
-  styleUrls: ['./databases.component.scss']
+  styleUrls: ['./databases.component.scss'],
 })
-export class DatabasesComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
+export class DatabasesComponent {}

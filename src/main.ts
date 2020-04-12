@@ -9,7 +9,7 @@ if (environment.production) {
   enableProdMode()
 }
 
-const bootstrap = (): Promise<NgModuleRef<AppModule>> =>
+const bootstrap = (): Promise<NgModuleRef<{}>> =>
   platformBrowserDynamic().bootstrapModule(AppModule)
 
 if (environment.hmr) {

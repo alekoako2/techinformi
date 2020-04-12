@@ -1,20 +1,13 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, Input } from '@angular/core'
 
 @Component({
-  selector: 'app-layout-container',
+  selector: 'layout-container',
   templateUrl: './layout-container.component.html',
-  styleUrls: ['./layout-container.component.scss']
+  styleUrls: ['./layout-container.component.scss'],
 })
-export class LayoutContainerComponent implements OnInit {
-  @Input() backgroundColor?;
-  @Input() flexWidth = 60;
-  @Input() layoutStyle = 'column';
-  @Input() ltLg?;
-
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
-
+export class LayoutContainerComponent {
+  @Input() backgroundColor?
+  @Input() flexWidth = 60
+  @Input() layoutStyle = 'column'
+  @Input() ltLg?
 }

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 
 import { ContactRoutingModule } from './contact-routing.module'
-import { MapComponent } from './components/map/map.component'
+import { ContactMapComponent } from './components/contact-map/contact-map.component'
 import { ContactInfoComponent } from './components/contact-info/contact-info.component'
 import { ContactFormComponent } from './components/contact-form/contact-form.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
@@ -13,7 +13,7 @@ import { ContactComponent } from './pages/contact/contact.component'
 @NgModule({
   declarations: [
     ContactComponent,
-    MapComponent,
+    ContactMapComponent,
     ContactInfoComponent,
     ContactFormComponent,
   ],

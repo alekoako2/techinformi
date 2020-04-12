@@ -1,8 +1,9 @@
 import { Inject, Injectable, LOCALE_ID } from '@angular/core'
 import { Apollo } from 'apollo-angular'
 import { map } from 'rxjs/operators'
-import { expertsQuery } from './expert-query'
+import { expertsQuery } from './gql/expert-query'
 import { ExpertsQuery } from '../../../types/operation-result-types'
+import { Observable } from 'rxjs'
 
 @Injectable({
   providedIn: 'root',
@@ -17,7 +18,7 @@ export class ExpertService {
     query = { fullName: '', oecd: '', specialization: '' },
     index = 0,
     limit = 12
-  ) {
+  ): Observable<{}> {
     return this.apollo
       .watchQuery<ExpertsQuery>({
         variables: {

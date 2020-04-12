@@ -1,51 +1,51 @@
-<app-page-title-bar title="საქართველოს სამეცნიერო პუბლიკაციები"
-                    i18n-title="@@institute_techinformi"></app-page-title-bar>
+<page-title-bar title="საქართველოს სამეცნიერო პუბლიკაციები"
+                i18n-title="@@institute_techinformi">
+</page-title-bar>
 
-<app-layout-container [layoutStyle]="'row'">
-
+<layout-container [layoutStyle]="'row'">
   <div fxFlex="20">
-    <div class="overflow-auto" fxLayoutAlign="center">
+    <div fxLayoutAlign="center"
+         class="overflow-auto">
       <div class="width-max-content">
         <form #myForm="ngForm">
           <div>
-            <app-input-text
-              placeholder="ავტორი"
-              matTooltip="ავტორი"
-              name="author"
-              [(inputModel)]="author"
-            ></app-input-text>
+            <input-text placeholder="ავტორი"
+                        matTooltip="ავტორი"
+                        [(inputModel)]="author"
+                        name="author">
+            </input-text>
           </div>
           <div>
-            <app-input-text
-              placeholder="სტატიის დასახელება"
-              matTooltip="სტატიის დასახელება"
-              name="title"
-              [(inputModel)]="title"
-            ></app-input-text>
+            <input-text placeholder="სტატიის დასახელება"
+                        matTooltip="სტატიის დასახელება"
+                        [(inputModel)]="title"
+                        name="title">
+            </input-text>
           </div>
           <div>
-            <app-input-select
+            <input-select
               label="სამეცნიერო მიმართულება (OECD)"
               matTooltip="სამეცნიერო მიმართულება (OECD)"
               [array]="oecdList"
               name="oecd"
               [(inputSelectModel)]="oecd"
             >
-            </app-input-select>
+            </input-select>
           </div>
           <div>
-            <app-input-select
-              label="გამოცემის დასახელება"
-              matTooltip="გამოცემის დასახელება"
-              [array]="qrjJournalList"
-              name="qrjJournal"
-              [(inputSelectModel)]="qrjJournal"
-            >
-            </app-input-select>
+            <input-select matTooltip="გამოცემის დასახელება"
+                          [(inputSelectModel)]="qrjJournal"
+                          label="გამოცემის დასახელება"
+                          [array]="qrjJournalList"
+                          name="qrjJournal">
+            </input-select>
           </div>
           <div>
-            <button mat-raised-button color="primary" class="mtavruli" fxFlexAlign="center"
-                    (click)="loadQrjPublications()">
+            <button (click)="loadQrjPublications()"
+                    fxFlexAlign="center"
+                    mat-raised-button
+                    class="mtavruli"
+                    color="primary">
               ძიება
             </button>
           </div>
@@ -55,35 +55,51 @@
   </div>
 
   <div fxFlex="80">
-    <app-spinner *ngIf="showSpinner"></app-spinner>
-    <div *ngIf="countQrjPublications == 0">ჩანაწერები ვერ მოინახა</div>
+    <spinner *ngIf="showSpinner"></spinner>
+
+    <div *ngIf="countQrjPublications == 0">
+      ჩანაწერები ვერ მოინახა
+    </div>
+
     <div *ngIf="countQrjPublications">
-      <mat-paginator [length]="countQrjPublications"
-                     [pageIndex]="0"
-                     [pageSize]="12"
+      <mat-paginator (page)="loadQrjPublications($event.pageIndex, $event.pageSize)"
                      [pageSizeOptions]="[8, 20, 50, 100]"
-                     (page)="loadQrjPublications($event.pageIndex,$event.pageSize)"
-      >
+                     [length]="countQrjPublications"
+                     [pageIndex]="0"
+                     [pageSize]="12">
       </mat-paginator>
 
       <div class="list-wrapper">
-        <div *ngFor="let item of (qrjPublications$|async)?.qrjPublications"
-             class="border-radius-2 padding-3 margin-3 mat-elevation-z1 animate-3 box-shadow-h-1 cursor-pointer">
-          <div fxFlex="70" class="margin-right-1">
-            <span class="mtavruli">სტატიის დასახელება</span>
-            <p>{{item.translation[0].title}}</p>
+        <div class="border-radius-2 padding-3 margin-3 mat-elevation-z1 animate-3 box-shadow-h-1 cursor-pointer"
+             *ngFor="let item of (qrjPublications$ | async)?.qrjPublications">
+          <div class="margin-right-1"
+               fxFlex="70">
+            <span class="mtavruli">
+              სტატიის დასახელება
+            </span>
+            <p>
+              {{ item.translation[0].title }}
+            </p>
           </div>
-          <div fxFlex="20" class="margin-right-1">
-            <span class="mtavruli">ავტორ(ებ)ი</span>
-            <p>{{item?.translation[0]?.publicationAuthor}}</p>
+          <div class="margin-right-1"
+               fxFlex="20">
+            <span class="mtavruli">
+              ავტორ(ებ)ი
+            </span>
+            <p>
+              {{ (item?.translation)[0]?.publicationAuthor }}
+            </p>
           </div>
           <div fxFlex="10">
-            <span class="mtavruli">წელი</span>
-            <p>{{item?.year}}</p>
+            <span class="mtavruli">
+              წელი
+            </span>
+            <p>
+              {{ item?.year }}
+            </p>
           </div>
         </div>
       </div>
     </div>
   </div>
-</app-layout-container>
-
+</layout-container>

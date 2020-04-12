@@ -1,8 +1,9 @@
 import { Inject, Injectable, LOCALE_ID } from '@angular/core'
 import { Apollo } from 'apollo-angular'
 import { map } from 'rxjs/operators'
-import { qrjPublicationsQuery } from './qrj-publication-query'
+import { qrjPublicationsQuery } from './gql/qrj-publication-query'
 import { QrjPublicationsQuery } from '../../../types/operation-result-types'
+import { Observable } from 'rxjs'
 
 @Injectable({
   providedIn: 'root',
@@ -17,8 +18,7 @@ export class QrjPublicationService {
     query = { author: '', title: '', oecd: '', qrjJournal: '' },
     index = 0,
     limit = 10
-  ) {
-    console.log(index, limit)
+  ): Observable<QrjPublicationsQuery> {
     return this.apollo
       .watchQuery<QrjPublicationsQuery>({
         variables: {

@@ -1,21 +1,20 @@
-import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
+import { Component, Inject, LOCALE_ID } from '@angular/core'
 
 @Component({
-  selector: 'app-regulation',
+  selector: 'regulation',
   templateUrl: './regulation.component.html',
-  styleUrls: ['./regulation.component.scss']
+  styleUrls: ['./regulation.component.scss'],
 })
-export class RegulationComponent implements OnInit {
-  title: string;
+export class RegulationComponent {
+  title: string
   urls: object = {
-    en: Array(7).fill(0).map((x, i) => i + 1),
-    ka: Array(11).fill(0).map((x, i) => i + 1)
-  };
-
-  constructor(@Inject(LOCALE_ID) public localeId: string) {
+    en: Array(7)
+      .fill(0)
+      .map((x, i) => i + 1),
+    ka: Array(11)
+      .fill(0)
+      .map((x, i) => i + 1),
   }
 
-  ngOnInit() {
-  }
-
+  constructor(@Inject(LOCALE_ID) public localeId: string) {}
 }

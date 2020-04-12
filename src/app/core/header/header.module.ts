@@ -1,34 +1,28 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
-import { SidenavListComponent } from './sidenav-list/sidenav-list.component'
-import { TopToolbarComponent } from './toolbars/top-toolbar/top-toolbar.component'
-import { BottomToolbarComponent } from './toolbars/bottom-toolbar/bottom-toolbar.component'
-import { MaterialModule } from '../../shared/modules/material/material.module'
-import { LogoComponent } from './toolbars/top-toolbar/logo/logo.component'
-import { SearchComponent } from './toolbars/top-toolbar/search/search.component'
-import { UserToolsComponent } from './toolbars/top-toolbar/user-tools/user-tools.component'
-import { FlexLayoutModule } from '@angular/flex-layout'
-import { ShoppingCartComponent } from './toolbars/top-toolbar/user-tools/shopping-cart/shopping-cart.component'
-import { ProfileComponent } from './toolbars/top-toolbar/user-tools/profile/profile.component'
+import { HeaderSidenavListComponent } from './components/header-sidenav-list/header-sidenav-list.component'
+import { HeaderTopToolbarComponent } from './components/header-top-toolbar/header-top-toolbar.component'
+import { HeaderBottomToolbarComponent } from './components/header-bottom-toolbar/header-bottom-toolbar.component'
+import { HeaderTopToolbarLogoComponent } from './components/header-top-toolbar-logo/header-top-toolbar-logo.component'
+import { HeaderTopToolbarSearchComponent } from './components/header-top-toolbar-search/header-top-toolbar-search.component'
+import { HeaderTopToolbarUserToolsComponent } from './components/header-top-toolbar-user-tools/header-top-toolbar-user-tools.component'
 import { RouterModule } from '@angular/router'
-import { ResponsiveSearchComponent } from './toolbars/top-toolbar/responsive-search/responsive-search.component'
-import { LanguageComponent } from './toolbars/top-toolbar/user-tools/language/language.component'
+import { HeaderTopToolbarResponsiveSearchComponent } from './components/header-top-toolbar-responsive-search/header-top-toolbar-responsive-search.component'
+import { HeaderTopToolbarUserToolsLanguageComponent } from './components/header-top-toolbar-user-tools-language/header-top-toolbar-user-tools-language.component'
 import { HideNotImplementedModule } from '../../shared/modules/hide-not-implemented/hide-not-implemented.module'
 import { HideMissingLanguageElementModule } from '../../shared/modules/hide-missing-language-element/hide-missing-language-element.module'
 import { SharedModule } from '../../shared/modules/shared/shared.module'
 
 @NgModule({
   declarations: [
-    SidenavListComponent,
-    TopToolbarComponent,
-    BottomToolbarComponent,
-    LogoComponent,
-    SearchComponent,
-    UserToolsComponent,
-    ShoppingCartComponent,
-    ProfileComponent,
-    ResponsiveSearchComponent,
-    LanguageComponent,
+    HeaderSidenavListComponent,
+    HeaderTopToolbarComponent,
+    HeaderBottomToolbarComponent,
+    HeaderTopToolbarLogoComponent,
+    HeaderTopToolbarSearchComponent,
+    HeaderTopToolbarUserToolsComponent,
+    HeaderTopToolbarResponsiveSearchComponent,
+    HeaderTopToolbarUserToolsLanguageComponent,
   ],
   imports: [
     CommonModule,
@@ -37,6 +31,10 @@ import { SharedModule } from '../../shared/modules/shared/shared.module'
     HideNotImplementedModule,
     HideMissingLanguageElementModule,
   ],
-  exports: [SidenavListComponent, TopToolbarComponent, BottomToolbarComponent],
+  exports: [
+    HeaderSidenavListComponent,
+    HeaderTopToolbarComponent,
+    HeaderBottomToolbarComponent,
+  ],
 })
 export class HeaderModule {}

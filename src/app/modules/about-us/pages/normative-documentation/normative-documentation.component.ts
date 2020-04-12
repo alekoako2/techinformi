@@ -1,16 +1,10 @@
-import {Component, Inject, LOCALE_ID, OnInit} from '@angular/core';
+import { Component, Inject, LOCALE_ID } from '@angular/core'
 
 @Component({
-  selector: 'app-normative-documentation',
+  selector: 'normative-documentation',
   templateUrl: './normative-documentation.component.html',
-  styleUrls: ['./normative-documentation.component.scss']
+  styleUrls: ['./normative-documentation.component.scss'],
 })
-export class NormativeDocumentationComponent implements OnInit {
-
-  constructor(@Inject(LOCALE_ID) public localeId: string) {
-  }
-
-  ngOnInit() {
-  }
-
+export class NormativeDocumentationComponent {
+  constructor(@Inject(LOCALE_ID) public localeId: string) {}
 }
