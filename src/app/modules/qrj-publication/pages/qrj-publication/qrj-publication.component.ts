@@ -4,12 +4,8 @@ import { Observable } from 'rxjs'
 
 import { OecdService } from '@services/oecd-service'
 import { QrjJournalService } from '@services/qrj-journal-service'
-import {
-  OecdsQuery_oecds,
-  QrjJournalsQuery_qrjJournals,
-  QrjPublicationsQuery,
-} from '@gen-types'
 import { ProgressBarService } from '@services/progress-bar-service'
+import { OecdsQuery, QrjJournalsQuery, QrjPublicationsQuery } from '@graphql'
 
 @Component({
   selector: 'qrj-publication',
@@ -21,8 +17,8 @@ export class QrjPublicationComponent implements OnInit {
   countQrjPublications = 0
   showSpinner = true
 
-  oecdList: OecdsQuery_oecds[]
-  qrjJournalList: QrjJournalsQuery_qrjJournals[]
+  oecdList: OecdsQuery
+  qrjJournalList: QrjJournalsQuery
 
   author: string
   title: string

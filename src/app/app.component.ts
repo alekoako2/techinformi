@@ -1,10 +1,4 @@
-import {
-  Component,
-  OnChanges,
-  OnInit,
-  SimpleChanges,
-  ViewChild,
-} from '@angular/core'
+import { Component, OnInit, ViewChild } from '@angular/core'
 import { ProgressBarService } from '@services/progress-bar-service'
 import { SidenavService } from '@services/sidenav-service'
 import { MatSidenav } from '@angular/material/sidenav'
@@ -14,7 +8,7 @@ import { MatSidenav } from '@angular/material/sidenav'
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit, OnChanges {
+export class AppComponent implements OnInit {
   @ViewChild('sidenav') sidenav: MatSidenav
 
   title = 'techinformi'
@@ -27,13 +21,5 @@ export class AppComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.sidenavService.sidenav.subscribe(() => this.sidenav.toggle())
-  }
-
-  consolelog() {
-    console.log('asdasd')
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    this.consolelog()
   }
 }

@@ -3,7 +3,7 @@ import { Apollo } from 'apollo-angular'
 import { map } from 'rxjs/operators'
 import { qrjJournalsQuery } from './gql/journal-query'
 import { Observable } from 'rxjs'
-import { QrjJournalsQuery } from '@gen-types'
+import { QrjJournalsQuery } from '@graphql'
 
 @Injectable({
   providedIn: 'root',

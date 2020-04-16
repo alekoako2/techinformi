@@ -1,19 +1,18 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing'
+import { ScientistsExpertsComponent } from './scientists-experts.component'
 
-import { ExpertComponent } from './expert.component'
-
-describe('ExpertComponent', () => {
-  let component: ExpertComponent
-  let fixture: ComponentFixture<ExpertComponent>
+describe('ScientistsExpertsComponent', () => {
+  let component: ScientistsExpertsComponent
+  let fixture: ComponentFixture<ScientistsExpertsComponent>
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ExpertComponent],
+      declarations: [ScientistsExpertsComponent],
     }).compileComponents()
   }))
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ExpertComponent)
+    fixture = TestBed.createComponent(ScientistsExpertsComponent)
     component = fixture.componentInstance
     fixture.detectChanges()
   })

@@ -1,7 +1,7 @@
 import gql from 'graphql-tag'
 
 export const researchProjectsQuery = gql`
-  query ResearchProjectsQuery(
+  query ResearchProjects(
     $languageCode: LanguageCode
     $first: Int
     $skip: Int

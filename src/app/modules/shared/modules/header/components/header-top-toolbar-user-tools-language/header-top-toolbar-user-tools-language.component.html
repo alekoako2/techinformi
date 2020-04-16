@@ -3,22 +3,22 @@
         id="tools-button"
         mat-mini-fab>
   <img src="./assets/images/content/languages/ge.svg"
-       *ngIf="localeId=='ka'"
+       *ngIf="languageService.currentLanguage===LANG.KA"
        width="100%"
        alt="">
-  <img src="./assets/images/content/languages/ge.svg"
-       *ngIf="localeId=='en'"
+  <img src="./assets/images/content/languages/us.svg"
+       *ngIf="languageService.currentLanguage===LANG.EN"
        width="100%"
        alt="">
 </button>
 <mat-menu #languages="matMenu">
-  <a *ngIf="localeId=='ka'"
+  <a *ngIf="languageService.currentLanguage===LANG.KA"
      class="mtavruli"
      mat-menu-item
      href="/en">
     English
   </a>
-  <a *ngIf="localeId=='en'"
+  <a *ngIf="languageService.currentLanguage===LANG.EN"
      class="mtavruli"
      mat-menu-item
      href="/ka">

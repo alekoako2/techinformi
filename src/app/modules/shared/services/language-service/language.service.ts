@@ -1,5 +1,5 @@
 import { Inject, Injectable, LOCALE_ID } from '@angular/core'
-import { LanguageCode } from '@gen-types'
+import { LanguageCode } from '@graphql'
 
 @Injectable({
   providedIn: 'root',

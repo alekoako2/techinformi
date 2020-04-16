@@ -1,12 +1,7 @@
 import { Component, OnInit } from '@angular/core'
-import { Select, Store } from '@ngxs/store'
-import { Observable } from 'rxjs'
 
-import { OecdService } from '../../../shared/services/oecd-service/oecd.service'
-import {
-  OecdsQuery_oecds,
-  ResearchProjectsQuery_researchProjects,
-} from '../../../shared/models/generated/types/operation-result-types'
+import { OecdService } from '@services/oecd-service'
+import { OecdsQuery } from '@graphql'
 
 @Component({
   selector: 'research-project',
@@ -14,12 +9,10 @@ import {
   styleUrls: ['./research-project.component.scss'],
 })
 export class ResearchProjectComponent implements OnInit {
-  @Select((state) => state.researchProject.researchProjects)
-  researchProjects$: Observable<ResearchProjectsQuery_researchProjects[]>
-  @Select((state) => state.researchProject.count)
-  countResearchProjects$: Observable<number>
+  researchProjects$
+  countResearchProjects$
 
-  oecdList: OecdsQuery_oecds[]
+  oecdList: OecdsQuery[]
 
   title: string
   researchExecutors: string
@@ -27,7 +20,7 @@ export class ResearchProjectComponent implements OnInit {
   organizationName: string
   oecd: string
 
-  constructor(private store: Store, private oecdService: OecdService) {}
+  constructor(private oecdService: OecdService) {}
 
   ngOnInit(): void {
     this.loadResearchProjects()
@@ -38,6 +31,8 @@ export class ResearchProjectComponent implements OnInit {
   }
 
   loadResearchProjects(index = 0, limit = 12): void {
+    const sum = index + limit
+    console.log(sum)
     // this.store.dispatch(new LoadResearchProjects({
     //   query: {
     //     title: this.title,

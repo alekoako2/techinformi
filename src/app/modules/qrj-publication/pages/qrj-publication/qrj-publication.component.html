@@ -2,11 +2,11 @@
                 i18n-title="@@institute_techinformi">
 </page-title-bar>
 
-<layout-container [layoutStyle]="'row'">
-  <div fxFlex="20">
+<layout-container [layoutStyle]="'row'" flexWidth="80" ltLg="100">
+  <div fxFlex="30">
     <div fxLayoutAlign="center"
          class="overflow-auto">
-      <div class="width-max-content">
+      <div fxFlex="100">
         <form #myForm="ngForm">
           <div>
             <input-text placeholder="ავტორი"
@@ -54,17 +54,19 @@
     </div>
   </div>
 
-  <div fxFlex="80">
+  <div fxFlex="70">
     <div *ngIf="countQrjPublications == 0">
       ჩანაწერები ვერ მოინახა
     </div>
 
     <div>
+
       <mat-paginator (page)="loadQrjPublications($event.pageIndex, $event.pageSize)"
                      [pageSizeOptions]="[8, 20, 50, 100]"
                      [length]="countQrjPublications"
                      [pageIndex]="0"
-                     [pageSize]="12">
+                     [pageSize]="12"
+      >
       </mat-paginator>
 
       <spinner *ngIf="showSpinner"></spinner>

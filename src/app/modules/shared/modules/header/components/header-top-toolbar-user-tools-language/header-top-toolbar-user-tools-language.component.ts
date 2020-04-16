@@ -1,4 +1,6 @@
-import { Component, Inject, LOCALE_ID } from '@angular/core'
+import { Component } from '@angular/core'
+import { LanguageService } from '@services/language-service'
+import { LanguageCode } from '@graphql'
 
 @Component({
   selector: 'header-top-toolbar-user-tools-language',
@@ -6,5 +8,6 @@ import { Component, Inject, LOCALE_ID } from '@angular/core'
   styleUrls: ['./header-top-toolbar-user-tools-language.component.scss'],
 })
 export class HeaderTopToolbarUserToolsLanguageComponent {
-  constructor(@Inject(LOCALE_ID) public localeId: string) {}
+  LANG = LanguageCode
+  constructor(public languageService: LanguageService) {}
 }

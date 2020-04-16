@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core'
 import { SidenavListItem, SidenavListItemType } from '../../models/Sidenav-List'
+import { LanguageCode } from '@graphql'
 // Enums
-import { LanguageCode } from '@gen-types'
 
 @Injectable({
   providedIn: 'root',
