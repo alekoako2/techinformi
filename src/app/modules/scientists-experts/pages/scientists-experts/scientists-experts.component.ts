@@ -1,27 +1,25 @@
 import { Component, OnInit } from '@angular/core'
-import { Store } from '@ngxs/store'
 
 import { OecdService } from '@services/oecd-service'
-
-import { OecdsQuery_oecds } from '@gen-types'
+import { OecdsQuery } from '@graphql'
 
 @Component({
-  selector: 'expert',
-  templateUrl: './expert.component.html',
-  styleUrls: ['./expert.component.scss'],
+  selector: 'scientists-experts',
+  templateUrl: './scientists-experts.component.html',
+  styleUrls: ['./scientists-experts.component.scss'],
 })
-export class ExpertComponent implements OnInit {
+export class ScientistsExpertsComponent implements OnInit {
   experts$
   countExperts$
-  oecdList: OecdsQuery_oecds[]
+  oecdList: OecdsQuery
 
   fullName: string
   oecd: string
   specialization: string
 
-  constructor(private store: Store, private oecdService: OecdService) {}
+  constructor(private oecdService: OecdService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.loadExperts()
 
     this.oecdService.loadOecds('', 0, 999).subscribe((res: { oecds }) => {
@@ -29,7 +27,9 @@ export class ExpertComponent implements OnInit {
     })
   }
 
-  loadExperts(index = 0, limit = 12) {
+  loadExperts(index = 0, limit = 12): void {
+    const sum = index + limit
+    console.log(sum)
     // this.store.dispatch(new LoadExperts({
     //   query: {
     //     fullName: this.fullName,

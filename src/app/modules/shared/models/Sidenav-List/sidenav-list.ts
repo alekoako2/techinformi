@@ -1,4 +1,4 @@
-import { LanguageCode } from '@gen-types'
+import { LanguageCode } from '@graphql'
 
 export enum SidenavListItemType {
   BUTTON,

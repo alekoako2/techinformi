@@ -3,7 +3,7 @@ import { Apollo } from 'apollo-angular'
 import { oecdsQuery } from './gql/oecd-query'
 import { map } from 'rxjs/operators'
 import { Observable } from 'rxjs'
-import { OecdsQuery } from '@gen-types'
+import { OecdsQuery } from '@graphql'
 
 @Injectable({
   providedIn: 'root',

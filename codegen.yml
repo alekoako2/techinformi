@@ -1,0 +1,19 @@
+overwrite: true
+schema: "http://localhost:4000/graphql"
+documents: "src/app/modules/shared/services/**/gql/*.ts"
+generates:
+  src/app/modules/shared/models/generated/graphql.ts:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-apollo-angular"
+#      - "typescript-graphql-files-modules"
+#      - "typescript-document-nodes"
+#      - "fragment-matcher"
+    config:
+      avoidOptionals: true
+      namingConvention:
+        enumValues: keep
+  ./graphql.schema.json:
+    plugins:
+      - "introspection"

@@ -1,7 +1,7 @@
 import gql from 'graphql-tag'
 
 export const oecdsQuery = gql`
-  query OecdsQuery(
+  query Oecds(
     $languageCode: LanguageCode
     $first: Int
     $skip: Int

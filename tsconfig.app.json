@@ -5,8 +5,8 @@
     "types": [],
     "baseUrl": "./",
     "paths": {
-      "@gen-types": [
-        "src/app/modules/shared/models/generated/types/operation-result-types.ts"
+      "@graphql": [
+        "src/app/modules/shared/models/generated/graphql.ts"
       ],
       "@shared": [
         "src/app/modules/shared/shared.module.ts"

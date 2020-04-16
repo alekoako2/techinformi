@@ -11,7 +11,7 @@ import { PartnershipModule } from './modules/partnership'
 import { DatabasesModule } from './modules/databases'
 import { AboutUsModule } from './modules/about-us'
 import { ContactModule } from './modules/contact'
-import { ExpertModule } from './modules/expert'
+import { ScientistsExpertsModule } from './modules/scientists-experts/scientists-experts.module'
 import { HomeModule } from './modules/home'
 import { QrjModule } from './modules/qrj'
 
@@ -25,21 +25,16 @@ const appRoutes: Routes = [
   },
   {
     path: 'scientists-experts',
-    loadChildren: (): Promise<ExpertModule> =>
-      import('./modules/expert').then((mod) => mod.ExpertModule),
+    loadChildren: (): Promise<ScientistsExpertsModule> =>
+      import('./modules/scientists-experts/scientists-experts.module').then(
+        (mod) => mod.ScientistsExpertsModule
+      ),
   },
   {
     path: 'research-project',
     loadChildren: (): Promise<ResearchProjectModule> =>
       import('./modules/research-project').then(
         (mod) => mod.ResearchProjectModule
-      ),
-  },
-  {
-    path: 'qrj-publication',
-    loadChildren: (): Promise<QrjPublicationModule> =>
-      import('./modules/qrj-publication').then(
-        (mod) => mod.QrjPublicationModule
       ),
   },
   {

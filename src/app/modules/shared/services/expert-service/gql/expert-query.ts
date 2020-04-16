@@ -1,7 +1,7 @@
 import gql from 'graphql-tag'
 
 export const expertsQuery = gql`
-  query ExpertsQuery(
+  query Experts(
     $languageCode: LanguageCode
     $first: Int
     $skip: Int
