@@ -1,6 +1,8 @@
-import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
-import { ExpertComponent } from './pages/expert/expert.component'
+import { NgModule } from '@angular/core'
+
+// Pages
+import { ExpertComponent } from './pages/expert'
 
 const routes: Routes = [
   {

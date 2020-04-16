@@ -1,5 +1,6 @@
 import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core'
 import { AngularFirestore } from '@angular/fire/firestore'
+import { ProgressBarService } from '@services/progress-bar-service'
 
 @Component({
   selector: 'scientific-directions',
@@ -7,8 +8,9 @@ import { AngularFirestore } from '@angular/fire/firestore'
   styleUrls: ['./scientific-activity-directions.component.scss'],
 })
 export class ScientificActivityDirectionsComponent implements OnInit {
-  showSpinner = true
   slides: object
+
+  spinner = true
 
   slideConfig = {
     slidesToShow: 1,
@@ -22,8 +24,11 @@ export class ScientificActivityDirectionsComponent implements OnInit {
 
   constructor(
     @Inject(LOCALE_ID) public localeId: string,
-    private db: AngularFirestore
-  ) {}
+    private db: AngularFirestore,
+    private progressBarService: ProgressBarService
+  ) {
+    this.progressBarService.show(true)
+  }
 
   ngOnInit(): void {
     this.db
@@ -34,9 +39,9 @@ export class ScientificActivityDirectionsComponent implements OnInit {
       .collection('slides')
       .valueChanges()
       .subscribe((data) => {
-        this.showSpinner = false
-
         this.slides = data
+        this.spinner = false
+        this.progressBarService.show(false)
       })
   }
 }

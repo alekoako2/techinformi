@@ -1,11 +1,10 @@
-<dialog>
-  <div header>
+  <h1 mat-dialog-title>
     {{ data.title }}
-  </div>
-  <div body>
+  </h1>
+  <div mat-dialog-content>
     <spinner *ngIf="showSpinner"></spinner>
     <ul class="mtavruli padding-0">
-      <li *ngFor="let item of data.list"
+      <li *ngFor="let item of list"
           class="margin-y-3">
         <a [href]="item.url | sanitizeHtml: 'url'"
            [innerHTML]="item.title | sanitizeHtml"
@@ -14,6 +13,4 @@
         </a>
       </li>
     </ul>
-    <mat-divider></mat-divider>
   </div>
-</dialog>

@@ -11,6 +11,8 @@ import { Observable } from 'rxjs'
 export class PartnershipDialogComponent implements OnInit {
   showSpinner = true
 
+  list
+
   constructor(
     @Inject(MAT_DIALOG_DATA) public data,
     private db: AngularFirestore
@@ -19,7 +21,7 @@ export class PartnershipDialogComponent implements OnInit {
   ngOnInit(): void {
     this.loadLists(this.data.title).subscribe((data) => {
       this.showSpinner = false
-      this.data.list = data
+      this.list = data
     })
   }
 

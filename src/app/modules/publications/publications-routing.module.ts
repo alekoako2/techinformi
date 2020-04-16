@@ -1,6 +1,8 @@
-import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
-import { PublicationsComponent } from './pages/publications/publications.component'
+import { NgModule } from '@angular/core'
+
+// Pages
+import { PublicationsComponent } from './pages/publications'
 
 const routes: Routes = [
   {
@@ -8,6 +10,7 @@ const routes: Routes = [
     component: PublicationsComponent,
   },
 ]
+
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],

@@ -3,11 +3,12 @@
 </page-title-bar>
 
 <layout-container>
-  <spinner *ngIf="showSpinner"></spinner>
+  <spinner *ngIf="spinner"></spinner>
 
   <ngx-slick-carousel #slickModal="slick-carousel"
                       [config]="slideConfig"
-                      class="carousel">
+                      class="carousel"
+                      *ngIf="!spinner">
     <div *ngFor="let slide of slides"
          class="slide"
          ngxSlickItem>

@@ -55,19 +55,19 @@
   </div>
 
   <div fxFlex="80">
-    <spinner *ngIf="showSpinner"></spinner>
-
     <div *ngIf="countQrjPublications == 0">
       ჩანაწერები ვერ მოინახა
     </div>
 
-    <div *ngIf="countQrjPublications">
+    <div>
       <mat-paginator (page)="loadQrjPublications($event.pageIndex, $event.pageSize)"
                      [pageSizeOptions]="[8, 20, 50, 100]"
                      [length]="countQrjPublications"
                      [pageIndex]="0"
                      [pageSize]="12">
       </mat-paginator>
+
+      <spinner *ngIf="showSpinner"></spinner>
 
       <div class="list-wrapper">
         <div class="border-radius-2 padding-3 margin-3 mat-elevation-z1 animate-3 box-shadow-h-1 cursor-pointer"

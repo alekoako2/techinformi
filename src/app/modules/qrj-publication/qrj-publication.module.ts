@@ -1,23 +1,22 @@
-import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
-
-import { QrjPublicationRoutingModule } from './qrj-publication-routing.module'
-import { QrjPublicationComponent } from './pages/qrj-publication/qrj-publication.component'
-import { SharedModule } from '../../shared/modules/shared/shared.module'
-import { CustomInputsModule } from '../../shared/modules/custom-inputs/custom-inputs.module'
 import { FormsModule } from '@angular/forms'
-import { PageTitleBarModule } from '../../shared/modules/page-title-bar/page-title-bar.module'
-import { QrjPublicationDetailsComponent } from './pages/qrj-publication-details/qrj-publication-details.component'
+import { NgModule } from '@angular/core'
+
+// Modules
+import { QrjPublicationRoutingModule } from './qrj-publication-routing.module'
+import { SharedModule } from '@shared'
+
+// Pages
+import { QrjPublicationDetailsComponent } from './pages/qrj-publication-details'
+import { QrjPublicationComponent } from './pages/qrj-publication'
 
 @NgModule({
   declarations: [QrjPublicationComponent, QrjPublicationDetailsComponent],
   imports: [
+    QrjPublicationRoutingModule,
     CommonModule,
     SharedModule,
-    QrjPublicationRoutingModule,
-    CustomInputsModule,
     FormsModule,
-    PageTitleBarModule,
   ],
 })
 export class QrjPublicationModule {}

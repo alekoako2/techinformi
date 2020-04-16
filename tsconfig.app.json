@@ -2,13 +2,31 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
-    "types": []
+    "types": [],
+    "baseUrl": "./",
+    "paths": {
+      "@gen-types": [
+        "src/app/modules/shared/models/generated/types/operation-result-types.ts"
+      ],
+      "@shared": [
+        "src/app/modules/shared/shared.module.ts"
+      ],
+      "@services/*": [
+        "src/app/modules/shared/services/*"
+      ],
+      "@env": [
+        "src/environments/environment.ts"
+      ],
+      "@models/*": [
+        "src/app/modules/shared/models/*"
+      ]
+    }
   },
+  "include": [
+    "src/**/*.d.ts"
+  ],
   "files": [
     "src/main.ts",
     "src/polyfills.ts"
-  ],
-  "include": [
-    "src/**/*.d.ts"
   ]
 }

@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core'
-import { QrjPublicationService } from '../../../../core/services/qrj-publication-service/qrj-publication.service'
+import { QrjPublicationService } from '@services/qrj-publication-service'
 import { Observable } from 'rxjs'
+
+import { OecdService } from '@services/oecd-service'
+import { QrjJournalService } from '@services/qrj-journal-service'
 import {
   OecdsQuery_oecds,
   QrjJournalsQuery_qrjJournals,
   QrjPublicationsQuery,
-} from '../../../../types/operation-result-types'
-import { OecdService } from '../../../../core/services/oecd-service/oecd.service'
-import { QrjJournalService } from '../../../../core/services/qrj-journal-service/qrj-journal.service'
+} from '@gen-types'
+import { ProgressBarService } from '@services/progress-bar-service'
 
 @Component({
   selector: 'qrj-publication',
@@ -30,10 +32,12 @@ export class QrjPublicationComponent implements OnInit {
   constructor(
     private oecdService: OecdService,
     private qrjJournalService: QrjJournalService,
-    private qrjPublicationService: QrjPublicationService
+    private qrjPublicationService: QrjPublicationService,
+    private progressBarService: ProgressBarService
   ) {}
 
   ngOnInit(): void {
+    this.progressBarService.show(true)
     this.loadQrjPublications()
     this.oecdService.loadOecds('', 0, 999).subscribe((res: { oecds }) => {
       this.oecdList = res.oecds
@@ -46,6 +50,8 @@ export class QrjPublicationComponent implements OnInit {
   }
 
   loadQrjPublications(index = 0, limit = 12): void {
+    this.progressBarService.show(true)
+    this.showSpinner = true
     this.qrjPublications$ = this.qrjPublicationService.loadQrjPublications(
       {
         author: this.author,
@@ -59,6 +65,7 @@ export class QrjPublicationComponent implements OnInit {
     this.qrjPublications$.subscribe((res: QrjPublicationsQuery) => {
       this.countQrjPublications = res.countQrjPublications
       this.showSpinner = false
+      this.progressBarService.show(false)
     })
   }
 }

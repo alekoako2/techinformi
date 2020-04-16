@@ -1,20 +1,16 @@
-import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
-
-import { ExpertRoutingModule } from './expert-routing.module'
-import { ExpertComponent } from './pages/expert/expert.component'
-import { CustomInputsModule } from '../../shared/modules/custom-inputs/custom-inputs.module'
-import { SharedModule } from '../../shared/modules/shared/shared.module'
 import { FormsModule } from '@angular/forms'
+import { NgModule } from '@angular/core'
+
+// Modules
+import { ExpertRoutingModule } from './expert-routing.module'
+import { SharedModule } from '@shared'
+
+// Pages
+import { ExpertComponent } from './pages/expert'
 
 @NgModule({
   declarations: [ExpertComponent],
-  imports: [
-    CommonModule,
-    ExpertRoutingModule,
-    SharedModule,
-    CustomInputsModule,
-    FormsModule,
-  ],
+  imports: [CommonModule, ExpertRoutingModule, SharedModule, FormsModule],
 })
 export class ExpertModule {}

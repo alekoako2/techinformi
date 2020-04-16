@@ -1,35 +1,30 @@
-import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
+import { NgModule } from '@angular/core'
 
-import { HomeComponent } from './pages/home/home.component'
-
+// Modules
 import { HomeRoutingModule } from './home-routing.module'
+import { SharedModule } from '@shared'
+
+// NPM Modules
 import { SlickCarouselModule } from 'ngx-slick-carousel'
-import { FlexModule } from '@angular/flex-layout'
-import { HomeSlickCarouselComponent } from './components/home-slick-carousel/home-slick-carousel.component'
-import { SnackbarDirective } from '../../shared/directives/snackbar.directive'
-import { HomeNewsComponent } from './components/home-news/home-news.component'
-import { HomeVerticalNavListComponent } from './components/home-vertical-nav-list/home-vertical-nav-list.component'
 import { AngularFirestore } from '@angular/fire/firestore'
-import { SharedModule } from '../../shared/modules/shared/shared.module'
-import { SanitizeHtmlModule } from '../../shared/modules/sanitize-html/sanitize-html.module'
+
+// Pages
+import { HomeComponent } from './pages/home'
+
+// Components
+import { HomeVerticalNavListComponent } from './components/home-vertical-nav-list'
+import { HomeSlickCarouselComponent } from './components/home-slick-carousel'
+import { HomeNewsComponent } from './components/home-news'
 
 @NgModule({
   declarations: [
-    HomeComponent,
-    HomeSlickCarouselComponent,
-    SnackbarDirective,
-    HomeNewsComponent,
     HomeVerticalNavListComponent,
+    HomeSlickCarouselComponent,
+    HomeNewsComponent,
+    HomeComponent,
   ],
-  imports: [
-    CommonModule,
-    HomeRoutingModule,
-    SlickCarouselModule,
-    SharedModule,
-    FlexModule,
-    SanitizeHtmlModule,
-  ],
+  imports: [CommonModule, HomeRoutingModule, SlickCarouselModule, SharedModule],
   providers: [AngularFirestore],
 })
 export class HomeModule {}

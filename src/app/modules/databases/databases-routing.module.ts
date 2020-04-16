@@ -1,6 +1,8 @@
-import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
-import { DatabasesComponent } from './pages/databases/databases.component'
+import { NgModule } from '@angular/core'
+
+// Pages
+import { DatabasesComponent } from './pages/databases'
 
 const routes: Routes = [
   {

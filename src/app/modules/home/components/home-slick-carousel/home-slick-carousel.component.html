@@ -1,10 +1,10 @@
-<ngx-slick-carousel class="carousel bg-white padding-y-5"
+<ngx-slick-carousel class="carousel bg-white"
                     #slickModal="slick-carousel"
                     [config]="slideConfig">
 
   <spinner *ngIf="showSpinner"></spinner>
 
-  <div class="slide margin-5 border-radius-1 mat-elevation-z1 animate-3 box-shadow-h-2"
+  <div class="slide margin-3 border-radius-1 mat-elevation-z1 animate-3 box-shadow-h-2"
        *ngFor="let slide of slides"
        ngxSlickItem>
     <div class="slide-content-wrapper">
@@ -15,10 +15,10 @@
              class="padding-3"
              fxLayout="row">
           <div class="img-wrapper padding-3"
-               [fxFlex]="slide.breakpoint">
+               [fxFlex]="slide.breakpoint"
+               fxHide.lt-md>
             <img class="border-radius-1"
                  [src]="slide.imgUrl"
-                 fxHide.lt-md
                  width="100%"
                  alt=""
             />
@@ -26,7 +26,7 @@
           <div [fxFlex]="100 - slide.breakpoint"
                class="slide-info-wrapper">
             <div class="mtavruli">
-              <h2>
+              <h2 class="margin-top-0">
                 <button [routerLink]="slide.url"
                         color="primary"
                         tabindex="0"

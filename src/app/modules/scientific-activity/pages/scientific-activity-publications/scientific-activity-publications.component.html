@@ -2,5 +2,11 @@
                 title="პუბლიკაციები">
 </page-title-bar>
 <layout-container>
-  <div [innerHTML]="content | sanitizeHtml"></div>
+
+  <spinner *ngIf="spinner"></spinner>
+
+  <div [innerHTML]="content | sanitizeHtml"
+       *ngIf="!spinner">
+  </div>
+
 </layout-container>

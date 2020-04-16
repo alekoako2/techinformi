@@ -1,0 +1,4 @@
+{
+  "main": "custom-inputs.module.ts",
+  "typings": "custom-inputs.module.ts"
+}

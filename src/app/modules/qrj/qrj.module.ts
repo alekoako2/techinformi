@@ -1,32 +1,28 @@
-import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
-
-import { QrjRoutingModule } from './qrj-routing.module'
-import { QrjComponent } from './pages/qrj/qrj.component'
-import { PageTitleBarModule } from '../../shared/modules/page-title-bar/page-title-bar.module'
-import { QrjDescriptionComponent } from './components/qrj-description/qrj-description.component'
-import { SharedModule } from '../../shared/modules/shared/shared.module'
-import { QrjDialogComponent } from './components/qrj-dialog/qrj-dialog.component'
-import { DialogModule } from '../../shared/modules/dialog/dialog.module'
 import { FormsModule } from '@angular/forms'
-import { FilterOecdPipe } from './components/qrj-dialog/pipes/filter-oecd.pipe'
+import { NgModule } from '@angular/core'
+
+// Modules
+import { QrjRoutingModule } from './qrj-routing.module'
+import { SharedModule } from '@shared'
+
+// Pages
+import { QrjComponent } from './pages/qrj'
+
+// Components
+import { QrjDescriptionComponent } from './components/qrj-description'
+import { FilterOecdPipe } from './components/qrj-dialog/pipes'
+import { QrjDialogComponent } from './components/qrj-dialog'
 
 @NgModule({
   declarations: [
-    QrjComponent,
     QrjDescriptionComponent,
     QrjDialogComponent,
     FilterOecdPipe,
     FilterOecdPipe,
+    QrjComponent,
   ],
-  imports: [
-    CommonModule,
-    SharedModule,
-    QrjRoutingModule,
-    PageTitleBarModule,
-    DialogModule,
-    FormsModule,
-  ],
+  imports: [CommonModule, SharedModule, QrjRoutingModule, FormsModule],
   entryComponents: [QrjDialogComponent],
 })
 export class QrjModule {}

@@ -2,5 +2,11 @@
                 title="პროექტები">
 </page-title-bar>
 <layout-container>
-  <div [innerHTML]="content"></div>
+
+  <spinner *ngIf="spinner"></spinner>
+
+  <div [innerHTML]="content"
+       *ngIf="!spinner">
+  </div>
+
 </layout-container>

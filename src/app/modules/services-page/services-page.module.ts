@@ -1,20 +1,15 @@
-import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
+import { NgModule } from '@angular/core'
 
+// Modules
 import { ServicesPageRoutingModule } from './services-page-routing.module'
-import { ServicesPageComponent } from './pages/services-page/services-page.component'
-import { PageTitleBarModule } from '../../shared/modules/page-title-bar/page-title-bar.module'
-import { SharedModule } from '../../shared/modules/shared/shared.module'
-import { SanitizeHtmlModule } from '../../shared/modules/sanitize-html/sanitize-html.module'
+import { SharedModule } from '@shared'
+
+// Pages
+import { ServicesPageComponent } from './pages/services-page'
 
 @NgModule({
   declarations: [ServicesPageComponent],
-  imports: [
-    CommonModule,
-    SharedModule,
-    ServicesPageRoutingModule,
-    PageTitleBarModule,
-    SanitizeHtmlModule,
-  ],
+  imports: [CommonModule, SharedModule, ServicesPageRoutingModule],
 })
 export class ServicesPageModule {}

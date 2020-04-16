@@ -1,6 +1,6 @@
 import { Component, Inject, LOCALE_ID } from '@angular/core'
 import { MatDialog } from '@angular/material/dialog'
-import { PartnershipDialogComponent } from '../../components/partnership-dialog/partnership-dialog.component'
+import { PartnershipDialogComponent } from '../../components/partnership-dialog'
 
 @Component({
   selector: 'partnership',

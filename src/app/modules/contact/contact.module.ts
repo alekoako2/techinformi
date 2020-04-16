@@ -1,29 +1,32 @@
-import { NgModule } from '@angular/core'
-import { CommonModule } from '@angular/common'
-
-import { ContactRoutingModule } from './contact-routing.module'
-import { ContactMapComponent } from './components/contact-map/contact-map.component'
-import { ContactInfoComponent } from './components/contact-info/contact-info.component'
-import { ContactFormComponent } from './components/contact-form/contact-form.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-import { PageTitleBarModule } from '../../shared/modules/page-title-bar/page-title-bar.module'
-import { SharedModule } from '../../shared/modules/shared/shared.module'
-import { ContactComponent } from './pages/contact/contact.component'
+import { CommonModule } from '@angular/common'
+import { NgModule } from '@angular/core'
+
+// Modules
+import { ContactRoutingModule } from './contact-routing.module'
+import { SharedModule } from '@shared'
+
+// Pages
+import { ContactComponent } from './pages/contact'
+
+// Components
+import { ContactInfoComponent } from './components/contact-info'
+import { ContactFormComponent } from './components/contact-form'
+import { ContactMapComponent } from './components/contact-map'
 
 @NgModule({
   declarations: [
-    ContactComponent,
-    ContactMapComponent,
     ContactInfoComponent,
     ContactFormComponent,
+    ContactMapComponent,
+    ContactComponent,
   ],
   imports: [
+    ContactRoutingModule,
+    ReactiveFormsModule,
     CommonModule,
     SharedModule,
-    ContactRoutingModule,
     FormsModule,
-    ReactiveFormsModule,
-    PageTitleBarModule,
   ],
 })
 export class ContactModule {}

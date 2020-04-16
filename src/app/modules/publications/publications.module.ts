@@ -1,18 +1,15 @@
-import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
+import { NgModule } from '@angular/core'
 
+// Modules
 import { PublicationsRoutingModule } from './publications-routing.module'
-import { PublicationsComponent } from './pages/publications/publications.component'
-import { PageTitleBarModule } from '../../shared/modules/page-title-bar/page-title-bar.module'
-import { SharedModule } from '../../shared/modules/shared/shared.module'
+import { SharedModule } from '@shared'
+
+// Pages
+import { PublicationsComponent } from './pages/publications'
 
 @NgModule({
   declarations: [PublicationsComponent],
-  imports: [
-    CommonModule,
-    SharedModule,
-    PublicationsRoutingModule,
-    PageTitleBarModule,
-  ],
+  imports: [CommonModule, SharedModule, PublicationsRoutingModule],
 })
 export class PublicationsModule {}

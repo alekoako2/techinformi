@@ -7,13 +7,13 @@ export const environment = {
   production: false,
   graphqlLink: 'http://localhost:4000/graphql',
   firebase: {
+    databaseURL: 'https://techinform-40dd4.firebaseio.com',
     apiKey: 'AIzaSyCjE7e6B4NnhJPxZQChlaLZDHg54YwunKE',
     authDomain: 'techinform-40dd4.firebaseapp.com',
-    databaseURL: 'https://techinform-40dd4.firebaseio.com',
-    projectId: 'techinform-40dd4',
     storageBucket: 'techinform-40dd4.appspot.com',
-    messagingSenderId: '205412723156',
     appId: '1:205412723156:web:e9f9f47d757619e4',
+    messagingSenderId: '205412723156',
+    projectId: 'techinform-40dd4',
   },
 }
 

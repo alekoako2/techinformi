@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core'
 import { Select, Store } from '@ngxs/store'
 import { Observable } from 'rxjs'
+
+import { OecdService } from '../../../shared/services/oecd-service/oecd.service'
 import {
-  ResearchProjectsQuery_researchProjects,
   OecdsQuery_oecds,
-} from '../../../../types/operation-result-types'
-import { OecdService } from '../../../../core/services/oecd-service/oecd.service'
+  ResearchProjectsQuery_researchProjects,
+} from '../../../shared/models/generated/types/operation-result-types'
 
 @Component({
   selector: 'research-project',

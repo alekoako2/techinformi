@@ -1,22 +1,27 @@
-import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
-import { GeneralComponent } from './pages/general/general.component'
-import { EmployeesStructureComponent } from './pages/employees-structure/employees-structure.component'
-import { RegulationComponent } from './pages/regulation/regulation.component'
-import { NormativeDocumentationComponent } from './pages/normative-documentation/normative-documentation.component'
-import { EmployeesComponent } from './pages/employees/employees.component'
+import { NgModule } from '@angular/core'
+
+// Pages
+import { AboutUsNormativeDocumentationComponent } from './pages/about-us-normative-documentation'
+import { AboutUsEmployeesStructureComponent } from './pages/about-us-employees-structure'
+import { AboutUsRegulationComponent } from './pages/about-us-regulation'
+import { AboutUsEmployeesComponent } from './pages/about-us-employees'
+import { AboutUsGeneralComponent } from './pages/about-us-general'
 
 const routes: Routes = [
   {
     path: '',
     children: [
-      { path: 'general', component: GeneralComponent },
-      { path: 'regulation', component: RegulationComponent },
-      { path: 'employees-structure', component: EmployeesStructureComponent },
-      { path: 'employees', component: EmployeesComponent },
+      { path: 'regulation', component: AboutUsRegulationComponent },
+      { path: 'employees', component: AboutUsEmployeesComponent },
+      { path: 'general', component: AboutUsGeneralComponent },
       {
         path: 'normative-documentation',
-        component: NormativeDocumentationComponent,
+        component: AboutUsNormativeDocumentationComponent,
+      },
+      {
+        path: 'employees-structure',
+        component: AboutUsEmployeesStructureComponent,
       },
     ],
   },

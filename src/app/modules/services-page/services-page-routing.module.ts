@@ -1,6 +1,8 @@
-import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
-import { ServicesPageComponent } from './pages/services-page/services-page.component'
+import { NgModule } from '@angular/core'
+
+// Pages
+import { ServicesPageComponent } from './pages/services-page'
 
 const routes: Routes = [
   {

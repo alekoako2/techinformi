@@ -1,0 +1,219 @@
+<layout-container [backgroundColor]="'bg-white'"
+                  [ltLg]="100">
+  <mat-toolbar class="bg-white">
+    <div class="height-100"
+         fxLayout="row">
+
+      <!--      About Us-->
+      <button [matMenuTriggerFor]="about_us"
+              i18n="@@about_us"
+              mat-button>
+        ჩვენს შესახებ
+      </button>
+      <mat-menu class="mat-menu-buttons-wrapper"
+                #about_us="matMenu">
+        <button routerLink="/about-us/general"
+                i18n="@@general"
+                mat-menu-item>
+          ზოგადი
+        </button>
+        <button routerLink="/about-us/regulation"
+                i18n="@@regulation"
+                mat-menu-item>
+          დებულება
+        </button>
+        <button routerLink="/about-us/employees-structure"
+                i18n="@@structure"
+                mat-menu-item>
+          სტრუქტურა
+        </button>
+        <button routerLink="/about-us/employees"
+                i18n="@@employees"
+                mat-menu-item>
+          თანამშრომლები
+        </button>
+        <button routerLink="/about-us/normative-documentation"
+                i18n="@@normative_documentation"
+                mat-menu-item>
+          ნორმატიული დოკუმენტაცია
+        </button>
+      </mat-menu>
+
+      <!--      Scientific Activity-->
+      <button [matMenuTriggerFor]="research_activities"
+              i18n="@@scientific_activity"
+              mat-button>
+        სამეცნიერო საქმიანობა
+      </button>
+      <mat-menu class="mat-menu-buttons-wrapper"
+                #research_activities="matMenu">
+        <button routerLink="/scientific-activity/directions"
+                i18n="@@scientific_directions"
+                mat-menu-item>
+          სამეცნიერო მიმართულებები
+        </button>
+        <button routerLink="/scientific-activity/projects"
+                appHideMissingLanguageElement
+                i18n="@@projects"
+                mat-menu-item>
+          პროექტები
+        </button>
+        <button routerLink="/scientific-activity/publications"
+                appHideMissingLanguageElement
+                i18n="@@publications"
+                mat-menu-item>
+          პუბლიკაციები
+        </button>
+      </mat-menu>
+
+      <!--      Resources-->
+      <button [matMenuTriggerFor]="resources"
+              i18n="@@resources"
+              mat-button>
+        რესურსები
+      </button>
+      <mat-menu class="mat-menu-buttons-wrapper"
+                #resources="matMenu">
+        <button [matMenuTriggerFor]="el_resources"
+                i18n="@@electronic_resources"
+                mat-menu-item>
+          ელექტრონული რესურსები
+        </button>
+        <button [matMenuTriggerFor]="printed_resources"
+                i18n="@@printed_resources"
+                appHideNotImplemented
+                mat-menu-item>
+          ბეჭდური რესურსები
+        </button>
+      </mat-menu>
+
+      <!--      Electronic Resources-->
+      <mat-menu class="mat-menu-buttons-wrapper"
+                #el_resources="matMenu">
+        <button [matMenuTriggerFor]="databases"
+                i18n="@@databases"
+                mat-menu-item>
+          მონაცემთა ბაზები
+        </button>
+        <button i18n="@@electronic_collections"
+                [matMenuTriggerFor]="el_funds"
+                appHideNotImplemented
+                mat-menu-item>
+          ელექტრონული ფონდები
+        </button>
+        <button [matMenuTriggerFor]="el_discs"
+                appHideNotImplemented
+                i18n="@@ram_discs"
+                mat-menu-item>
+          ელექტრონული დისკები
+        </button>
+      </mat-menu>
+
+      <!--      Printed Resources-->
+      <mat-menu class="mat-menu-buttons-wrapper"
+                #printed_resources="matMenu">
+        <button mat-menu-item>
+          საქართველოში დაცული დისერტაციების ავტორეფერატები
+        </button>
+        <button mat-menu-item>
+          FAO-ს სადეპოზიტო ბიბლიოთეკის ფონდი
+        </button>
+        <button mat-menu-item>
+          დეპონირებული შრომების ფონდი
+        </button>
+        <button mat-menu-item>
+          წიგნადი ფონდი
+        </button>
+      </mat-menu>
+
+      <!--      Databases-->
+      <mat-menu class="mat-menu-buttons-wrapper"
+                #databases="matMenu">
+        <button i18n="@@research_projects"
+                mat-menu-item>
+          სამეცნიერო-კვლევითი პროექტები
+        </button>
+        <button i18n="@@scientists_experts"
+                mat-menu-item>
+          მეცნიერები/ექსპერტები
+        </button>
+        <button i18n="@@georgian_scientific_publications"
+                mat-menu-item>
+          საქართველოს სამეცნიერო პუბლიკაციები
+        </button>
+        <button i18n="@@research_organizations"
+                mat-menu-item>
+          სამეცნიერო ორგანიზაციები
+        </button>
+        <button i18n="@@georgian_scientists_publications_in_high_ranking_foreign_journals"
+                [matMenuTriggerFor]="scientific_publications_high_rating_foreign_journals"
+                mat-menu-item>
+          საქართველოს მეცნიერთა პუბლიკაციები მაღალი რეიტინგის უცხოურ ჟურნალებში
+        </button>
+      </mat-menu>
+
+      <!--      Electronic Funds-->
+      <mat-menu class="mat-menu-buttons-wrapper"
+                #el_funds="matMenu">
+        <button i18n="@@abstracts_of_theses_defended_in_georgia"
+                mat-menu-item>
+          საქართველოში დაცული დისერტაციების ავტორეფერატები (ბიბლიოგრაფია, ხელმძღვანელები, ოპონენტები)
+        </button>
+        <button i18n="@@deposited_works_of_georgian_scientists"
+                mat-menu-item>
+          საქართველოს მეცნიერთა დეპონირებული შრომები
+        </button>
+      </mat-menu>
+
+      <!--      Electronic Discs-->
+      <mat-menu class="mat-menu-buttons-wrapper"
+                #el_discs="matMenu">
+        <button mat-menu-item>
+          Your Georgia
+        </button>
+        <button i18n="@@research_organizations"
+                mat-menu-item>
+          სამეცნიერო ორგანიზაციები
+        </button>
+        <button mat-menu-item>
+          საქმიანი საქართველო
+        </button>
+      </mat-menu>
+
+      <!--      Georgian Scientists’ Publication in High-Ranking Foreign Journals -->
+      <mat-menu #scientific_publications_high_rating_foreign_journals="matMenu"
+                class="mat-menu-buttons-wrapper">
+        <button mat-menu-item>
+          Wos Core Collection
+        </button>
+        <button mat-menu-item>
+          WOS Full
+        </button>
+      </mat-menu>
+
+      <!--      Services-->
+      <button routerLink="/services-page"
+              class="nav-main-menu"
+              i18n="@@service"
+              mat-button>
+        მომსახურება
+      </button>
+
+      <!--      Partnership-->
+      <button routerLink="/partnership"
+              class="nav-main-menu"
+              i18n="@@partnership"
+              mat-button>
+        თანამშრომლობა
+      </button>
+
+      <!--      Contact-->
+      <button routerLink="/contact"
+              class="nav-main-menu"
+              i18n="@@contact"
+              mat-button>
+        კონტაქტი
+      </button>
+    </div>
+  </mat-toolbar>
+</layout-container>

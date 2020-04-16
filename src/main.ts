@@ -2,14 +2,14 @@ import { enableProdMode, NgModuleRef } from '@angular/core'
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'
 
 import { AppModule } from './app/app.module'
-import { environment } from './environments/environment'
+import { environment } from '@env'
 import { hmrBootstrap } from './hmr'
 
 if (environment.production) {
   enableProdMode()
 }
 
-const bootstrap = (): Promise<NgModuleRef<{}>> =>
+const bootstrap = (): Promise<NgModuleRef<AppModule>> =>
   platformBrowserDynamic().bootstrapModule(AppModule)
 
 if (environment.hmr) {

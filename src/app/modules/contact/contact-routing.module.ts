@@ -1,6 +1,8 @@
-import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
-import { ContactComponent } from './pages/contact/contact.component'
+import { NgModule } from '@angular/core'
+
+// Pages
+import { ContactComponent } from './pages/contact'
 
 const contactRoutes: Routes = [
   {

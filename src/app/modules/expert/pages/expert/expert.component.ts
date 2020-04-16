@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core'
-import { Select, Store } from '@ngxs/store'
-import { Observable } from 'rxjs'
-import {
-  OecdsQuery_oecds,
-  ExpertsQuery_experts,
-} from '../../../../types/operation-result-types'
-import { OecdService } from '../../../../core/services/oecd-service/oecd.service'
+import { Store } from '@ngxs/store'
+
+import { OecdService } from '@services/oecd-service'
+
+import { OecdsQuery_oecds } from '@gen-types'
 
 @Component({
   selector: 'expert',
@@ -13,11 +11,8 @@ import { OecdService } from '../../../../core/services/oecd-service/oecd.service
   styleUrls: ['./expert.component.scss'],
 })
 export class ExpertComponent implements OnInit {
-  @Select((state) => state.expert.experts) experts$: Observable<
-    ExpertsQuery_experts[]
-  >
-  @Select((state) => state.expert.count) countExperts$: Observable<number>
-
+  experts$
+  countExperts$
   oecdList: OecdsQuery_oecds[]
 
   fullName: string

@@ -1,0 +1,4 @@
+{
+  "main": "databases.module.ts",
+  "typings": "databases.module.ts"
+}

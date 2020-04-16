@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
-import { QrjComponent } from './pages/qrj/qrj.component'
+import { QrjComponent } from './pages/qrj'
+import { NgModule } from '@angular/core'
 
 const routes: Routes = [
   {

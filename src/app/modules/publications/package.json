@@ -1,0 +1,4 @@
+{
+  "main": "publications.module.ts",
+  "typings": "publications.module.ts"
+}

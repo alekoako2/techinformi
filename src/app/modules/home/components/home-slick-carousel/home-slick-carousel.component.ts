@@ -1,6 +1,9 @@
 import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core'
 import { AngularFirestore } from '@angular/fire/firestore'
-import { Slide } from '../../../../shared/models/Slide/slide'
+import { Slide } from '../../../shared/models/Slide'
+
+// Services
+import { ProgressBarService } from '@services/progress-bar-service'
 
 @Component({
   selector: 'home-slick-carousel',
@@ -19,16 +22,18 @@ export class HomeSlickCarouselComponent implements OnInit {
     arrows: false,
     centerPadding: window.innerWidth <= 1300 ? 0 : 15 + '%',
     speed: 1000,
-    autoplay: true,
+    autoplay: false,
   }
 
   constructor(
     @Inject(LOCALE_ID) public localeId: string,
-    private db: AngularFirestore
-  ) {}
+    private db: AngularFirestore,
+    private progressBarService: ProgressBarService
+  ) {
+    this.progressBarService.show(true)
+  }
 
   ngOnInit(): void {
-    console.log(this.localeId)
     this.db
       .collection('slides')
       .snapshotChanges()
@@ -43,6 +48,7 @@ export class HomeSlickCarouselComponent implements OnInit {
             .valueChanges()
             .subscribe((translatedData) => {
               this.showSpinner = false
+              this.progressBarService.show(false)
               const newSlide: Slide = slide.payload.doc.data() as Slide
               newSlide.translatedData = translatedData
               this.slides.push(newSlide)

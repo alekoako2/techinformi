@@ -1,0 +1,33 @@
+  <ng-template #recursiveListTmpl let-list>
+    <div *ngFor="let sidenavListItem of list" class="wrapper">
+
+      <button *ngIf="sidenavListItem.type===TYPE.BUTTON"
+              (click)="sidenavService.toggle()"
+              [routerLink]="sidenavListItem.routerLink"
+              mat-menu-item>
+        {{getNameByCurrentLocale(sidenavListItem.name)}}
+      </button>
+
+      <mat-accordion *ngIf="sidenavListItem.type===TYPE.ACCORDION">
+
+        <mat-expansion-panel>
+
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{getNameByCurrentLocale(sidenavListItem.name)}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <mat-divider></mat-divider>
+
+          <ng-container *ngTemplateOutlet="recursiveListTmpl; context:{ $implicit: sidenavListItem.list }">
+          </ng-container>
+
+        </mat-expansion-panel>
+
+      </mat-accordion>
+
+    </div>
+  </ng-template>
+<ng-container *ngTemplateOutlet="recursiveListTmpl; context:{ $implicit: sidenavList }"></ng-container>
+
