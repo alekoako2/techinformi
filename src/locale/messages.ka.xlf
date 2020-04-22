@@ -951,12 +951,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="search" datatype="html">
-        <source>
-          ძიება
-        </source>
-        <target>
-          ძიება
-        </target>
+        <source>ძიება</source>
+        <target>ძიება</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/pages/qrj/components/qrj-dialog/qrj-dialog.component.html
           </context>
@@ -966,6 +962,58 @@
           <context context-type="sourcefile">src/app/core/header/toolbars/top-toolbar/search/search.component.html
           </context>
           <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="publication_title" datatype="html">
+        <source>სტატიის დასახელება</source>
+        <target>სტატიის დასახელება</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/qrj-publication/pages/qrj-publication-details/qrj-publication-details.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="authors" datatype="html">
+        <source>ავტორ(ებ)ი</source>
+        <target>ავტორ(ებ)ი</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/qrj-publication/pages/qrj-publication-details/qrj-publication-details.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="scientific_direction_oecd" datatype="html">
+        <source>სამეცნიერო მიმართულება (OECD)</source>
+        <target>სამეცნიერო მიმართულება (OECD)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/qrj-publication/pages/qrj-publication-details/qrj-publication-details.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="publication_name" datatype="html">
+        <source>გამოცემის დასახელება</source>
+        <target>გამოცემის დასახელება</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/qrj-publication/pages/qrj-publication-details/qrj-publication-details.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="abstract" datatype="html">
+        <source>რეფერატი</source>
+        <target>რეფერატი</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/qrj-publication/pages/qrj-publication-details/qrj-publication-details.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="year" datatype="html">
+        <source>
+          წელი
+        </source>
+        <target>
+          წელი
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/qrj-publication/pages/qrj-publication/qrj-publication.component.html</context>
+          <context context-type="linenumber">46</context>
         </context-group>
       </trans-unit>
     </body>

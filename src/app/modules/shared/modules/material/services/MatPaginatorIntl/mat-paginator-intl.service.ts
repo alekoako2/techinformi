@@ -18,11 +18,11 @@ export class MatPaginatorIntlService extends MatPaginatorIntl {
     super()
     switch (languageService.currentLanguage) {
       case LanguageCode.KA:
-        this.firstPageLabel = '1'
+        this.firstPageLabel = 'პირველი გვერდი'
         this.itemsPerPageLabel = 'ჩანაწერები ერთ გვერდზე'
-        this.lastPageLabel = '3'
-        this.nextPageLabel = '4'
-        this.previousPageLabel = '5'
+        this.lastPageLabel = 'უკანასკნელი გვერდი'
+        this.nextPageLabel = 'შემდეგი გვერდი'
+        this.previousPageLabel = 'წინა გვერდი'
         this.getRangeLabel = (page, pageSize, length): string => {
           if (length === 0 || pageSize === 0) {
             return '0 დან ' + length

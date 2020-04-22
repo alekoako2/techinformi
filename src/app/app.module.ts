@@ -25,6 +25,8 @@ import { SharedModule } from '@shared'
 
 // Components
 import { AppComponent } from './app.component'
+import { RouteReuseStrategy } from '@angular/router'
+import { CustomReuseStrategy } from './router-strategy'
 
 @NgModule({
   declarations: [AppComponent],
@@ -44,6 +46,10 @@ import { AppComponent } from './app.component'
     {
       useClass: HashLocationStrategy,
       provide: LocationStrategy,
+    },
+    {
+      provide: RouteReuseStrategy,
+      useClass: CustomReuseStrategy,
     },
   ],
   bootstrap: [AppComponent],

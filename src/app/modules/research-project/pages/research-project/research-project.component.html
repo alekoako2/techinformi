@@ -35,7 +35,7 @@
             <input-select label="სამეცნიერო მიმართულება (OECD)"
                           [(inputSelectModel)]="oecd"
                           class="margin-x-2"
-                          [array]="oecdList"
+                          [array]="(oecds$|async)?.oecds"
                           name="oecd"
                           fxFlex="50">
             </input-select>

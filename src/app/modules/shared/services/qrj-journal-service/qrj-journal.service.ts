@@ -3,7 +3,8 @@ import { Apollo } from 'apollo-angular'
 import { map } from 'rxjs/operators'
 import { qrjJournalsQuery } from './gql/journal-query'
 import { Observable } from 'rxjs'
-import { QrjJournalsQuery } from '@graphql'
+import { QrjJournal, QrjJournalsQuery } from '@graphql'
+import { ApolloQueryResult } from 'apollo-client'
 
 @Injectable({
   providedIn: 'root',
@@ -14,7 +15,11 @@ export class QrjJournalService {
     @Inject(LOCALE_ID) public localeId: string
   ) {}
 
-  loadQrjJournals(searchText = '', index = 0, limit = 10): Observable<{}> {
+  loadQrjJournals(
+    searchText = '',
+    index?: number,
+    limit?: number
+  ): Observable<QrjJournal[]> {
     return this.apollo
       .watchQuery<QrjJournalsQuery>({
         variables: {
@@ -25,6 +30,11 @@ export class QrjJournalService {
         },
         query: qrjJournalsQuery,
       })
-      .valueChanges.pipe(map((qrjJournalsData) => qrjJournalsData.data))
+      .valueChanges.pipe(
+        map(
+          (qrjJournalsData: ApolloQueryResult<QrjJournalsQuery>) =>
+            qrjJournalsData.data.qrjJournals
+        )
+      )
   }
 }

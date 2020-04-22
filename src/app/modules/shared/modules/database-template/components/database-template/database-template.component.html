@@ -1,0 +1,16 @@
+<database-template-paginator (loadPressed)="loadPressed.emit($event)"
+                             [pageIndex]="pageIndex"
+                             [pageSize]="pageSize"
+                             [length]="length">
+
+</database-template-paginator>
+<div>
+  <database-template-filters fxFlex="30"
+  (searchPressed)="searchPressed.emit()">
+    <ng-content select="[filters]"></ng-content>
+  </database-template-filters>
+  <database-template-list fxFlex="70"
+                          [skeleton]="skeleton">
+    <ng-content select="[list]"></ng-content>
+  </database-template-list>
+</div>

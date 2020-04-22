@@ -1,9 +1,11 @@
-import { Inject, Injectable, LOCALE_ID } from '@angular/core'
+import { Injectable } from '@angular/core'
 import { Apollo } from 'apollo-angular'
 import { oecdsQuery } from './gql/oecd-query'
 import { map } from 'rxjs/operators'
 import { Observable } from 'rxjs'
-import { OecdsQuery } from '@graphql'
+import { Oecd, OecdsQuery } from '@graphql'
+import { ApolloQueryResult } from 'apollo-client'
+import { LanguageService } from '@services/language-service'
 
 @Injectable({
   providedIn: 'root',
@@ -11,20 +13,26 @@ import { OecdsQuery } from '@graphql'
 export class OecdService {
   constructor(
     private apollo: Apollo,
-    @Inject(LOCALE_ID) public localeId: string
+    private languageService: LanguageService
   ) {}
 
-  loadOecds(searchText = '', index = 0, limit = 10): Observable<{}> {
+  loadOecds(
+    searchText = '',
+    index?: number,
+    limit?: number
+  ): Observable<Oecd[]> {
     return this.apollo
       .watchQuery<OecdsQuery>({
         variables: {
-          languageCode: this.localeId.toUpperCase(),
+          languageCode: this.languageService.currentLanguage,
           first: limit,
           skip: index * limit,
           query: searchText,
         },
         query: oecdsQuery,
       })
-      .valueChanges.pipe(map((oecdsData) => oecdsData.data))
+      .valueChanges.pipe(
+        map((res: ApolloQueryResult<OecdsQuery>) => res.data.oecds)
+      )
   }
 }

@@ -1,9 +1,19 @@
 import { Inject, Injectable, LOCALE_ID } from '@angular/core'
 import { Apollo } from 'apollo-angular'
-import { map } from 'rxjs/operators'
-import { qrjPublicationsQuery } from './gql/qrj-publication-query'
+import { map, tap } from 'rxjs/operators'
+import {
+  qrjPublicationQuery,
+  qrjPublicationsQuery,
+} from './gql/qrj-publication-query'
 import { Observable } from 'rxjs'
-import { QrjPublicationsQuery } from '@graphql'
+import {
+  QrjPublication,
+  QrjPublicationQuery,
+  QrjPublicationsQuery,
+  Scalars,
+} from '@graphql'
+import { ApolloQueryResult } from 'apollo-client'
+import { LanguageService } from '@services/language-service'
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +21,7 @@ import { QrjPublicationsQuery } from '@graphql'
 export class QrjPublicationService {
   constructor(
     private apollo: Apollo,
-    @Inject(LOCALE_ID) public localeId: string
+    private languageService: LanguageService
   ) {}
 
   loadQrjPublications(
@@ -22,13 +32,32 @@ export class QrjPublicationService {
     return this.apollo
       .watchQuery<QrjPublicationsQuery>({
         variables: {
-          languageCode: this.localeId.toUpperCase(),
+          languageCode: this.languageService.currentLanguage,
           first: limit,
           skip: index * limit,
           query: { ...query },
         },
         query: qrjPublicationsQuery,
       })
-      .valueChanges.pipe(map((qrjsData) => qrjsData.data))
+      .valueChanges.pipe(
+        map((res: ApolloQueryResult<QrjPublicationsQuery>) => res.data)
+      )
+  }
+
+  loadQrjPublication(id: Scalars['ID']): Observable<QrjPublication> {
+    return this.apollo
+      .watchQuery<QrjPublicationQuery>({
+        variables: {
+          languageCode: this.languageService.currentLanguage,
+          id,
+        },
+        query: qrjPublicationQuery,
+      })
+      .valueChanges.pipe(
+        map(
+          (res: ApolloQueryResult<QrjPublicationQuery>) =>
+            res.data.qrjPublication
+        )
+      )
   }
 }

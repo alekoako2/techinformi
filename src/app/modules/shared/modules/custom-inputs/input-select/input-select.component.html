@@ -2,8 +2,8 @@
   <mat-label>
     {{label}}
   </mat-label>
-  <mat-select (ngModelChange)="inputSelectModelChange.emit(inputSelectModel)"
-              [(ngModel)]="inputSelectModel"
+  <mat-select (ngModelChange)="inputSelectModelChange.emit($event)"
+              [ngModel]="inputSelectModel"
               [required]="required"
               #input="ngModel"
               [name]="name">

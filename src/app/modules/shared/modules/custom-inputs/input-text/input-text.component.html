@@ -1,12 +1,15 @@
 <mat-form-field fxFlex="100">
-  <input (ngModelChange)="inputModelChange.emit(inputModel)"
+  <input (ngModelChange)="inputModelChange.emit($event)"
          [placeholder]="placeholder"
-         [(ngModel)]="inputModel"
+         [ngModel]="inputModel"
          [required]="required"
          #input="ngModel"
          [name]="name"
          [type]="type"
          matInput>
+  <button mat-button *ngIf="inputModel" matSuffix mat-icon-button aria-label="Clear" (click)="inputModel='';inputModelChange.emit('')">
+    <mat-icon>close</mat-icon>
+  </button>
 
   <mat-error *ngIf="!input.valid && input.touched">
     გთხოვთ შეავსოთ ველი

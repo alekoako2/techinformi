@@ -19,116 +19,116 @@ export type AuthPayload = {
 
 export type Department = {
   __typename?: 'Department'
-  translation: Maybe<Array<Maybe<DepartmentTranslation>>>
+  translation?: Maybe<Array<Maybe<DepartmentTranslation>>>
 }
 
 export type DepartmentTranslationArgs = {
-  language: Maybe<LanguageCode>
+  language?: Maybe<LanguageCode>
 }
 
 export type DepartmentTranslation = {
   __typename?: 'DepartmentTranslation'
-  name: Maybe<Scalars['String']>
+  name?: Maybe<Scalars['String']>
   language: Language
 }
 
 export type Employee = {
   __typename?: 'Employee'
   id: Scalars['ID']
-  inpDate: Maybe<Scalars['String']>
-  workExperience: Maybe<Scalars['String']>
-  email: Maybe<Scalars['String']>
-  gender: Maybe<Gender>
-  tel: Maybe<Scalars['String']>
-  department: Maybe<Department>
-  position: Maybe<EmployeePosition>
-  translation: Maybe<Array<Maybe<EmployeeTranslation>>>
+  inpDate?: Maybe<Scalars['String']>
+  workExperience?: Maybe<Scalars['String']>
+  email?: Maybe<Scalars['String']>
+  gender?: Maybe<Gender>
+  tel?: Maybe<Scalars['String']>
+  department?: Maybe<Department>
+  position?: Maybe<EmployeePosition>
+  translation?: Maybe<Array<Maybe<EmployeeTranslation>>>
 }
 
 export type EmployeeTranslationArgs = {
-  language: Maybe<LanguageCode>
+  language?: Maybe<LanguageCode>
 }
 
 export type EmployeePosition = {
   __typename?: 'EmployeePosition'
-  translation: Maybe<Array<Maybe<EmployeePositionTranslation>>>
+  translation?: Maybe<Array<Maybe<EmployeePositionTranslation>>>
 }
 
 export type EmployeePositionTranslationArgs = {
-  language: Maybe<LanguageCode>
+  language?: Maybe<LanguageCode>
 }
 
 export type EmployeePositionTranslation = {
   __typename?: 'EmployeePositionTranslation'
-  name: Maybe<Scalars['String']>
+  name?: Maybe<Scalars['String']>
   language: Language
 }
 
 export type EmployeeTranslation = {
   __typename?: 'EmployeeTranslation'
-  firstName: Maybe<Scalars['String']>
-  lastName: Maybe<Scalars['String']>
+  firstName?: Maybe<Scalars['String']>
+  lastName?: Maybe<Scalars['String']>
   language: Language
 }
 
 export type Expert = {
   __typename?: 'Expert'
-  id: Scalars['ID']
-  inpDate: Maybe<Scalars['String']>
-  workExperience: Maybe<Scalars['String']>
-  email: Maybe<Scalars['String']>
-  web: Maybe<Scalars['String']>
-  tel: Maybe<Scalars['String']>
-  mobile: Maybe<Scalars['String']>
-  publications: Maybe<Scalars['String']>
-  translation: Maybe<Array<Maybe<ExpertTranslation>>>
-  oecds: Maybe<Array<Maybe<Oecd>>>
-  languages: Maybe<Array<Maybe<Language>>>
-  author: User
+  id?: Maybe<Scalars['ID']>
+  inpDate?: Maybe<Scalars['String']>
+  workExperience?: Maybe<Scalars['String']>
+  email?: Maybe<Scalars['String']>
+  web?: Maybe<Scalars['String']>
+  tel?: Maybe<Scalars['String']>
+  mobile?: Maybe<Scalars['String']>
+  publications?: Maybe<Scalars['String']>
+  translation?: Maybe<Array<Maybe<ExpertTranslation>>>
+  oecds?: Maybe<Array<Maybe<Oecd>>>
+  languages?: Maybe<Array<Maybe<Language>>>
+  author?: Maybe<User>
 }
 
 export type ExpertTranslationArgs = {
-  language: Maybe<LanguageCode>
+  language?: Maybe<LanguageCode>
 }
 
 export type ExpertInput = {
-  inpDate: Maybe<Scalars['String']>
-  email: Maybe<Scalars['String']>
-  web: Maybe<Scalars['String']>
-  workExperience: Maybe<Scalars['String']>
-  tel: Maybe<Scalars['String']>
-  mobile: Maybe<Scalars['String']>
-  publications: Maybe<Scalars['String']>
-  translation: Maybe<Array<Maybe<ExpertTranslationInput>>>
-  oecds: Maybe<Array<Maybe<OecdInput>>>
-  languages: Maybe<Array<Maybe<LanguageInput>>>
+  inpDate?: Maybe<Scalars['String']>
+  email?: Maybe<Scalars['String']>
+  web?: Maybe<Scalars['String']>
+  workExperience?: Maybe<Scalars['String']>
+  tel?: Maybe<Scalars['String']>
+  mobile?: Maybe<Scalars['String']>
+  publications?: Maybe<Scalars['String']>
+  translation?: Maybe<Array<Maybe<ExpertTranslationInput>>>
+  oecds?: Maybe<Array<Maybe<OecdInput>>>
+  languages?: Maybe<Array<Maybe<LanguageInput>>>
 }
 
 export type ExpertQueryInput = {
-  fullName: Maybe<Scalars['String']>
-  oecd: Maybe<Scalars['String']>
-  specialization: Maybe<Scalars['String']>
+  fullName?: Maybe<Scalars['String']>
+  oecd?: Maybe<Scalars['String']>
+  specialization?: Maybe<Scalars['String']>
 }
 
 export type ExpertTranslation = {
   __typename?: 'ExpertTranslation'
-  fullName: Maybe<Scalars['String']>
-  qualification: Maybe<Scalars['String']>
-  academicDegree: Maybe<Scalars['String']>
-  specialization: Maybe<Scalars['String']>
-  workingPlace: Maybe<Scalars['String']>
-  position: Maybe<Scalars['String']>
-  language: Language
+  fullName?: Maybe<Scalars['String']>
+  qualification?: Maybe<Scalars['String']>
+  academicDegree?: Maybe<Scalars['String']>
+  specialization?: Maybe<Scalars['String']>
+  workingPlace?: Maybe<Scalars['String']>
+  position?: Maybe<Scalars['String']>
+  language?: Maybe<Language>
 }
 
 export type ExpertTranslationInput = {
-  fullName: Maybe<Scalars['String']>
-  qualification: Maybe<Scalars['String']>
-  academicDegree: Maybe<Scalars['String']>
-  specialization: Maybe<Scalars['String']>
-  workingPlace: Maybe<Scalars['String']>
-  position: Maybe<Scalars['String']>
-  language: Maybe<LanguageCode>
+  fullName?: Maybe<Scalars['String']>
+  qualification?: Maybe<Scalars['String']>
+  academicDegree?: Maybe<Scalars['String']>
+  specialization?: Maybe<Scalars['String']>
+  workingPlace?: Maybe<Scalars['String']>
+  position?: Maybe<Scalars['String']>
+  language?: Maybe<LanguageCode>
 }
 
 export enum Gender {
@@ -138,30 +138,30 @@ export enum Gender {
 
 export type Journal = {
   __typename?: 'Journal'
-  id: Maybe<Scalars['String']>
-  pubNumber: Maybe<Scalars['String']>
-  translation: Maybe<Array<Maybe<QrjTranslation>>>
+  id?: Maybe<Scalars['String']>
+  pubNumber?: Maybe<Scalars['String']>
+  translation?: Maybe<Array<Maybe<QrjTranslation>>>
 }
 
 export type JournalTranslationArgs = {
-  language: Maybe<LanguageCode>
+  language?: Maybe<LanguageCode>
 }
 
 export type JournalInput = {
-  id: Maybe<Scalars['String']>
-  pub_num: Maybe<Scalars['String']>
-  translation: Maybe<Array<QrjTranslationInput>>
+  id?: Maybe<Scalars['String']>
+  pub_num?: Maybe<Scalars['String']>
+  translation?: Maybe<Array<QrjTranslationInput>>
 }
 
 export type Keyword = {
   __typename?: 'Keyword'
-  name: Maybe<Scalars['String']>
+  name?: Maybe<Scalars['String']>
 }
 
 export type Language = {
   __typename?: 'Language'
-  code: Maybe<LanguageCode>
-  name: Maybe<Scalars['String']>
+  code?: Maybe<LanguageCode>
+  name?: Maybe<Scalars['String']>
 }
 
 export enum LanguageCode {
@@ -175,7 +175,7 @@ export enum LanguageCode {
 }
 
 export type LanguageInput = {
-  code: Maybe<Scalars['String']>
+  code?: Maybe<Scalars['String']>
 }
 
 export type LoginInput = {
@@ -187,39 +187,39 @@ export type Mutation = {
   __typename?: 'Mutation'
   signup: AuthPayload
   login: AuthPayload
-  createNews: Maybe<News>
-  updateNews: Maybe<News>
-  deleteNews: Maybe<News>
-  createOecd: Maybe<Oecd>
-  updateOecd: Maybe<Oecd>
-  deleteOecd: Maybe<Oecd>
-  createQrjJournal: Maybe<QrjJournal>
-  updateQrjJournal: Maybe<QrjJournal>
-  deleteQrjJournal: Maybe<QrjJournal>
-  createQrjPublication: Maybe<QrjPublication>
-  updateQrjPublication: Maybe<QrjPublication>
-  deleteQrjPublication: Maybe<QrjPublication>
-  createQrj: Maybe<Qrj>
-  updateQrj: Maybe<Qrj>
-  deleteQrj: Maybe<Qrj>
-  createTechnologyTransferNetwork: Maybe<TechnologyTransferNetwork>
-  updateTechnologyTransferNetwork: Maybe<TechnologyTransferNetwork>
-  deleteTechnologyTransferNetwork: Maybe<TechnologyTransferNetwork>
-  createTechnologyTransferAndInnovationOrganization: Maybe<
+  createTechnologyTransferAndInnovationOrganization?: Maybe<
     TechnologyTransferAndInnovationOrganization
   >
-  updateTechnologyTransferAndInnovationOrganization: Maybe<
+  updateTechnologyTransferAndInnovationOrganization?: Maybe<
     TechnologyTransferAndInnovationOrganization
   >
-  deleteTechnologyTransferAndInnovationOrganization: Maybe<
+  deleteTechnologyTransferAndInnovationOrganization?: Maybe<
     TechnologyTransferAndInnovationOrganization
   >
-  createExpert: Maybe<Expert>
-  updateExpert: Maybe<Expert>
-  deleteExpert: Maybe<Expert>
-  createResearchProject: Maybe<ResearchProject>
-  updateResearchProject: Maybe<ResearchProject>
-  deleteResearchProject: Maybe<ResearchProject>
+  createTechnologyTransferNetwork?: Maybe<TechnologyTransferNetwork>
+  updateTechnologyTransferNetwork?: Maybe<TechnologyTransferNetwork>
+  deleteTechnologyTransferNetwork?: Maybe<TechnologyTransferNetwork>
+  createResearchProject?: Maybe<ResearchProject>
+  updateResearchProject?: Maybe<ResearchProject>
+  deleteResearchProject?: Maybe<ResearchProject>
+  createQrjPublication?: Maybe<QrjPublication>
+  updateQrjPublication?: Maybe<QrjPublication>
+  deleteQrjPublication?: Maybe<QrjPublication>
+  createQrjJournal?: Maybe<QrjJournal>
+  updateQrjJournal?: Maybe<QrjJournal>
+  deleteQrjJournal?: Maybe<QrjJournal>
+  createExpert?: Maybe<Expert>
+  updateExpert?: Maybe<Expert>
+  deleteExpert?: Maybe<Expert>
+  createNews?: Maybe<News>
+  updateNews?: Maybe<News>
+  deleteNews?: Maybe<News>
+  createOecd?: Maybe<Oecd>
+  updateOecd?: Maybe<Oecd>
+  deleteOecd?: Maybe<Oecd>
+  createQrj?: Maybe<Qrj>
+  updateQrj?: Maybe<Qrj>
+  deleteQrj?: Maybe<Qrj>
 }
 
 export type MutationSignupArgs = {
@@ -230,547 +230,547 @@ export type MutationLoginArgs = {
   input: LoginInput
 }
 
-export type MutationCreateNewsArgs = {
-  input: Maybe<NewsInput>
-}
-
-export type MutationUpdateNewsArgs = {
-  id: Scalars['ID']
-  input: Maybe<NewsInput>
-}
-
-export type MutationDeleteNewsArgs = {
-  id: Maybe<Scalars['ID']>
-}
-
-export type MutationCreateOecdArgs = {
-  input: Maybe<OecdInput>
-}
-
-export type MutationUpdateOecdArgs = {
-  id: Scalars['ID']
-  input: Maybe<OecdInput>
-}
-
-export type MutationDeleteOecdArgs = {
-  id: Maybe<Scalars['ID']>
-}
-
-export type MutationCreateQrjJournalArgs = {
-  input: Maybe<QrjJournalInput>
-}
-
-export type MutationUpdateQrjJournalArgs = {
-  id: Scalars['ID']
-  input: Maybe<QrjJournalInput>
-}
-
-export type MutationDeleteQrjJournalArgs = {
-  id: Maybe<Scalars['ID']>
-}
-
-export type MutationCreateQrjPublicationArgs = {
-  input: Maybe<QrjPublicationInput>
-}
-
-export type MutationUpdateQrjPublicationArgs = {
-  id: Scalars['ID']
-  input: Maybe<QrjPublicationInput>
-}
-
-export type MutationDeleteQrjPublicationArgs = {
-  id: Maybe<Scalars['ID']>
-}
-
-export type MutationCreateQrjArgs = {
-  input: Maybe<QrjInput>
-}
-
-export type MutationUpdateQrjArgs = {
-  id: Scalars['ID']
-  input: Maybe<QrjInput>
-}
-
-export type MutationDeleteQrjArgs = {
-  id: Maybe<Scalars['ID']>
-}
-
-export type MutationCreateTechnologyTransferNetworkArgs = {
-  input: Maybe<TechnologyTransferNetworkInput>
-}
-
-export type MutationUpdateTechnologyTransferNetworkArgs = {
-  id: Scalars['ID']
-  input: Maybe<TechnologyTransferNetworkInput>
-}
-
-export type MutationDeleteTechnologyTransferNetworkArgs = {
-  id: Maybe<Scalars['ID']>
-}
-
 export type MutationCreateTechnologyTransferAndInnovationOrganizationArgs = {
-  input: Maybe<TechnologyTransferAndInnovationOrganizationInput>
+  input?: Maybe<TechnologyTransferAndInnovationOrganizationInput>
 }
 
 export type MutationUpdateTechnologyTransferAndInnovationOrganizationArgs = {
   id: Scalars['ID']
-  input: Maybe<TechnologyTransferAndInnovationOrganizationInput>
+  input?: Maybe<TechnologyTransferAndInnovationOrganizationInput>
 }
 
 export type MutationDeleteTechnologyTransferAndInnovationOrganizationArgs = {
-  id: Maybe<Scalars['ID']>
+  id?: Maybe<Scalars['ID']>
 }
 
-export type MutationCreateExpertArgs = {
-  input: Maybe<ExpertInput>
+export type MutationCreateTechnologyTransferNetworkArgs = {
+  input?: Maybe<TechnologyTransferNetworkInput>
 }
 
-export type MutationUpdateExpertArgs = {
+export type MutationUpdateTechnologyTransferNetworkArgs = {
   id: Scalars['ID']
-  input: Maybe<ExpertInput>
+  input?: Maybe<TechnologyTransferNetworkInput>
 }
 
-export type MutationDeleteExpertArgs = {
-  id: Maybe<Scalars['ID']>
+export type MutationDeleteTechnologyTransferNetworkArgs = {
+  id?: Maybe<Scalars['ID']>
 }
 
 export type MutationCreateResearchProjectArgs = {
-  input: Maybe<ResearchProjectInput>
+  input?: Maybe<ResearchProjectInput>
 }
 
 export type MutationUpdateResearchProjectArgs = {
   id: Scalars['ID']
-  input: Maybe<ResearchProjectInput>
+  input?: Maybe<ResearchProjectInput>
 }
 
 export type MutationDeleteResearchProjectArgs = {
-  id: Maybe<Scalars['ID']>
+  id?: Maybe<Scalars['ID']>
+}
+
+export type MutationCreateQrjPublicationArgs = {
+  input?: Maybe<QrjPublicationInput>
+}
+
+export type MutationUpdateQrjPublicationArgs = {
+  id: Scalars['ID']
+  input?: Maybe<QrjPublicationInput>
+}
+
+export type MutationDeleteQrjPublicationArgs = {
+  id?: Maybe<Scalars['ID']>
+}
+
+export type MutationCreateQrjJournalArgs = {
+  input?: Maybe<QrjJournalInput>
+}
+
+export type MutationUpdateQrjJournalArgs = {
+  id: Scalars['ID']
+  input?: Maybe<QrjJournalInput>
+}
+
+export type MutationDeleteQrjJournalArgs = {
+  id?: Maybe<Scalars['ID']>
+}
+
+export type MutationCreateExpertArgs = {
+  input?: Maybe<ExpertInput>
+}
+
+export type MutationUpdateExpertArgs = {
+  id: Scalars['ID']
+  input?: Maybe<ExpertInput>
+}
+
+export type MutationDeleteExpertArgs = {
+  id?: Maybe<Scalars['ID']>
+}
+
+export type MutationCreateNewsArgs = {
+  input?: Maybe<NewsInput>
+}
+
+export type MutationUpdateNewsArgs = {
+  id: Scalars['ID']
+  input?: Maybe<NewsInput>
+}
+
+export type MutationDeleteNewsArgs = {
+  id?: Maybe<Scalars['ID']>
+}
+
+export type MutationCreateOecdArgs = {
+  input?: Maybe<OecdInput>
+}
+
+export type MutationUpdateOecdArgs = {
+  id: Scalars['ID']
+  input?: Maybe<OecdInput>
+}
+
+export type MutationDeleteOecdArgs = {
+  id?: Maybe<Scalars['ID']>
+}
+
+export type MutationCreateQrjArgs = {
+  input?: Maybe<QrjInput>
+}
+
+export type MutationUpdateQrjArgs = {
+  id: Scalars['ID']
+  input?: Maybe<QrjInput>
+}
+
+export type MutationDeleteQrjArgs = {
+  id?: Maybe<Scalars['ID']>
 }
 
 export type News = {
   __typename?: 'News'
   id: Scalars['ID']
-  translation: Maybe<Array<Maybe<NewsTranslation>>>
+  translation?: Maybe<Array<Maybe<NewsTranslation>>>
   author: User
 }
 
 export type NewsTranslationArgs = {
-  language: Maybe<LanguageCode>
+  language?: Maybe<LanguageCode>
 }
 
 export type NewsInput = {
-  translation: Maybe<Array<Maybe<NewsTranslationInput>>>
+  translation?: Maybe<Array<Maybe<NewsTranslationInput>>>
 }
 
 export type NewsTranslation = {
   __typename?: 'NewsTranslation'
-  title: Maybe<Scalars['String']>
-  description: Maybe<Scalars['String']>
-  content: Maybe<Scalars['String']>
+  title?: Maybe<Scalars['String']>
+  description?: Maybe<Scalars['String']>
+  content?: Maybe<Scalars['String']>
   language: Language
 }
 
 export type NewsTranslationInput = {
-  title: Maybe<Scalars['String']>
-  description: Maybe<Scalars['String']>
-  content: Maybe<Scalars['String']>
-  language: Maybe<LanguageCode>
+  title?: Maybe<Scalars['String']>
+  description?: Maybe<Scalars['String']>
+  content?: Maybe<Scalars['String']>
+  language?: Maybe<LanguageCode>
 }
 
 export type Oecd = {
   __typename?: 'Oecd'
   id: Scalars['ID']
-  code: Maybe<Scalars['String']>
-  translation: Maybe<Array<Maybe<OecdTranslation>>>
-  author: User
+  code?: Maybe<Scalars['String']>
+  translation: Array<OecdTranslation>
+  author?: Maybe<User>
 }
 
 export type OecdTranslationArgs = {
-  language: Maybe<LanguageCode>
+  language?: Maybe<LanguageCode>
 }
 
 export type OecdInput = {
-  code: Maybe<Scalars['String']>
-  translation: Maybe<Array<OecdTranslationInput>>
+  code?: Maybe<Scalars['String']>
+  translation?: Maybe<Array<OecdTranslationInput>>
 }
 
 export type OecdTranslation = {
   __typename?: 'OecdTranslation'
-  name: Maybe<Scalars['String']>
-  language: Language
+  name: Scalars['String']
+  language?: Maybe<Language>
 }
 
 export type OecdTranslationInput = {
-  name: Maybe<Scalars['String']>
-  language: Maybe<LanguageCode>
+  name?: Maybe<Scalars['String']>
+  language?: Maybe<LanguageCode>
 }
 
 export type Qrj = {
   __typename?: 'Qrj'
   id: Scalars['ID']
-  year: Maybe<Scalars['String']>
-  journal: Maybe<Array<Maybe<Journal>>>
+  year?: Maybe<Scalars['String']>
+  journal?: Maybe<Array<Maybe<Journal>>>
   author: User
 }
 
 export type QrjInput = {
-  year: Maybe<Scalars['String']>
-  journal: Maybe<Array<Maybe<JournalInput>>>
+  year?: Maybe<Scalars['String']>
+  journal?: Maybe<Array<Maybe<JournalInput>>>
 }
 
 export type QrjJournal = {
   __typename?: 'QrjJournal'
   id: Scalars['ID']
-  code: Maybe<Scalars['String']>
-  translation: Maybe<Array<Maybe<QrjJournalTranslation>>>
-  author: User
+  code?: Maybe<Scalars['String']>
+  translation?: Maybe<Array<Maybe<QrjJournalTranslation>>>
+  author?: Maybe<User>
 }
 
 export type QrjJournalTranslationArgs = {
-  language: Maybe<LanguageCode>
+  language?: Maybe<LanguageCode>
 }
 
 export type QrjJournalInput = {
-  code: Maybe<Scalars['String']>
-  translation: Maybe<Array<QrjJournalTranslationInput>>
+  code?: Maybe<Scalars['String']>
+  translation?: Maybe<Array<QrjJournalTranslationInput>>
 }
 
 export type QrjJournalTranslation = {
   __typename?: 'QrjJournalTranslation'
-  name: Maybe<Scalars['String']>
-  address: Maybe<Scalars['String']>
-  language: Language
+  name?: Maybe<Scalars['String']>
+  address?: Maybe<Scalars['String']>
+  language?: Maybe<Language>
 }
 
 export type QrjJournalTranslationInput = {
-  name: Maybe<Scalars['String']>
-  address: Maybe<Scalars['String']>
-  language: Maybe<LanguageCode>
+  name?: Maybe<Scalars['String']>
+  address?: Maybe<Scalars['String']>
+  language?: Maybe<LanguageCode>
 }
 
 export type QrjPublication = {
   __typename?: 'QrjPublication'
-  id: Scalars['ID']
-  edited: Maybe<Scalars['Boolean']>
-  index: Maybe<Scalars['String']>
-  year: Maybe<Scalars['String']>
-  number: Maybe<Scalars['String']>
-  pages: Maybe<Scalars['String']>
-  journal: Maybe<QrjJournal>
-  inputDate: Maybe<Scalars['String']>
-  oecd: Maybe<Oecd>
-  translation: Maybe<Array<Maybe<QrjPublicationTranslation>>>
-  author: User
+  id?: Maybe<Scalars['ID']>
+  edited?: Maybe<Scalars['Boolean']>
+  index?: Maybe<Scalars['String']>
+  year?: Maybe<Scalars['String']>
+  number?: Maybe<Scalars['String']>
+  pages?: Maybe<Scalars['String']>
+  journal?: Maybe<QrjJournal>
+  inputDate?: Maybe<Scalars['String']>
+  oecd?: Maybe<Oecd>
+  translation?: Maybe<Array<Maybe<QrjPublicationTranslation>>>
+  author?: Maybe<User>
 }
 
 export type QrjPublicationTranslationArgs = {
-  language: Maybe<LanguageCode>
+  language?: Maybe<LanguageCode>
 }
 
 export type QrjPublicationInput = {
-  index: Maybe<Scalars['String']>
-  year: Maybe<Scalars['String']>
-  edited: Maybe<Scalars['Boolean']>
-  number: Maybe<Scalars['String']>
-  pages: Maybe<Scalars['String']>
-  journal: Maybe<Scalars['String']>
-  inputDate: Maybe<Scalars['String']>
-  oecd: Maybe<Scalars['String']>
-  translation: Maybe<Array<Maybe<QrjPublicationTranslationInput>>>
+  index?: Maybe<Scalars['String']>
+  year?: Maybe<Scalars['String']>
+  edited?: Maybe<Scalars['Boolean']>
+  number?: Maybe<Scalars['String']>
+  pages?: Maybe<Scalars['String']>
+  journal?: Maybe<Scalars['String']>
+  inputDate?: Maybe<Scalars['String']>
+  oecd?: Maybe<Scalars['String']>
+  translation?: Maybe<Array<Maybe<QrjPublicationTranslationInput>>>
 }
 
 export type QrjPublicationQueryInput = {
-  index: Maybe<Scalars['String']>
-  author: Maybe<Scalars['String']>
-  title: Maybe<Scalars['String']>
-  qrjJournal: Maybe<Scalars['String']>
-  oecd: Maybe<Scalars['String']>
-  keywords: Maybe<Array<Maybe<Scalars['String']>>>
-  yearStart: Maybe<Scalars['String']>
-  yearEnd: Maybe<Scalars['String']>
+  index?: Maybe<Scalars['String']>
+  author?: Maybe<Scalars['String']>
+  title?: Maybe<Scalars['String']>
+  qrjJournal?: Maybe<Scalars['String']>
+  oecd?: Maybe<Scalars['String']>
+  keywords?: Maybe<Array<Maybe<Scalars['String']>>>
+  yearStart?: Maybe<Scalars['String']>
+  yearEnd?: Maybe<Scalars['String']>
 }
 
 export type QrjPublicationTranslation = {
   __typename?: 'QrjPublicationTranslation'
-  title: Maybe<Scalars['String']>
-  publicationAuthor: Maybe<Scalars['String']>
-  publicationLang: Maybe<Scalars['String']>
-  abstract: Maybe<Scalars['String']>
-  language: Language
+  title?: Maybe<Scalars['String']>
+  publicationAuthor?: Maybe<Scalars['String']>
+  publicationLang?: Maybe<Scalars['String']>
+  abstract?: Maybe<Scalars['String']>
+  language?: Maybe<Language>
 }
 
 export type QrjPublicationTranslationInput = {
-  title: Maybe<Scalars['String']>
-  publicationAuthor: Maybe<Scalars['String']>
-  publicationLang: Maybe<Scalars['String']>
-  abstract: Maybe<Scalars['String']>
-  language: Maybe<LanguageCode>
+  title?: Maybe<Scalars['String']>
+  publicationAuthor?: Maybe<Scalars['String']>
+  publicationLang?: Maybe<Scalars['String']>
+  abstract?: Maybe<Scalars['String']>
+  language?: Maybe<LanguageCode>
 }
 
 export type QrjTranslation = {
   __typename?: 'QrjTranslation'
-  address: Maybe<Scalars['String']>
+  address?: Maybe<Scalars['String']>
   language: Language
 }
 
 export type QrjTranslationInput = {
-  address: Maybe<Scalars['String']>
-  language: Maybe<LanguageCode>
+  address?: Maybe<Scalars['String']>
+  language?: Maybe<LanguageCode>
 }
 
 export type Query = {
   __typename?: 'Query'
-  me: Maybe<User>
-  employees: Array<Employee>
-  countNewses: Maybe<Scalars['Int']>
-  newses: Array<News>
-  news: News
-  countOecds: Maybe<Scalars['Int']>
-  oecds: Array<Oecd>
-  oecd: Oecd
-  countQrjJournals: Maybe<Scalars['Int']>
-  qrjJournals: Array<QrjJournal>
-  qrjJournal: QrjJournal
-  countQrjPublications: Maybe<Scalars['Int']>
-  qrjPublications: Array<QrjPublication>
-  qrjPublication: QrjPublication
-  countQrjs: Maybe<Scalars['Int']>
-  qrjs: Array<Qrj>
-  qrj: Qrj
-  countTechnologyTransferNetworks: Maybe<Scalars['Int']>
-  technologyTransferNetworks: Array<TechnologyTransferNetwork>
-  technologyTransferNetwork: TechnologyTransferNetwork
-  countTechnologyTransferAndInnovationOrganizations: Maybe<Scalars['Int']>
+  me?: Maybe<User>
+  countTechnologyTransferAndInnovationOrganizations?: Maybe<Scalars['Int']>
   technologyTransferAndInnovationOrganizations: Array<
     TechnologyTransferAndInnovationOrganization
   >
   technologyTransferAndInnovationOrganization: TechnologyTransferAndInnovationOrganization
-  countExperts: Maybe<Scalars['Int']>
-  experts: Array<Expert>
-  expert: Expert
-  countResearchProjects: Maybe<Scalars['Int']>
+  countTechnologyTransferNetworks?: Maybe<Scalars['Int']>
+  technologyTransferNetworks: Array<TechnologyTransferNetwork>
+  technologyTransferNetwork: TechnologyTransferNetwork
+  countResearchProjects?: Maybe<Scalars['Int']>
   researchProjects: Array<ResearchProject>
   researchProject: ResearchProject
+  countQrjPublications?: Maybe<Scalars['Int']>
+  qrjPublications: Array<QrjPublication>
+  qrjPublication: QrjPublication
+  countQrjJournals?: Maybe<Scalars['Int']>
+  qrjJournals: Array<QrjJournal>
+  qrjJournal: QrjJournal
+  employees: Array<Employee>
+  countExperts?: Maybe<Scalars['Int']>
+  experts: Array<Expert>
+  expert: Expert
+  countNewses?: Maybe<Scalars['Int']>
+  newses: Array<News>
+  news: News
+  countOecds?: Maybe<Scalars['Int']>
+  oecds: Array<Oecd>
+  oecd: Oecd
+  countQrjs?: Maybe<Scalars['Int']>
+  qrjs: Array<Qrj>
+  qrj: Qrj
 }
 
 export type QueryMeArgs = {
-  language: Maybe<LanguageCode>
-}
-
-export type QueryEmployeesArgs = {
-  first: Maybe<Scalars['Int']>
-  skip: Maybe<Scalars['Int']>
-}
-
-export type QueryNewsesArgs = {
-  query: Maybe<Scalars['String']>
-  first: Maybe<Scalars['Int']>
-  skip: Maybe<Scalars['Int']>
-}
-
-export type QueryNewsArgs = {
-  id: Maybe<Scalars['String']>
-}
-
-export type QueryOecdsArgs = {
-  query: Maybe<Scalars['String']>
-  first: Maybe<Scalars['Int']>
-  skip: Maybe<Scalars['Int']>
-}
-
-export type QueryOecdArgs = {
-  id: Maybe<Scalars['String']>
-}
-
-export type QueryQrjJournalsArgs = {
-  query: Maybe<Scalars['String']>
-  first: Maybe<Scalars['Int']>
-  skip: Maybe<Scalars['Int']>
-}
-
-export type QueryQrjJournalArgs = {
-  id: Maybe<Scalars['String']>
-}
-
-export type QueryCountQrjPublicationsArgs = {
-  query: Maybe<QrjPublicationQueryInput>
-}
-
-export type QueryQrjPublicationsArgs = {
-  query: Maybe<QrjPublicationQueryInput>
-  first: Maybe<Scalars['Int']>
-  skip: Maybe<Scalars['Int']>
-}
-
-export type QueryQrjPublicationArgs = {
-  id: Maybe<Scalars['String']>
-}
-
-export type QueryQrjsArgs = {
-  query: Maybe<Scalars['String']>
-  first: Maybe<Scalars['Int']>
-  skip: Maybe<Scalars['Int']>
-}
-
-export type QueryQrjArgs = {
-  id: Maybe<Scalars['String']>
-}
-
-export type QueryTechnologyTransferNetworksArgs = {
-  query: Maybe<Scalars['String']>
-  first: Maybe<Scalars['Int']>
-  skip: Maybe<Scalars['Int']>
-}
-
-export type QueryTechnologyTransferNetworkArgs = {
-  id: Maybe<Scalars['String']>
+  language?: Maybe<LanguageCode>
 }
 
 export type QueryTechnologyTransferAndInnovationOrganizationsArgs = {
-  query: Maybe<Scalars['String']>
-  first: Maybe<Scalars['Int']>
-  skip: Maybe<Scalars['Int']>
+  query?: Maybe<Scalars['String']>
+  first?: Maybe<Scalars['Int']>
+  skip?: Maybe<Scalars['Int']>
 }
 
 export type QueryTechnologyTransferAndInnovationOrganizationArgs = {
-  id: Maybe<Scalars['String']>
+  id?: Maybe<Scalars['String']>
 }
 
-export type QueryCountExpertsArgs = {
-  query: Maybe<ExpertQueryInput>
+export type QueryTechnologyTransferNetworksArgs = {
+  query?: Maybe<Scalars['String']>
+  first?: Maybe<Scalars['Int']>
+  skip?: Maybe<Scalars['Int']>
 }
 
-export type QueryExpertsArgs = {
-  query: Maybe<ExpertQueryInput>
-  first: Maybe<Scalars['Int']>
-  skip: Maybe<Scalars['Int']>
-}
-
-export type QueryExpertArgs = {
-  id: Maybe<Scalars['String']>
+export type QueryTechnologyTransferNetworkArgs = {
+  id?: Maybe<Scalars['String']>
 }
 
 export type QueryCountResearchProjectsArgs = {
-  query: Maybe<ResearchProjectQueryInput>
+  query?: Maybe<ResearchProjectQueryInput>
 }
 
 export type QueryResearchProjectsArgs = {
-  query: Maybe<ResearchProjectQueryInput>
-  first: Maybe<Scalars['Int']>
-  skip: Maybe<Scalars['Int']>
+  query?: Maybe<ResearchProjectQueryInput>
+  first?: Maybe<Scalars['Int']>
+  skip?: Maybe<Scalars['Int']>
 }
 
 export type QueryResearchProjectArgs = {
-  id: Maybe<Scalars['String']>
+  id?: Maybe<Scalars['String']>
+}
+
+export type QueryCountQrjPublicationsArgs = {
+  query?: Maybe<QrjPublicationQueryInput>
+}
+
+export type QueryQrjPublicationsArgs = {
+  query?: Maybe<QrjPublicationQueryInput>
+  first?: Maybe<Scalars['Int']>
+  skip?: Maybe<Scalars['Int']>
+}
+
+export type QueryQrjPublicationArgs = {
+  id?: Maybe<Scalars['String']>
+}
+
+export type QueryQrjJournalsArgs = {
+  query?: Maybe<Scalars['String']>
+  first?: Maybe<Scalars['Int']>
+  skip?: Maybe<Scalars['Int']>
+}
+
+export type QueryQrjJournalArgs = {
+  id?: Maybe<Scalars['String']>
+}
+
+export type QueryEmployeesArgs = {
+  first?: Maybe<Scalars['Int']>
+  skip?: Maybe<Scalars['Int']>
+}
+
+export type QueryCountExpertsArgs = {
+  query?: Maybe<ExpertQueryInput>
+}
+
+export type QueryExpertsArgs = {
+  query?: Maybe<ExpertQueryInput>
+  first?: Maybe<Scalars['Int']>
+  skip?: Maybe<Scalars['Int']>
+}
+
+export type QueryExpertArgs = {
+  id?: Maybe<Scalars['String']>
+}
+
+export type QueryNewsesArgs = {
+  query?: Maybe<Scalars['String']>
+  first?: Maybe<Scalars['Int']>
+  skip?: Maybe<Scalars['Int']>
+}
+
+export type QueryNewsArgs = {
+  id?: Maybe<Scalars['String']>
+}
+
+export type QueryOecdsArgs = {
+  query?: Maybe<Scalars['String']>
+  first?: Maybe<Scalars['Int']>
+  skip?: Maybe<Scalars['Int']>
+}
+
+export type QueryOecdArgs = {
+  id?: Maybe<Scalars['String']>
+}
+
+export type QueryQrjsArgs = {
+  query?: Maybe<Scalars['String']>
+  first?: Maybe<Scalars['Int']>
+  skip?: Maybe<Scalars['Int']>
+}
+
+export type QueryQrjArgs = {
+  id?: Maybe<Scalars['String']>
 }
 
 export type ResearchProject = {
   __typename?: 'ResearchProject'
-  id: Maybe<Scalars['ID']>
-  inpDate: Maybe<Scalars['String']>
-  regDate: Maybe<Scalars['String']>
-  startDate: Maybe<Scalars['String']>
-  endDate: Maybe<Scalars['String']>
-  regNumb: Maybe<Scalars['String']>
-  research: Maybe<Scalars['String']>
-  researchDirection: Maybe<Scalars['String']>
-  researchExecutionBasis: Maybe<Scalars['String']>
-  abstract: Maybe<Scalars['String']>
-  annotation: Maybe<Scalars['String']>
-  budget: Maybe<Scalars['Int']>
-  organizationName: Maybe<Scalars['String']>
-  organizationShortName: Maybe<Scalars['String']>
-  organizationCode: Maybe<Scalars['String']>
-  organizationHead: Maybe<Scalars['String']>
-  organizationCity: Maybe<Scalars['String']>
-  organizationAddress: Maybe<Scalars['String']>
-  organizationIndex: Maybe<Scalars['String']>
-  organizationTel: Maybe<Scalars['String']>
-  organizationWeb: Maybe<Scalars['String']>
-  participatingInstitutionName: Maybe<Scalars['String']>
-  participatingInstitutionCountryCity: Maybe<Scalars['String']>
-  participatingInstitutionTel: Maybe<Scalars['String']>
-  participatingInstitutionEmail: Maybe<Scalars['String']>
-  participatingInstitutionWeb: Maybe<Scalars['String']>
-  leaderName: Maybe<Scalars['String']>
-  leaderPosition: Maybe<Scalars['String']>
-  leaderAcademicDegree: Maybe<Scalars['String']>
-  leaderTel: Maybe<Scalars['String']>
-  leaderMobile: Maybe<Scalars['String']>
-  leaderEmail: Maybe<Scalars['String']>
-  researchExecutors: Maybe<Scalars['String']>
-  financing: Maybe<Scalars['String']>
-  note: Maybe<Scalars['String']>
-  pincode: Maybe<Scalars['String']>
-  translation: Maybe<Array<Maybe<ResearchProjectTranslation>>>
-  oecds: Maybe<Array<Maybe<Oecd>>>
+  id?: Maybe<Scalars['ID']>
+  inpDate?: Maybe<Scalars['String']>
+  regDate?: Maybe<Scalars['String']>
+  startDate?: Maybe<Scalars['String']>
+  endDate?: Maybe<Scalars['String']>
+  regNumb?: Maybe<Scalars['String']>
+  research?: Maybe<Scalars['String']>
+  researchDirection?: Maybe<Scalars['String']>
+  researchExecutionBasis?: Maybe<Scalars['String']>
+  abstract?: Maybe<Scalars['String']>
+  annotation?: Maybe<Scalars['String']>
+  budget?: Maybe<Scalars['Int']>
+  organizationName?: Maybe<Scalars['String']>
+  organizationShortName?: Maybe<Scalars['String']>
+  organizationCode?: Maybe<Scalars['String']>
+  organizationHead?: Maybe<Scalars['String']>
+  organizationCity?: Maybe<Scalars['String']>
+  organizationAddress?: Maybe<Scalars['String']>
+  organizationIndex?: Maybe<Scalars['String']>
+  organizationTel?: Maybe<Scalars['String']>
+  organizationWeb?: Maybe<Scalars['String']>
+  participatingInstitutionName?: Maybe<Scalars['String']>
+  participatingInstitutionCountryCity?: Maybe<Scalars['String']>
+  participatingInstitutionTel?: Maybe<Scalars['String']>
+  participatingInstitutionEmail?: Maybe<Scalars['String']>
+  participatingInstitutionWeb?: Maybe<Scalars['String']>
+  leaderName?: Maybe<Scalars['String']>
+  leaderPosition?: Maybe<Scalars['String']>
+  leaderAcademicDegree?: Maybe<Scalars['String']>
+  leaderTel?: Maybe<Scalars['String']>
+  leaderMobile?: Maybe<Scalars['String']>
+  leaderEmail?: Maybe<Scalars['String']>
+  researchExecutors?: Maybe<Scalars['String']>
+  financing?: Maybe<Scalars['String']>
+  note?: Maybe<Scalars['String']>
+  pincode?: Maybe<Scalars['String']>
+  translation?: Maybe<Array<Maybe<ResearchProjectTranslation>>>
+  oecds?: Maybe<Array<Maybe<Oecd>>>
   author: User
 }
 
 export type ResearchProjectTranslationArgs = {
-  language: Maybe<LanguageCode>
+  language?: Maybe<LanguageCode>
 }
 
 export type ResearchProjectInput = {
-  inpDate: Maybe<Scalars['String']>
-  regDate: Maybe<Scalars['String']>
-  startDate: Maybe<Scalars['String']>
-  endDate: Maybe<Scalars['String']>
-  regNumb: Maybe<Scalars['String']>
-  research: Maybe<Scalars['String']>
-  researchDirection: Maybe<Scalars['String']>
-  researchExecutionBasis: Maybe<Scalars['String']>
-  abstract: Maybe<Scalars['String']>
-  annotation: Maybe<Scalars['String']>
-  budget: Maybe<Scalars['Int']>
-  organizationName: Maybe<Scalars['String']>
-  organizationShortName: Maybe<Scalars['String']>
-  organizationCode: Maybe<Scalars['String']>
-  organizationHead: Maybe<Scalars['String']>
-  organizationCity: Maybe<Scalars['String']>
-  organizationAddress: Maybe<Scalars['String']>
-  organizationIndex: Maybe<Scalars['String']>
-  organizationTel: Maybe<Scalars['String']>
-  organizationWeb: Maybe<Scalars['String']>
-  participatingInstitutionName: Maybe<Scalars['String']>
-  participatingInstitutionCountryCity: Maybe<Scalars['String']>
-  participatingInstitutionTel: Maybe<Scalars['String']>
-  participatingInstitutionEmail: Maybe<Scalars['String']>
-  participatingInstitutionWeb: Maybe<Scalars['String']>
-  leaderName: Maybe<Scalars['String']>
-  leaderPosition: Maybe<Scalars['String']>
-  leaderAcademicDegree: Maybe<Scalars['String']>
-  leaderTel: Maybe<Scalars['String']>
-  leaderMobile: Maybe<Scalars['String']>
-  leaderEmail: Maybe<Scalars['String']>
-  researchExecutors: Maybe<Scalars['String']>
-  financing: Maybe<Scalars['String']>
-  note: Maybe<Scalars['String']>
-  pincode: Maybe<Scalars['String']>
-  translation: Maybe<Array<Maybe<ResearchProjectTranslationInput>>>
-  oecds: Maybe<Array<Maybe<OecdInput>>>
-  languages: Maybe<Array<Maybe<LanguageInput>>>
+  inpDate?: Maybe<Scalars['String']>
+  regDate?: Maybe<Scalars['String']>
+  startDate?: Maybe<Scalars['String']>
+  endDate?: Maybe<Scalars['String']>
+  regNumb?: Maybe<Scalars['String']>
+  research?: Maybe<Scalars['String']>
+  researchDirection?: Maybe<Scalars['String']>
+  researchExecutionBasis?: Maybe<Scalars['String']>
+  abstract?: Maybe<Scalars['String']>
+  annotation?: Maybe<Scalars['String']>
+  budget?: Maybe<Scalars['Int']>
+  organizationName?: Maybe<Scalars['String']>
+  organizationShortName?: Maybe<Scalars['String']>
+  organizationCode?: Maybe<Scalars['String']>
+  organizationHead?: Maybe<Scalars['String']>
+  organizationCity?: Maybe<Scalars['String']>
+  organizationAddress?: Maybe<Scalars['String']>
+  organizationIndex?: Maybe<Scalars['String']>
+  organizationTel?: Maybe<Scalars['String']>
+  organizationWeb?: Maybe<Scalars['String']>
+  participatingInstitutionName?: Maybe<Scalars['String']>
+  participatingInstitutionCountryCity?: Maybe<Scalars['String']>
+  participatingInstitutionTel?: Maybe<Scalars['String']>
+  participatingInstitutionEmail?: Maybe<Scalars['String']>
+  participatingInstitutionWeb?: Maybe<Scalars['String']>
+  leaderName?: Maybe<Scalars['String']>
+  leaderPosition?: Maybe<Scalars['String']>
+  leaderAcademicDegree?: Maybe<Scalars['String']>
+  leaderTel?: Maybe<Scalars['String']>
+  leaderMobile?: Maybe<Scalars['String']>
+  leaderEmail?: Maybe<Scalars['String']>
+  researchExecutors?: Maybe<Scalars['String']>
+  financing?: Maybe<Scalars['String']>
+  note?: Maybe<Scalars['String']>
+  pincode?: Maybe<Scalars['String']>
+  translation?: Maybe<Array<Maybe<ResearchProjectTranslationInput>>>
+  oecds?: Maybe<Array<Maybe<OecdInput>>>
+  languages?: Maybe<Array<Maybe<LanguageInput>>>
 }
 
 export type ResearchProjectQueryInput = {
-  title: Maybe<Scalars['String']>
-  researchExecutors: Maybe<Scalars['String']>
-  keyword: Maybe<Scalars['String']>
-  organizationName: Maybe<Scalars['String']>
-  oecd: Maybe<Scalars['String']>
+  title?: Maybe<Scalars['String']>
+  researchExecutors?: Maybe<Scalars['String']>
+  keyword?: Maybe<Scalars['String']>
+  organizationName?: Maybe<Scalars['String']>
+  oecd?: Maybe<Scalars['String']>
 }
 
 export type ResearchProjectTranslation = {
   __typename?: 'ResearchProjectTranslation'
-  title: Maybe<Scalars['String']>
-  key: Maybe<Array<Maybe<Keyword>>>
+  title?: Maybe<Scalars['String']>
+  key?: Maybe<Array<Maybe<Keyword>>>
   language: Language
 }
 
 export type ResearchProjectTranslationInput = {
-  title: Maybe<Scalars['String']>
-  key: Maybe<Array<Maybe<Scalars['String']>>>
-  language: Maybe<LanguageCode>
+  title?: Maybe<Scalars['String']>
+  key?: Maybe<Array<Maybe<Scalars['String']>>>
+  language?: Maybe<LanguageCode>
 }
 
 export enum Role {
@@ -783,41 +783,41 @@ export type SignupInput = {
   email: Scalars['String']
   password: Scalars['String']
   role: Role
-  translation: Maybe<Array<UserTranslationInput>>
+  translation?: Maybe<Array<UserTranslationInput>>
 }
 
 export type TechnologyTransferAndInnovationOrganization = {
   __typename?: 'TechnologyTransferAndInnovationOrganization'
   id: Scalars['ID']
-  url: Maybe<Scalars['String']>
-  title: Maybe<Scalars['String']>
-  text: Maybe<Scalars['String']>
-  region: Maybe<Scalars['String']>
+  url?: Maybe<Scalars['String']>
+  title?: Maybe<Scalars['String']>
+  text?: Maybe<Scalars['String']>
+  region?: Maybe<Scalars['String']>
   author: User
 }
 
 export type TechnologyTransferAndInnovationOrganizationInput = {
-  url: Maybe<Scalars['String']>
-  title: Maybe<Scalars['String']>
-  text: Maybe<Scalars['String']>
-  region: Maybe<Scalars['String']>
+  url?: Maybe<Scalars['String']>
+  title?: Maybe<Scalars['String']>
+  text?: Maybe<Scalars['String']>
+  region?: Maybe<Scalars['String']>
 }
 
 export type TechnologyTransferNetwork = {
   __typename?: 'TechnologyTransferNetwork'
   id: Scalars['ID']
-  url: Maybe<Scalars['String']>
-  title: Maybe<Scalars['String']>
-  text: Maybe<Scalars['String']>
-  region: Maybe<Scalars['String']>
+  url?: Maybe<Scalars['String']>
+  title?: Maybe<Scalars['String']>
+  text?: Maybe<Scalars['String']>
+  region?: Maybe<Scalars['String']>
   author: User
 }
 
 export type TechnologyTransferNetworkInput = {
-  url: Maybe<Scalars['String']>
-  title: Maybe<Scalars['String']>
-  text: Maybe<Scalars['String']>
-  region: Maybe<Scalars['String']>
+  url?: Maybe<Scalars['String']>
+  title?: Maybe<Scalars['String']>
+  text?: Maybe<Scalars['String']>
+  region?: Maybe<Scalars['String']>
 }
 
 export type User = {
@@ -826,22 +826,46 @@ export type User = {
   email: Scalars['String']
   role: Role
   createdAt: Scalars['String']
-  translation: Maybe<Array<UserTranslation>>
-  newses: Array<News>
-  oecds: Array<Oecd>
-  qrjJournals: Array<QrjJournal>
-  qrjPublications: Array<QrjPublication>
-  qrjs: Array<Qrj>
-  technologyTransferNetworks: Array<TechnologyTransferNetwork>
+  translation?: Maybe<Array<UserTranslation>>
   technologyTransferAndInnovationOrganizations: Array<
     TechnologyTransferAndInnovationOrganization
   >
-  experts: Array<Expert>
+  technologyTransferNetworks: Array<TechnologyTransferNetwork>
   researchProjects: Array<ResearchProject>
+  qrjPublications: Array<QrjPublication>
+  qrjJournals: Array<QrjJournal>
+  experts: Array<Expert>
+  newses: Array<News>
+  oecds: Array<Oecd>
+  qrjs: Array<Qrj>
 }
 
 export type UserTranslationArgs = {
-  language: Maybe<LanguageCode>
+  language?: Maybe<LanguageCode>
+}
+
+export type UserTechnologyTransferAndInnovationOrganizationsArgs = {
+  language: LanguageCode
+}
+
+export type UserTechnologyTransferNetworksArgs = {
+  language: LanguageCode
+}
+
+export type UserResearchProjectsArgs = {
+  language: LanguageCode
+}
+
+export type UserQrjPublicationsArgs = {
+  language: LanguageCode
+}
+
+export type UserQrjJournalsArgs = {
+  language: LanguageCode
+}
+
+export type UserExpertsArgs = {
+  language: LanguageCode
 }
 
 export type UserNewsesArgs = {
@@ -852,38 +876,14 @@ export type UserOecdsArgs = {
   language: LanguageCode
 }
 
-export type UserQrjJournalsArgs = {
-  language: LanguageCode
-}
-
-export type UserQrjPublicationsArgs = {
-  language: LanguageCode
-}
-
 export type UserQrjsArgs = {
-  language: LanguageCode
-}
-
-export type UserTechnologyTransferNetworksArgs = {
-  language: LanguageCode
-}
-
-export type UserTechnologyTransferAndInnovationOrganizationsArgs = {
-  language: LanguageCode
-}
-
-export type UserExpertsArgs = {
-  language: LanguageCode
-}
-
-export type UserResearchProjectsArgs = {
   language: LanguageCode
 }
 
 export type UserTranslation = {
   __typename?: 'UserTranslation'
-  firstName: Maybe<Scalars['String']>
-  lastName: Maybe<Scalars['String']>
+  firstName?: Maybe<Scalars['String']>
+  lastName?: Maybe<Scalars['String']>
   language: Language
 }
 
@@ -893,105 +893,34 @@ export type UserTranslationInput = {
   language: LanguageCode
 }
 
-export type ExpertsQueryVariables = {
-  languageCode: Maybe<LanguageCode>
-  first: Maybe<Scalars['Int']>
-  skip: Maybe<Scalars['Int']>
-  query: Maybe<ExpertQueryInput>
-}
-
-export type ExpertsQuery = { __typename?: 'Query' } & Pick<
-  Query,
-  'countExperts'
-> & {
-    experts: Array<
-      { __typename?: 'Expert' } & Pick<
-        Expert,
-        | 'id'
-        | 'workExperience'
-        | 'inpDate'
-        | 'email'
-        | 'web'
-        | 'tel'
-        | 'mobile'
-        | 'publications'
-      > & {
-          translation: Maybe<
-            Array<
-              Maybe<
-                { __typename?: 'ExpertTranslation' } & Pick<
-                  ExpertTranslation,
-                  | 'fullName'
-                  | 'qualification'
-                  | 'academicDegree'
-                  | 'specialization'
-                  | 'workingPlace'
-                  | 'position'
-                >
-              >
-            >
-          >
-          oecds: Maybe<
-            Array<
-              Maybe<
-                { __typename?: 'Oecd' } & Pick<Oecd, 'code'> & {
-                    translation: Maybe<
-                      Array<
-                        Maybe<
-                          { __typename?: 'OecdTranslation' } & Pick<
-                            OecdTranslation,
-                            'name'
-                          >
-                        >
-                      >
-                    >
-                  }
-              >
-            >
-          >
-          languages: Maybe<
-            Array<
-              Maybe<
-                { __typename?: 'Language' } & Pick<Language, 'code' | 'name'>
-              >
-            >
-          >
-        }
-    >
-  }
-
 export type OecdsQueryVariables = {
-  languageCode: Maybe<LanguageCode>
-  first: Maybe<Scalars['Int']>
-  skip: Maybe<Scalars['Int']>
-  query: Maybe<Scalars['String']>
+  languageCode?: Maybe<LanguageCode>
+  first?: Maybe<Scalars['Int']>
+  skip?: Maybe<Scalars['Int']>
+  query?: Maybe<Scalars['String']>
 }
 
 export type OecdsQuery = { __typename?: 'Query' } & {
   oecds: Array<
     { __typename?: 'Oecd' } & Pick<Oecd, 'id' | 'code'> & {
-        translation: Maybe<
-          Array<
-            Maybe<
-              { __typename?: 'OecdTranslation' } & Pick<OecdTranslation, 'name'>
-            >
-          >
+        translation: Array<
+          { __typename?: 'OecdTranslation' } & Pick<OecdTranslation, 'name'>
         >
       }
   >
 }
 
 export type QrjJournalsQueryVariables = {
-  languageCode: Maybe<LanguageCode>
-  first: Maybe<Scalars['Int']>
-  skip: Maybe<Scalars['Int']>
-  query: Maybe<Scalars['String']>
+  languageCode?: Maybe<LanguageCode>
+  first?: Maybe<Scalars['Int']>
+  skip?: Maybe<Scalars['Int']>
+  query?: Maybe<Scalars['String']>
 }
 
 export type QrjJournalsQuery = { __typename?: 'Query' } & {
   qrjJournals: Array<
     { __typename?: 'QrjJournal' } & Pick<QrjJournal, 'id' | 'code'> & {
-        translation: Maybe<
+        translation?: Maybe<
           Array<
             Maybe<
               { __typename?: 'QrjJournalTranslation' } & Pick<
@@ -1006,10 +935,10 @@ export type QrjJournalsQuery = { __typename?: 'Query' } & {
 }
 
 export type QrjPublicationsQueryVariables = {
-  languageCode: Maybe<LanguageCode>
-  first: Maybe<Scalars['Int']>
-  skip: Maybe<Scalars['Int']>
-  query: Maybe<QrjPublicationQueryInput>
+  languageCode?: Maybe<LanguageCode>
+  first?: Maybe<Scalars['Int']>
+  skip?: Maybe<Scalars['Int']>
+  query?: Maybe<QrjPublicationQueryInput>
 }
 
 export type QrjPublicationsQuery = { __typename?: 'Query' } & Pick<
@@ -1019,42 +948,14 @@ export type QrjPublicationsQuery = { __typename?: 'Query' } & Pick<
     qrjPublications: Array<
       { __typename?: 'QrjPublication' } & Pick<
         QrjPublication,
-        'id' | 'index' | 'year' | 'number' | 'pages' | 'inputDate'
+        'id' | 'year'
       > & {
-          journal: Maybe<
-            { __typename?: 'QrjJournal' } & Pick<QrjJournal, 'code'> & {
-                translation: Maybe<
-                  Array<
-                    Maybe<
-                      { __typename?: 'QrjJournalTranslation' } & Pick<
-                        QrjJournalTranslation,
-                        'name'
-                      >
-                    >
-                  >
-                >
-              }
-          >
-          oecd: Maybe<
-            { __typename?: 'Oecd' } & Pick<Oecd, 'code'> & {
-                translation: Maybe<
-                  Array<
-                    Maybe<
-                      { __typename?: 'OecdTranslation' } & Pick<
-                        OecdTranslation,
-                        'name'
-                      >
-                    >
-                  >
-                >
-              }
-          >
-          translation: Maybe<
+          translation?: Maybe<
             Array<
               Maybe<
                 { __typename?: 'QrjPublicationTranslation' } & Pick<
                   QrjPublicationTranslation,
-                  'title' | 'publicationAuthor' | 'publicationLang' | 'abstract'
+                  'title' | 'publicationAuthor'
                 >
               >
             >
@@ -1063,11 +964,55 @@ export type QrjPublicationsQuery = { __typename?: 'Query' } & Pick<
     >
   }
 
+export type QrjPublicationQueryVariables = {
+  languageCode?: Maybe<LanguageCode>
+  id?: Maybe<Scalars['String']>
+}
+
+export type QrjPublicationQuery = { __typename?: 'Query' } & {
+  qrjPublication: { __typename?: 'QrjPublication' } & Pick<
+    QrjPublication,
+    'index' | 'year' | 'number' | 'pages' | 'inputDate'
+  > & {
+      journal?: Maybe<
+        { __typename?: 'QrjJournal' } & Pick<QrjJournal, 'code'> & {
+            translation?: Maybe<
+              Array<
+                Maybe<
+                  { __typename?: 'QrjJournalTranslation' } & Pick<
+                    QrjJournalTranslation,
+                    'name' | 'address'
+                  >
+                >
+              >
+            >
+          }
+      >
+      oecd?: Maybe<
+        { __typename?: 'Oecd' } & Pick<Oecd, 'code'> & {
+            translation: Array<
+              { __typename?: 'OecdTranslation' } & Pick<OecdTranslation, 'name'>
+            >
+          }
+      >
+      translation?: Maybe<
+        Array<
+          Maybe<
+            { __typename?: 'QrjPublicationTranslation' } & Pick<
+              QrjPublicationTranslation,
+              'title' | 'publicationAuthor' | 'publicationLang' | 'abstract'
+            >
+          >
+        >
+      >
+    }
+}
+
 export type ResearchProjectsQueryVariables = {
-  languageCode: Maybe<LanguageCode>
-  first: Maybe<Scalars['Int']>
-  skip: Maybe<Scalars['Int']>
-  query: Maybe<ResearchProjectQueryInput>
+  languageCode?: Maybe<LanguageCode>
+  first?: Maybe<Scalars['Int']>
+  skip?: Maybe<Scalars['Int']>
+  query?: Maybe<ResearchProjectQueryInput>
 }
 
 export type ResearchProjectsQuery = { __typename?: 'Query' } & Pick<
@@ -1114,14 +1059,14 @@ export type ResearchProjectsQuery = { __typename?: 'Query' } & Pick<
         | 'note'
         | 'pincode'
       > & {
-          translation: Maybe<
+          translation?: Maybe<
             Array<
               Maybe<
                 { __typename?: 'ResearchProjectTranslation' } & Pick<
                   ResearchProjectTranslation,
                   'title'
                 > & {
-                    key: Maybe<
+                    key?: Maybe<
                       Array<
                         Maybe<
                           { __typename?: 'Keyword' } & Pick<Keyword, 'name'>
@@ -1132,18 +1077,14 @@ export type ResearchProjectsQuery = { __typename?: 'Query' } & Pick<
               >
             >
           >
-          oecds: Maybe<
+          oecds?: Maybe<
             Array<
               Maybe<
                 { __typename?: 'Oecd' } & Pick<Oecd, 'code'> & {
-                    translation: Maybe<
-                      Array<
-                        Maybe<
-                          { __typename?: 'OecdTranslation' } & Pick<
-                            OecdTranslation,
-                            'name'
-                          >
-                        >
+                    translation: Array<
+                      { __typename?: 'OecdTranslation' } & Pick<
+                        OecdTranslation,
+                        'name'
                       >
                     >
                   }
@@ -1154,54 +1095,92 @@ export type ResearchProjectsQuery = { __typename?: 'Query' } & Pick<
     >
   }
 
-export const ExpertsDocument = gql`
-  query Experts(
-    $languageCode: LanguageCode
-    $first: Int
-    $skip: Int
-    $query: expertQueryInput
-  ) {
-    experts(query: $query, first: $first, skip: $skip) {
-      id
-      workExperience
-      inpDate
-      email
-      web
-      tel
-      mobile
-      publications
-      translation(language: $languageCode) {
-        fullName
-        qualification
-        academicDegree
-        specialization
-        workingPlace
-        position
-      }
-      oecds {
-        code
-        translation(language: $languageCode) {
-          name
-        }
-      }
-      languages {
-        code
-        name
-      }
-    }
-    countExperts(query: $query)
-  }
-`
-
-@Injectable({
-  providedIn: 'root',
-})
-export class ExpertsGQL extends Apollo.Query<
-  ExpertsQuery,
-  ExpertsQueryVariables
-> {
-  document = ExpertsDocument
+export type ExpertsQueryVariables = {
+  languageCode?: Maybe<LanguageCode>
+  first?: Maybe<Scalars['Int']>
+  skip?: Maybe<Scalars['Int']>
+  query?: Maybe<ExpertQueryInput>
 }
+
+export type ExpertsQuery = { __typename?: 'Query' } & Pick<
+  Query,
+  'countExperts'
+> & {
+    experts: Array<
+      { __typename?: 'Expert' } & Pick<Expert, 'id' | 'inpDate'> & {
+          translation?: Maybe<
+            Array<
+              Maybe<
+                { __typename?: 'ExpertTranslation' } & Pick<
+                  ExpertTranslation,
+                  'fullName' | 'specialization'
+                >
+              >
+            >
+          >
+          oecds?: Maybe<
+            Array<
+              Maybe<
+                { __typename?: 'Oecd' } & {
+                  translation: Array<
+                    { __typename?: 'OecdTranslation' } & Pick<
+                      OecdTranslation,
+                      'name'
+                    >
+                  >
+                }
+              >
+            >
+          >
+        }
+    >
+  }
+
+export type ExpertQueryVariables = {
+  languageCode?: Maybe<LanguageCode>
+  id?: Maybe<Scalars['String']>
+}
+
+export type ExpertQuery = { __typename?: 'Query' } & {
+  expert: { __typename?: 'Expert' } & Pick<
+    Expert,
+    'email' | 'publications' | 'workExperience'
+  > & {
+      languages?: Maybe<
+        Array<Maybe<{ __typename?: 'Language' } & Pick<Language, 'name'>>>
+      >
+      translation?: Maybe<
+        Array<
+          Maybe<
+            { __typename?: 'ExpertTranslation' } & Pick<
+              ExpertTranslation,
+              | 'fullName'
+              | 'qualification'
+              | 'academicDegree'
+              | 'specialization'
+              | 'workingPlace'
+              | 'position'
+            >
+          >
+        >
+      >
+      oecds?: Maybe<
+        Array<
+          Maybe<
+            { __typename?: 'Oecd' } & {
+              translation: Array<
+                { __typename?: 'OecdTranslation' } & Pick<
+                  OecdTranslation,
+                  'name'
+                >
+              >
+            }
+          >
+        >
+      >
+    }
+}
+
 export const OecdsDocument = gql`
   query Oecds(
     $languageCode: LanguageCode
@@ -1261,6 +1240,28 @@ export const QrjPublicationsDocument = gql`
   ) {
     qrjPublications(query: $query, first: $first, skip: $skip) {
       id
+      year
+      translation(language: $languageCode) {
+        title
+        publicationAuthor
+      }
+    }
+    countQrjPublications(query: $query)
+  }
+`
+
+@Injectable({
+  providedIn: 'root',
+})
+export class QrjPublicationsGQL extends Apollo.Query<
+  QrjPublicationsQuery,
+  QrjPublicationsQueryVariables
+> {
+  document = QrjPublicationsDocument
+}
+export const QrjPublicationDocument = gql`
+  query QrjPublication($languageCode: LanguageCode, $id: String) {
+    qrjPublication(id: $id) {
       index
       year
       number
@@ -1270,6 +1271,7 @@ export const QrjPublicationsDocument = gql`
         code
         translation(language: $languageCode) {
           name
+          address
         }
       }
       oecd {
@@ -1285,18 +1287,17 @@ export const QrjPublicationsDocument = gql`
         abstract
       }
     }
-    countQrjPublications(query: $query)
   }
 `
 
 @Injectable({
   providedIn: 'root',
 })
-export class QrjPublicationsGQL extends Apollo.Query<
-  QrjPublicationsQuery,
-  QrjPublicationsQueryVariables
+export class QrjPublicationGQL extends Apollo.Query<
+  QrjPublicationQuery,
+  QrjPublicationQueryVariables
 > {
-  document = QrjPublicationsDocument
+  document = QrjPublicationDocument
 }
 export const ResearchProjectsDocument = gql`
   query ResearchProjects(
@@ -1368,3 +1369,276 @@ export class ResearchProjectsGQL extends Apollo.Query<
 > {
   document = ResearchProjectsDocument
 }
+export const ExpertsDocument = gql`
+  query Experts(
+    $languageCode: LanguageCode
+    $first: Int
+    $skip: Int
+    $query: expertQueryInput
+  ) {
+    experts(query: $query, first: $first, skip: $skip) {
+      id
+      translation(language: $languageCode) {
+        fullName
+        specialization
+      }
+      inpDate
+      oecds {
+        translation(language: $languageCode) {
+          name
+        }
+      }
+    }
+    countExperts(query: $query)
+  }
+`
+
+@Injectable({
+  providedIn: 'root',
+})
+export class ExpertsGQL extends Apollo.Query<
+  ExpertsQuery,
+  ExpertsQueryVariables
+> {
+  document = ExpertsDocument
+}
+export const ExpertDocument = gql`
+  query Expert($languageCode: LanguageCode, $id: String) {
+    expert(id: "ck49upori0chm0767sb664jhv") {
+      email
+      publications
+      workExperience
+      languages {
+        name
+      }
+      translation(language: $languageCode) {
+        fullName
+        qualification
+        academicDegree
+        specialization
+        workingPlace
+        position
+      }
+      oecds {
+        translation(language: $languageCode) {
+          name
+        }
+      }
+    }
+  }
+`
+
+@Injectable({
+  providedIn: 'root',
+})
+export class ExpertGQL extends Apollo.Query<ExpertQuery, ExpertQueryVariables> {
+  document = ExpertDocument
+}
+
+export const Oecds = gql`
+  query Oecds(
+    $languageCode: LanguageCode
+    $first: Int
+    $skip: Int
+    $query: String
+  ) {
+    oecds(query: $query, first: $first, skip: $skip) {
+      id
+      code
+      translation(language: $languageCode) {
+        name
+      }
+    }
+  }
+`
+export const QrjJournals = gql`
+  query QrjJournals(
+    $languageCode: LanguageCode
+    $first: Int
+    $skip: Int
+    $query: String
+  ) {
+    qrjJournals(query: $query, first: $first, skip: $skip) {
+      id
+      code
+      translation(language: $languageCode) {
+        name
+        address
+      }
+    }
+  }
+`
+export const QrjPublications = gql`
+  query QrjPublications(
+    $languageCode: LanguageCode
+    $first: Int
+    $skip: Int
+    $query: qrjPublicationQueryInput
+  ) {
+    qrjPublications(query: $query, first: $first, skip: $skip) {
+      id
+      year
+      translation(language: $languageCode) {
+        title
+        publicationAuthor
+      }
+    }
+    countQrjPublications(query: $query)
+  }
+`
+export const QrjPublication = gql`
+  query QrjPublication($languageCode: LanguageCode, $id: String) {
+    qrjPublication(id: $id) {
+      index
+      year
+      number
+      pages
+      inputDate
+      journal {
+        code
+        translation(language: $languageCode) {
+          name
+          address
+        }
+      }
+      oecd {
+        code
+        translation(language: $languageCode) {
+          name
+        }
+      }
+      translation(language: $languageCode) {
+        title
+        publicationAuthor
+        publicationLang
+        abstract
+      }
+    }
+  }
+`
+export const ResearchProjects = gql`
+  query ResearchProjects(
+    $languageCode: LanguageCode
+    $first: Int
+    $skip: Int
+    $query: ResearchProjectQueryInput
+  ) {
+    researchProjects(query: $query, first: $first, skip: $skip) {
+      id
+      inpDate
+      regDate
+      startDate
+      endDate
+      regNumb
+      research
+      researchDirection
+      researchExecutionBasis
+      abstract
+      annotation
+      budget
+      organizationName
+      organizationShortName
+      organizationCode
+      organizationHead
+      organizationCity
+      organizationAddress
+      organizationIndex
+      organizationTel
+      organizationWeb
+      participatingInstitutionName
+      participatingInstitutionCountryCity
+      participatingInstitutionTel
+      participatingInstitutionEmail
+      participatingInstitutionWeb
+      leaderName
+      leaderPosition
+      leaderAcademicDegree
+      leaderTel
+      leaderMobile
+      leaderEmail
+      researchExecutors
+      financing
+      note
+      pincode
+      translation(language: $languageCode) {
+        title
+        key {
+          name
+        }
+      }
+      oecds {
+        code
+        translation(language: $languageCode) {
+          name
+        }
+      }
+    }
+    countResearchProjects(query: $query)
+  }
+`
+export const Experts = gql`
+  query Experts(
+    $languageCode: LanguageCode
+    $first: Int
+    $skip: Int
+    $query: expertQueryInput
+  ) {
+    experts(query: $query, first: $first, skip: $skip) {
+      id
+      translation(language: $languageCode) {
+        fullName
+        specialization
+      }
+      inpDate
+      oecds {
+        translation(language: $languageCode) {
+          name
+        }
+      }
+    }
+    countExperts(query: $query)
+  }
+`
+export const Expert = gql`
+  query Expert($languageCode: LanguageCode, $id: String) {
+    expert(id: "ck49upori0chm0767sb664jhv") {
+      email
+      publications
+      workExperience
+      languages {
+        name
+      }
+      translation(language: $languageCode) {
+        fullName
+        qualification
+        academicDegree
+        specialization
+        workingPlace
+        position
+      }
+      oecds {
+        translation(language: $languageCode) {
+          name
+        }
+      }
+    }
+  }
+`
+
+export interface IntrospectionResultData {
+  __schema: {
+    types: {
+      kind: string
+      name: string
+      possibleTypes: {
+        name: string
+      }[]
+    }[]
+  }
+}
+const result: IntrospectionResultData = {
+  __schema: {
+    types: [],
+  },
+}
+export default result

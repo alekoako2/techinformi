@@ -1,17 +1,17 @@
 .search-wrapper {
-  width: 100%;
   background: rgba(255, 255, 255, 0.3);
   border-radius: 5px;
+  width: 100%;
+  display: flex;
 
   input {
-    font-family: bpg_glaho, serif;
     background: transparent;
     color: white;
+    width: 100%;
+    z-index: 1;
     border: none;
-    padding: 0;
     outline: none;
     font-size: 14px;
-    vertical-align: text-bottom;
   }
 
   ::placeholder {
@@ -19,10 +19,7 @@
   }
 
   mat-icon {
-    //position: absolute;
-    z-index: 9999;
-    font-size: 28px;
-    top: 6px;
-    left: 10px;
+    position: absolute;
+    margin-top: 7px;
   }
 }

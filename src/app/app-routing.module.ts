@@ -3,15 +3,14 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router'
 
 // Modules
 import { ScientificActivityModule } from './modules/scientific-activity'
+import { ExpertsModule } from './modules/experts'
 import { ResearchProjectModule } from './modules/research-project'
-import { QrjPublicationModule } from './modules/qrj-publication'
 import { ServicesPageModule } from './modules/services-page'
 import { PublicationsModule } from './modules/publications'
 import { PartnershipModule } from './modules/partnership'
 import { DatabasesModule } from './modules/databases'
 import { AboutUsModule } from './modules/about-us'
 import { ContactModule } from './modules/contact'
-import { ScientistsExpertsModule } from './modules/scientists-experts/scientists-experts.module'
 import { HomeModule } from './modules/home'
 import { QrjModule } from './modules/qrj'
 
@@ -21,13 +20,6 @@ const appRoutes: Routes = [
     loadChildren: (): Promise<ScientificActivityModule> =>
       import('./modules/scientific-activity').then(
         (mod) => mod.ScientificActivityModule
-      ),
-  },
-  {
-    path: 'scientists-experts',
-    loadChildren: (): Promise<ScientistsExpertsModule> =>
-      import('./modules/scientists-experts/scientists-experts.module').then(
-        (mod) => mod.ScientistsExpertsModule
       ),
   },
   {
@@ -61,6 +53,13 @@ const appRoutes: Routes = [
     path: 'about-us',
     loadChildren: (): Promise<AboutUsModule> =>
       import('./modules/about-us').then((mod) => mod.AboutUsModule),
+  },
+  {
+    path: 'experts',
+    loadChildren: (): Promise<ExpertsModule> =>
+      import('./modules/experts/experts.module').then(
+        (mod) => mod.ExpertsModule
+      ),
   },
   {
     path: 'contact',

@@ -14,6 +14,8 @@ import { SpinnerModule } from './modules/spinner'
 import { DialogModule } from './modules/dialog'
 
 // Components
+import { QrjJournalsSelectInputComponent } from './components/qrj-journals-select-input'
+import { OecdsSelectInputComponent } from './components/oecds-select-input'
 import { PageTitleBarComponent } from './components/page-title-bar'
 
 // Directives
@@ -22,43 +24,58 @@ import { SnackbarDirective } from './directives/snackbar'
 
 // Pipes
 import { SanitizeHtmlPipe } from './pipes/sanitize-html'
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader'
+import { ScrollingModule } from '@angular/cdk/scrolling'
 
 @NgModule({
   declarations: [
+    // Components
+    QrjJournalsSelectInputComponent,
+    OecdsSelectInputComponent,
     PageTitleBarComponent,
-    SnackbarDirective,
+    // Directives
     HideMissingLanguageElementDirective,
-    SanitizeHtmlPipe,
     HideNotImplementedDirective,
+    SnackbarDirective,
+    // Pipes
+    SanitizeHtmlPipe,
   ],
   imports: [
     CommonModule,
-    FlexLayoutModule,
-    DialogModule,
-    MaterialModule,
-    SpinnerModule,
+    NgxSkeletonLoaderModule,
     LayoutContainerModule,
-    SpinnerModule,
-    FirebaseModule,
     CustomInputsModule,
+    FlexLayoutModule,
+    ScrollingModule,
+    MaterialModule,
+    FirebaseModule,
+    SpinnerModule,
+    SpinnerModule,
+    DialogModule,
   ],
   exports: [
-    //Imports
-    FlexLayoutModule,
-    FlexLayoutModule,
-    DialogModule,
-    MaterialModule,
-    SpinnerModule,
+    //Modules
+    NgxSkeletonLoaderModule,
     LayoutContainerModule,
-    SpinnerModule,
-    FirebaseModule,
     CustomInputsModule,
-    // Declarations
+    FlexLayoutModule,
+    FlexLayoutModule,
+    ScrollingModule,
+    MaterialModule,
+    FirebaseModule,
+    SpinnerModule,
+    SpinnerModule,
+    DialogModule,
+    // Components
+    QrjJournalsSelectInputComponent,
+    OecdsSelectInputComponent,
     PageTitleBarComponent,
-    SnackbarDirective,
+    // Directives
     HideMissingLanguageElementDirective,
-    SanitizeHtmlPipe,
     HideNotImplementedDirective,
+    SnackbarDirective,
+    // Pipes
+    SanitizeHtmlPipe,
   ],
 })
 export class SharedModule {}

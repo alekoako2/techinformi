@@ -1,0 +1,54 @@
+<database-template-details>
+  <div *ngIf="qrjPublication$|async as qrjPublication" class="mat-elevation-z1 padding-3 border-radius-2 margin-top-4">
+
+    <!--    Publication Title-->
+    <div class="margin-bottom-3">
+      <h3 i18n="@@publication_title">სტატიის დასახელება</h3>
+      <span>{{qrjPublication.translation[0].title}}</span>
+    </div>
+
+    <!--    Authors-->
+    <div class="margin-bottom-3">
+      <h3 i18n="@@authors">ავტორ(ებ)ი</h3>
+      <span>{{qrjPublication.translation[0].publicationAuthor}}</span>
+    </div>
+
+    <!--    Scientific Direction Oecd-->
+    <div class="margin-bottom-3">
+      <h3 i18n="@@scientific_direction_oecd">სამეცნიერო მიმართულება (OECD)</h3>
+      <span>{{qrjPublication.oecd.code}} {{qrjPublication.oecd.translation[0].name}}</span>
+    </div>
+
+    <!--    Publication Name-->
+    <div class="margin-bottom-3">
+      <h3 i18n="@@publication_name">გამოცემის დასახელება</h3>
+      <!--      address-->
+      <a *ngIf="qrjPublication.journal.translation[0].address as address"
+         [href]="address"
+         target="_blank">
+        <span>{{qrjPublication.journal.translation[0].name}}</span>
+      </a>
+      <p *ngIf="!qrjPublication.journal.translation[0].address">
+        {{qrjPublication.journal.translation[0].name}}
+      </p>
+
+      <!--      Pages & Languages-->
+      <div>
+        <span>{{qrjPublication.pages}} {{qrjPublication.translation[0].publicationLang}}</span>
+      </div>
+    </div>
+
+    <!--    Abstract-->
+    <div class="margin-bottom-3">
+      <h3 i18n="@@abstract">რეფერატი</h3>
+      <span>{{qrjPublication.translation[0].abstract}}</span>
+    </div>
+
+    <!--    QRJ-->
+    <div>
+      <h3 i18n="@@qrj">ქრჟ</h3>
+      <span>{{qrjPublication.number}}</span>
+    </div>
+
+  </div>
+</database-template-details>

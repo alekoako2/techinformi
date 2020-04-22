@@ -1,0 +1,79 @@
+<database-template-details>
+  <div *ngIf="expert$|async as expert" class="mat-elevation-z1 padding-3 border-radius-2 margin-top-4">
+
+    <!--    Author-->
+    <div class="margin-bottom-3">
+      <h3 i18n="@@author">ავტორი</h3>
+      <span>{{expert.translation[0].fullName}}</span>
+    </div>
+
+    <!--    Qualification-->
+    <div class="margin-bottom-3">
+      <h3 i18n="@@qualification">კვალიფიკაცია</h3>
+      <span>{{expert.translation[0].qualification}}</span>
+    </div>
+
+    <!--    Academic Degree-->
+    <div class="margin-bottom-3">
+      <h3 i18n="@@academic_degree">აკადემიური ხარისხი</h3>
+      <span>{{expert.translation[0].academicDegree}}</span>
+    </div>
+
+    <!--    Scientific Direction Oecd-->
+    <div class="margin-bottom-3">
+      <h3 i18n="@@scientific_direction_oecd">სამეცნიერო მიმართულება (OECD)</h3>
+      <div *ngIf="expert.oecds as oecds">
+          <span *ngFor="let oecd of oecds">
+            {{oecd.translation[0].name}};
+          </span>
+      </div>
+    </div>
+
+    <!--    Specialization-->
+    <div class="margin-bottom-3">
+      <h3 i18n="@@specialization">სპეციალიზაცია</h3>
+      <span>{{expert.translation[0].specialization}}</span>
+    </div>
+
+    <!--    Experience -->
+    <div class="margin-bottom-3">
+      <h3 i18n="@@professional_experience_Specialization">სამუშაო გამოცდილება სპეციალიზაციის სფეროში</h3>
+      <span>{{expert.workExperience}}</span>
+    </div>
+
+    <!--    Languages -->
+    <div class="margin-bottom-3">
+      <h3 i18n="@@knowledge_foreign_languages">უცხო ენების ცოდნა</h3>
+      <span *ngIf="expert.languages as languages">
+          <span *ngFor="let language of languages">
+            {{language.name}};
+          </span>
+      </span>
+    </div>
+
+    <!--    Working Place -->
+    <div class="margin-bottom-3">
+      <h3 i18n="@@working_place">სამუშაო ადგილი</h3>
+      <span>{{expert.translation[0].workingPlace}}</span>
+    </div>
+
+    <!--    Position -->
+    <div class="margin-bottom-3">
+      <h3 i18n="@@working_position">თანამდებობა</h3>
+      <span>{{expert.translation[0].position}}</span>
+    </div>
+
+    <!--    Email -->
+    <div class="margin-bottom-3">
+      <h3 i18n="@@email">ელ. ფოსტა</h3>
+      <span>{{expert.email}}</span>
+    </div>
+
+    <!--    Last Publications -->
+    <div class="margin-bottom-3">
+      <h3 i18n="@@last_publications">ბოლო პუბლიკაციები</h3>
+      <span [innerHTML]="expert.publications|sanitizeHtml"></span>
+    </div>
+
+  </div>
+</database-template-details>

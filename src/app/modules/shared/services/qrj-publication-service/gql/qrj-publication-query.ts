@@ -9,6 +9,18 @@ export const qrjPublicationsQuery = gql`
   ) {
     qrjPublications(query: $query, first: $first, skip: $skip) {
       id
+      year
+      translation(language: $languageCode) {
+        title
+        publicationAuthor
+      }
+    }
+    countQrjPublications(query: $query)
+  }
+`
+export const qrjPublicationQuery = gql`
+  query QrjPublication($languageCode: LanguageCode, $id: String) {
+    qrjPublication(id: $id) {
       index
       year
       number
@@ -18,6 +30,7 @@ export const qrjPublicationsQuery = gql`
         code
         translation(language: $languageCode) {
           name
+          address
         }
       }
       oecd {
@@ -33,6 +46,5 @@ export const qrjPublicationsQuery = gql`
         abstract
       }
     }
-    countQrjPublications(query: $query)
   }
 `

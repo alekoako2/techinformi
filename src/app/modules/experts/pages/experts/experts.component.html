@@ -1,0 +1,82 @@
+<page-title-bar title="მეცნიერები/ექსპერტები"
+                i18n-title="@@scientists_experts">
+</page-title-bar>
+
+<layout-container layoutStyle="column" flexWidth="80" ltLg="100">
+  <database-template (loadPressed)="loadPressed($event)"
+                     (searchPressed)="searchPressed()"
+                     [pageIndex]="pageIndex"
+                     [pageSize]="pageSize"
+                     [length]="data?.countExperts"
+                     [skeleton]="skeleton">
+    <div filters>
+      <input-text i18n-placeholder="@@authors"
+                  placeholder="ავტორ(ებ)ი"
+                  [(inputModel)]="author"
+                  name="author">
+      </input-text>
+      <oecds-select-input [(oecd)]="oecd"></oecds-select-input>
+      <input-text i18n-placeholder="@@specialization"
+                  placeholder="სპეციალიზაცია"
+                  [(inputModel)]="specialization"
+                  name="specialization">
+      </input-text>
+    </div>
+
+    <div list>
+      <database-template-list-item *ngFor="let expert of data?.experts"
+                                   [routerLink]="transformUrl(expert)">
+        <div header>
+          <div class="padding-x-2"
+               fxFlex="20">
+                  <span i18n="@@author"
+                        class="mtavruli">
+                  ავტორი
+                </span>
+          </div>
+          <div class="padding-x-2"
+               fxFlex="40">
+                  <span i18n="@@scientific_direction_oecd"
+                        class="mtavruli">
+                სამეცნიერო მიმართულება (OECD)
+              </span>
+          </div>
+          <div class="padding-x-2"
+               fxFlex="40">
+                  <span i18n="@@specialization"
+                        class="mtavruli">
+                სპეციალიზაცია
+              </span>
+          </div>
+        </div>
+        <div body>
+          <div class="padding-x-2"
+               fxFlex="20">
+            <p class="text-overflow-ellipses-2 margin-bottom-0">
+              {{ expert.translation[0].fullName }}
+            </p>
+          </div>
+          <div class="padding-x-2"
+               fxFlex="40">
+            <div class="text-overflow-ellipses-2 margin-bottom-0">
+              <div *ngIf="expert.oecds as oecds">
+                <p>
+                <span *ngFor="let oecd of oecds">
+                  {{oecd.translation[0].name}};
+                </span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="padding-x-2"
+               fxFlex="40">
+            <p class="text-overflow-ellipses-2 margin-bottom-0">
+              {{ expert?.translation[0]?.specialization }}
+            </p>
+          </div>
+        </div>
+      </database-template-list-item>
+    </div>
+
+  </database-template>
+</layout-container>

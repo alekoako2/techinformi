@@ -8,10 +8,9 @@ generates:
       - "typescript-operations"
       - "typescript-apollo-angular"
 #      - "typescript-graphql-files-modules"
-#      - "typescript-document-nodes"
-#      - "fragment-matcher"
+      - "typescript-document-nodes"
+      - "fragment-matcher"
     config:
-      avoidOptionals: true
       namingConvention:
         enumValues: keep
   ./graphql.schema.json:

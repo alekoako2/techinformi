@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core'
 
 import { OecdService } from '@services/oecd-service'
-import { OecdsQuery } from '@graphql'
+import { Oecd } from '@graphql'
+import { Observable } from 'rxjs'
 
 @Component({
   selector: 'research-project',
@@ -12,7 +13,7 @@ export class ResearchProjectComponent implements OnInit {
   researchProjects$
   countResearchProjects$
 
-  oecdList: OecdsQuery[]
+  oecds$: Observable<Oecd[]>
 
   title: string
   researchExecutors: string
@@ -25,9 +26,7 @@ export class ResearchProjectComponent implements OnInit {
   ngOnInit(): void {
     this.loadResearchProjects()
 
-    this.oecdService.loadOecds('', 0, 999).subscribe((res: { oecds }) => {
-      this.oecdList = res.oecds
-    })
+    this.oecds$ = this.oecdService.loadOecds()
   }
 
   loadResearchProjects(index = 0, limit = 12): void {

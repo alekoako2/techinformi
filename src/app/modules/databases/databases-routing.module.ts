@@ -3,17 +3,15 @@ import { NgModule } from '@angular/core'
 
 // Pages
 import { DatabasesComponent } from './pages/databases'
-import { QrjPublicationModule } from '../qrj-publication'
-import { ScientistsExpertsModule } from '../scientists-experts'
+import { QrjPublicationsModule } from '../qrj-publications'
+import { ExpertsModule } from '../experts/experts.module'
 import { ResearchProjectModule } from '../research-project'
 
 const routes: Routes = [
   {
-    path: 'scientists-experts',
-    loadChildren: (): Promise<ScientistsExpertsModule> =>
-      import('../../modules/scientists-experts').then(
-        (mod) => mod.ScientistsExpertsModule
-      ),
+    path: 'experts',
+    loadChildren: (): Promise<ExpertsModule> =>
+      import('../experts/experts.module').then((mod) => mod.ExpertsModule),
   },
   {
     path: 'research-project',
@@ -23,10 +21,10 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'qrj-publication',
-    loadChildren: (): Promise<QrjPublicationModule> =>
-      import('../../modules/qrj-publication').then(
-        (mod) => mod.QrjPublicationModule
+    path: 'qrj-publications',
+    loadChildren: (): Promise<QrjPublicationsModule> =>
+      import('../qrj-publications/qrj-publications.module').then(
+        (mod) => mod.QrjPublicationsModule
       ),
   },
   {
