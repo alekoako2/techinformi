@@ -1,0 +1,114 @@
+<page-title-bar title="სამეცნიერო-კვლევითი პროექტები"
+                i18n-title="@@research_projects">
+</page-title-bar>
+
+
+<layout-container flexWidth="80" ltLg="100">
+  <database-template (loadPressed)="loadPressed($event)"
+                     (searchPressed)="searchPressed()"
+                     [pageIndex]="pageIndex"
+                     [pageSize]="pageSize"
+                     [length]="data?.countResearchProjects"
+                     [skeleton]="skeleton">
+    <div filters fxLayout="column">
+      <input-text i18n-placeholder="@@title"
+                  placeholder="სათაური"
+                  [(inputModel)]="title"
+                  name="title">
+      </input-text>
+      <input-text i18n-placeholder="@@leader_executors"
+                  placeholder="ხელმძღვანელი/შემსრულებლები"
+                  [(inputModel)]="leader_executors"
+                  name="leader_executors">
+      </input-text>
+      <input-text i18n-placeholder="@@keywords"
+                  placeholder="საკვანძო სიტყვები"
+                  [(inputModel)]="keywords"
+                  name="keywords">
+      </input-text>
+      <input-text i18n-placeholder="@@principal_executing_organization"
+                  placeholder="ძირითადი შემსრულებელი ორგანიზაცია"
+                  [(inputModel)]="principal_executing_organization"
+                  name="principal_executing_organization">
+      </input-text>
+      <oecds-select-input [(oecd)]="oecd"></oecds-select-input>
+      <year-picker matTooltip="წელი (კვლევის მიმდინარეობის, დაწყების ან დასრულების წელი)"
+                   label="წელი (კვლევის მიმდინარეობის, დაწყების ან დასრულების წელი)"
+                   i18n-matTooltip="year_research_progress_start_or_end_year"
+                   i18n-label="@@year_research_progress_start_or_end_year"
+                   [(date)]="year_research_progress_start_or_end_year"
+                   name="year_research_progress_start_or_end_year">
+      </year-picker>
+      <div fxLayoutGap="16px">
+        <year-picker i18n-label="@@from_year"
+                     [(date)]="from_year"
+                     [maxDate]="to_year"
+                     name="from_year"
+                     label="დან"
+                     fxFlex>
+        </year-picker>
+        <year-picker i18n-label="@@to_year"
+                     [(date)]="to_year"
+                     [minDate]="from_year"
+                     name="to_year"
+                     label="მდე"
+                     fxFlex>
+        </year-picker>
+      </div>
+    </div>
+
+    <div list>
+      <database-template-list-item *ngFor="let researchProject of data?.researchProjects"
+                                   [routerLink]="transformUrl(researchProject)">
+        <div header fxLayoutGap="8px">
+          <div fxFlex
+               class="padding-left-2"
+               fxFlexAlign="center">
+            <h4 i18n="@@title"
+                class="mtavruli">
+              სათაური
+            </h4>
+          </div>
+          <div fxFlex
+               fxFlexAlign="center">
+            <h4 i18n="@@leader_executors"
+                class="mtavruli">
+              ხელმძღვანელი/შემსრულებლები
+            </h4>
+          </div>
+          <div fxFlex
+               fxFlexAlign="center">
+            <h4 i18n="@@principal_executing_organization"
+                class="mtavruli">
+              ძირითადი შემსრულებელი ორგანიზაცია
+            </h4>
+          </div>
+          <div fxFlex="15"
+               class="padding-right-2"
+               fxFlexAlign="center">
+            <h4 i18n="@@work_completion_date"
+                class="mtavruli">
+              სამუშაოს დასრულების თარიღი
+            </h4>
+          </div>
+        </div>
+        <div body fxLayoutGap="8px">
+          <p fxFlex
+             class="padding-left-2">
+            {{ researchProject.translation[0].title }}
+          </p>
+          <p fxFlex>
+            {{ researchProject.leaderName }} / {{researchProject.researchExecutors}}
+          </p>
+          <p fxFlex>
+            {{ researchProject.organizationName }}
+          </p>
+          <p fxFlex="15">
+            {{ researchProject.endDate|date }}
+          </p>
+        </div>
+      </database-template-list-item>
+    </div>
+
+  </database-template>
+</layout-container>

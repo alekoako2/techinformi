@@ -1,0 +1,80 @@
+<database-template-details>
+  <div *ngIf="researchProject$|async as researchProject"
+       class="mat-elevation-z1 padding-3 border-radius-2 margin-top-4">
+
+    <!--    Title-->
+    <div class="margin-bottom-3" *ngIf="researchProject.translation[0].title|notEmpty as title">
+      <h3 i18n="@@title">სათაური</h3>
+      <span>{{title}}</span>
+    </div>
+
+    <!--    Research Category-->
+    <div class="margin-bottom-3" *ngIf="researchProject.research|notEmpty as research">
+      <h3 i18n="@@research_category">სამეცნიერო კვლევის კატეგორია</h3>
+      <span>{{research}}</span>
+    </div>
+
+    <!--    Scientific Direction Oecd-->
+    <div class="margin-bottom-3" *ngIf="researchProject.oecds as oecds">
+      <h3 i18n="@@scientific_direction_oecd">სამეცნიერო მიმართულება (OECD)</h3>
+      <span *ngFor="let oecd of oecds">
+            {{oecd.code}} {{oecd.translation[0].name}};
+          </span>
+    </div>
+
+    <!--   Start Of Date-->
+    <div class="margin-bottom-3" *ngIf="researchProject.startDate|notEmpty as startDate">
+      <h3 i18n="@@start_of_work">სამუშაოს დაწყების თარიღი</h3>
+      <span>{{startDate|date}}</span>
+    </div>
+
+    <!--    Work End Date-->
+    <div class="margin-bottom-3" *ngIf="researchProject.endDate|notEmpty as endDate">
+      <h3 i18n="@@end_of_work">სამუშაოს დასრულების თარიღი</h3>
+      <span>{{endDate|date}}</span>
+    </div>
+
+    <!--    Leader-->
+    <div class="margin-bottom-3" *ngIf="researchProject.leaderName|notEmpty as leaderName">
+      <h3 i18n="@@leader">ხელმძღვანელი</h3>
+      <span>{{leaderName}}</span>
+    </div>
+
+    <!--    Research Executors-->
+    <div class="margin-bottom-3" *ngIf="researchProject.researchExecutors|notEmpty as researchExecutors">
+      <h3 i18n="@@research_executors">კვლევითი სამუშაოს შემსრულებლები</h3>
+      <span>{{researchExecutors}}</span>
+    </div>
+
+    <!--    Principal Executing Organization-->
+    <div class="margin-bottom-3" *ngIf="researchProject.organizationName|notEmpty as organizationName">
+      <h3 i18n="@@principal_executing_organization">ძირითადი შემსრულებელი ორგანიზაცია</h3>
+      <span>{{organizationName}}</span>
+    </div>
+
+    <!--    Research Execution Basis-->
+    <div class="margin-bottom-3" *ngIf="researchProject.researchExecutionBasis|notEmpty as researchExecutionBasis">
+      <h3 i18n="@@research_execution_basis">სამუშაოს შესრულების საფუძველი</h3>
+      <span>{{researchExecutionBasis}}</span>
+    </div>
+
+    <!--    Keywords-->
+    <div class="margin-bottom-3" *ngIf="researchProject.translation[0].key as keys">
+      <h3 i18n="@@keywords">საკვანძო სიტყვები</h3>
+      <span *ngFor="let key of keys">{{key.name}};</span>
+    </div>
+
+    <!--    City-->
+    <div class="margin-bottom-3" *ngIf="researchProject.organizationCity|notEmpty as organizationCity">
+      <h3 i18n="@@city">ქალაქი</h3>
+      <span>{{organizationCity}}</span>
+    </div>
+
+    <!--    Abstract-->
+    <div class="margin-bottom-3" *ngIf="researchProject.abstract|notEmpty as abstract">
+      <h3 i18n="@@abstract">რეფერატი</h3>
+      <span>{{abstract}}</span>
+    </div>
+
+  </div>
+</database-template-details>

@@ -21,8 +21,6 @@ export class ExpertsComponent implements OnInit {
   pageIndex = 0
   pageSize = 10
 
-  arr = new Array(5).fill(0)
-
   constructor(
     private expertsService: ExpertsService,
     private progressBarService: ProgressBarService

@@ -2,8 +2,8 @@ import { Routes, RouterModule } from '@angular/router'
 import { NgModule } from '@angular/core'
 
 // Pages
-import { ExpertsComponent } from './pages/experts/experts.component'
-import { ExpertsDetailsComponent } from './pages/experts-details/experts-details.component'
+import { ExpertsComponent } from './pages/experts'
+import { ExpertDetailsComponent } from './pages/expert-details'
 
 const routes: Routes = [
   {
@@ -13,7 +13,7 @@ const routes: Routes = [
   },
   {
     path: ':title/:id',
-    component: ExpertsDetailsComponent,
+    component: ExpertDetailsComponent,
   },
 ]
 

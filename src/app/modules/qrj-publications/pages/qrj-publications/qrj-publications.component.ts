@@ -22,8 +22,6 @@ export class QrjPublicationsComponent implements OnInit {
   pageIndex = 0
   pageSize = 10
 
-  arr = new Array(5).fill(0)
-
   constructor(
     private qrjPublicationService: QrjPublicationService,
     private progressBarService: ProgressBarService

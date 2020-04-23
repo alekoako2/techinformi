@@ -7,16 +7,15 @@ import { DatabaseTemplateModule } from '../shared/modules/database-template'
 import { SharedModule } from '@shared'
 
 // Pages
-import { ExpertsDetailsComponent } from './pages/experts-details/experts-details.component'
-import { ExpertsComponent } from './pages/experts/experts.component'
+import { ExpertDetailsComponent } from './pages/expert-details'
+import { ExpertsComponent } from './pages/experts'
 
 @NgModule({
-  declarations: [ExpertsComponent, ExpertsDetailsComponent],
+  declarations: [ExpertsComponent, ExpertDetailsComponent],
   imports: [
     CommonModule,
-    ExpertsRoutingModule,
     DatabaseTemplateModule,
-    CommonModule,
+    ExpertsRoutingModule,
     SharedModule,
   ],
 })

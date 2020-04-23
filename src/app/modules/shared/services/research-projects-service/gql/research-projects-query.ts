@@ -9,6 +9,25 @@ export const researchProjectsQuery = gql`
   ) {
     researchProjects(query: $query, first: $first, skip: $skip) {
       id
+      leaderName
+      researchExecutors
+      organizationName
+      endDate
+      translation(language: $languageCode) {
+        title
+        key {
+          name
+        }
+      }
+    }
+
+    countResearchProjects(query: $query)
+  }
+`
+
+export const researchProjectQuery = gql`
+  query ResearchProject($languageCode: LanguageCode, $id: String) {
+    researchProject(id: $id) {
       inpDate
       regDate
       startDate
@@ -57,7 +76,5 @@ export const researchProjectsQuery = gql`
         }
       }
     }
-
-    countResearchProjects(query: $query)
   }
 `

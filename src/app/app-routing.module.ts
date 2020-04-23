@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router'
 // Modules
 import { ScientificActivityModule } from './modules/scientific-activity'
 import { ExpertsModule } from './modules/experts'
-import { ResearchProjectModule } from './modules/research-project'
+import { ResearchProjectsModule } from './modules/research-projects/research-projects.module'
 import { ServicesPageModule } from './modules/services-page'
 import { PublicationsModule } from './modules/publications'
 import { PartnershipModule } from './modules/partnership'
@@ -23,10 +23,10 @@ const appRoutes: Routes = [
       ),
   },
   {
-    path: 'research-project',
-    loadChildren: (): Promise<ResearchProjectModule> =>
-      import('./modules/research-project').then(
-        (mod) => mod.ResearchProjectModule
+    path: 'research-projects',
+    loadChildren: (): Promise<ResearchProjectsModule> =>
+      import('./modules/research-projects/research-projects.module').then(
+        (mod) => mod.ResearchProjectsModule
       ),
   },
   {

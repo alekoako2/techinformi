@@ -199,8 +199,8 @@ export type Mutation = {
   createTechnologyTransferNetwork?: Maybe<TechnologyTransferNetwork>
   updateTechnologyTransferNetwork?: Maybe<TechnologyTransferNetwork>
   deleteTechnologyTransferNetwork?: Maybe<TechnologyTransferNetwork>
-  createResearchProject?: Maybe<ResearchProject>
   updateResearchProject?: Maybe<ResearchProject>
+  createResearchProject?: Maybe<ResearchProject>
   deleteResearchProject?: Maybe<ResearchProject>
   createQrjPublication?: Maybe<QrjPublication>
   updateQrjPublication?: Maybe<QrjPublication>
@@ -256,12 +256,12 @@ export type MutationDeleteTechnologyTransferNetworkArgs = {
   id?: Maybe<Scalars['ID']>
 }
 
-export type MutationCreateResearchProjectArgs = {
+export type MutationUpdateResearchProjectArgs = {
+  id: Scalars['ID']
   input?: Maybe<ResearchProjectInput>
 }
 
-export type MutationUpdateResearchProjectArgs = {
-  id: Scalars['ID']
+export type MutationCreateResearchProjectArgs = {
   input?: Maybe<ResearchProjectInput>
 }
 
@@ -529,8 +529,8 @@ export type Query = {
   countTechnologyTransferNetworks?: Maybe<Scalars['Int']>
   technologyTransferNetworks: Array<TechnologyTransferNetwork>
   technologyTransferNetwork: TechnologyTransferNetwork
-  countResearchProjects?: Maybe<Scalars['Int']>
   researchProjects: Array<ResearchProject>
+  countResearchProjects?: Maybe<Scalars['Int']>
   researchProject: ResearchProject
   countQrjPublications?: Maybe<Scalars['Int']>
   qrjPublications: Array<QrjPublication>
@@ -577,14 +577,14 @@ export type QueryTechnologyTransferNetworkArgs = {
   id?: Maybe<Scalars['String']>
 }
 
-export type QueryCountResearchProjectsArgs = {
-  query?: Maybe<ResearchProjectQueryInput>
-}
-
 export type QueryResearchProjectsArgs = {
   query?: Maybe<ResearchProjectQueryInput>
   first?: Maybe<Scalars['Int']>
   skip?: Maybe<Scalars['Int']>
+}
+
+export type QueryCountResearchProjectsArgs = {
+  query?: Maybe<ResearchProjectQueryInput>
 }
 
 export type QueryResearchProjectArgs = {
@@ -666,45 +666,45 @@ export type QueryQrjArgs = {
 
 export type ResearchProject = {
   __typename?: 'ResearchProject'
-  id?: Maybe<Scalars['ID']>
-  inpDate?: Maybe<Scalars['String']>
-  regDate?: Maybe<Scalars['String']>
-  startDate?: Maybe<Scalars['String']>
-  endDate?: Maybe<Scalars['String']>
-  regNumb?: Maybe<Scalars['String']>
-  research?: Maybe<Scalars['String']>
-  researchDirection?: Maybe<Scalars['String']>
+  translation?: Maybe<Array<Maybe<ResearchProjectTranslation>>>
+  participatingInstitutionCountryCity?: Maybe<Scalars['String']>
+  participatingInstitutionEmail?: Maybe<Scalars['String']>
+  participatingInstitutionName?: Maybe<Scalars['String']>
+  participatingInstitutionTel?: Maybe<Scalars['String']>
+  participatingInstitutionWeb?: Maybe<Scalars['String']>
   researchExecutionBasis?: Maybe<Scalars['String']>
-  abstract?: Maybe<Scalars['String']>
-  annotation?: Maybe<Scalars['String']>
-  budget?: Maybe<Scalars['Int']>
-  organizationName?: Maybe<Scalars['String']>
   organizationShortName?: Maybe<Scalars['String']>
+  leaderAcademicDegree?: Maybe<Scalars['String']>
+  organizationAddress?: Maybe<Scalars['String']>
+  researchDirection?: Maybe<Scalars['String']>
+  organizationIndex?: Maybe<Scalars['String']>
+  researchExecutors?: Maybe<Scalars['String']>
+  organizationName?: Maybe<Scalars['String']>
   organizationCode?: Maybe<Scalars['String']>
   organizationHead?: Maybe<Scalars['String']>
   organizationCity?: Maybe<Scalars['String']>
-  organizationAddress?: Maybe<Scalars['String']>
-  organizationIndex?: Maybe<Scalars['String']>
   organizationTel?: Maybe<Scalars['String']>
   organizationWeb?: Maybe<Scalars['String']>
-  participatingInstitutionName?: Maybe<Scalars['String']>
-  participatingInstitutionCountryCity?: Maybe<Scalars['String']>
-  participatingInstitutionTel?: Maybe<Scalars['String']>
-  participatingInstitutionEmail?: Maybe<Scalars['String']>
-  participatingInstitutionWeb?: Maybe<Scalars['String']>
-  leaderName?: Maybe<Scalars['String']>
   leaderPosition?: Maybe<Scalars['String']>
-  leaderAcademicDegree?: Maybe<Scalars['String']>
-  leaderTel?: Maybe<Scalars['String']>
   leaderMobile?: Maybe<Scalars['String']>
   leaderEmail?: Maybe<Scalars['String']>
-  researchExecutors?: Maybe<Scalars['String']>
+  annotation?: Maybe<Scalars['String']>
+  leaderName?: Maybe<Scalars['String']>
+  startDate?: Maybe<Scalars['String']>
+  leaderTel?: Maybe<Scalars['String']>
   financing?: Maybe<Scalars['String']>
-  note?: Maybe<Scalars['String']>
+  research?: Maybe<Scalars['String']>
+  abstract?: Maybe<Scalars['String']>
+  inpDate?: Maybe<Scalars['String']>
+  regDate?: Maybe<Scalars['String']>
+  endDate?: Maybe<Scalars['String']>
+  regNumb?: Maybe<Scalars['String']>
   pincode?: Maybe<Scalars['String']>
-  translation?: Maybe<Array<Maybe<ResearchProjectTranslation>>>
   oecds?: Maybe<Array<Maybe<Oecd>>>
-  author: User
+  note?: Maybe<Scalars['String']>
+  budget?: Maybe<Scalars['Int']>
+  author?: Maybe<User>
+  id?: Maybe<Scalars['ID']>
 }
 
 export type ResearchProjectTranslationArgs = {
@@ -712,14 +712,14 @@ export type ResearchProjectTranslationArgs = {
 }
 
 export type ResearchProjectInput = {
+  researchExecutionBasis?: Maybe<Scalars['String']>
+  researchDirection?: Maybe<Scalars['String']>
+  startDate?: Maybe<Scalars['String']>
   inpDate?: Maybe<Scalars['String']>
   regDate?: Maybe<Scalars['String']>
-  startDate?: Maybe<Scalars['String']>
   endDate?: Maybe<Scalars['String']>
   regNumb?: Maybe<Scalars['String']>
   research?: Maybe<Scalars['String']>
-  researchDirection?: Maybe<Scalars['String']>
-  researchExecutionBasis?: Maybe<Scalars['String']>
   abstract?: Maybe<Scalars['String']>
   annotation?: Maybe<Scalars['String']>
   budget?: Maybe<Scalars['Int']>
@@ -753,18 +753,21 @@ export type ResearchProjectInput = {
 }
 
 export type ResearchProjectQueryInput = {
+  principalExecutingOrganization?: Maybe<Scalars['String']>
+  yearResearchProgressStartOrEndYear?: Maybe<Scalars['String']>
+  leaderExecutors?: Maybe<Scalars['String']>
+  keywords?: Maybe<Scalars['String']>
+  fromYear?: Maybe<Scalars['String']>
   title?: Maybe<Scalars['String']>
-  researchExecutors?: Maybe<Scalars['String']>
-  keyword?: Maybe<Scalars['String']>
-  organizationName?: Maybe<Scalars['String']>
   oecd?: Maybe<Scalars['String']>
+  toYear?: Maybe<Scalars['String']>
 }
 
 export type ResearchProjectTranslation = {
   __typename?: 'ResearchProjectTranslation'
-  title?: Maybe<Scalars['String']>
+  language?: Maybe<Language>
   key?: Maybe<Array<Maybe<Keyword>>>
-  language: Language
+  title?: Maybe<Scalars['String']>
 }
 
 export type ResearchProjectTranslationInput = {
@@ -1023,41 +1026,10 @@ export type ResearchProjectsQuery = { __typename?: 'Query' } & Pick<
       { __typename?: 'ResearchProject' } & Pick<
         ResearchProject,
         | 'id'
-        | 'inpDate'
-        | 'regDate'
-        | 'startDate'
-        | 'endDate'
-        | 'regNumb'
-        | 'research'
-        | 'researchDirection'
-        | 'researchExecutionBasis'
-        | 'abstract'
-        | 'annotation'
-        | 'budget'
-        | 'organizationName'
-        | 'organizationShortName'
-        | 'organizationCode'
-        | 'organizationHead'
-        | 'organizationCity'
-        | 'organizationAddress'
-        | 'organizationIndex'
-        | 'organizationTel'
-        | 'organizationWeb'
-        | 'participatingInstitutionName'
-        | 'participatingInstitutionCountryCity'
-        | 'participatingInstitutionTel'
-        | 'participatingInstitutionEmail'
-        | 'participatingInstitutionWeb'
         | 'leaderName'
-        | 'leaderPosition'
-        | 'leaderAcademicDegree'
-        | 'leaderTel'
-        | 'leaderMobile'
-        | 'leaderEmail'
         | 'researchExecutors'
-        | 'financing'
-        | 'note'
-        | 'pincode'
+        | 'organizationName'
+        | 'endDate'
       > & {
           translation?: Maybe<
             Array<
@@ -1077,23 +1049,86 @@ export type ResearchProjectsQuery = { __typename?: 'Query' } & Pick<
               >
             >
           >
-          oecds?: Maybe<
-            Array<
-              Maybe<
-                { __typename?: 'Oecd' } & Pick<Oecd, 'code'> & {
-                    translation: Array<
-                      { __typename?: 'OecdTranslation' } & Pick<
-                        OecdTranslation,
-                        'name'
-                      >
-                    >
-                  }
-              >
-            >
-          >
         }
     >
   }
+
+export type ResearchProjectQueryVariables = {
+  languageCode?: Maybe<LanguageCode>
+  id?: Maybe<Scalars['String']>
+}
+
+export type ResearchProjectQuery = { __typename?: 'Query' } & {
+  researchProject: { __typename?: 'ResearchProject' } & Pick<
+    ResearchProject,
+    | 'inpDate'
+    | 'regDate'
+    | 'startDate'
+    | 'endDate'
+    | 'regNumb'
+    | 'research'
+    | 'researchDirection'
+    | 'researchExecutionBasis'
+    | 'abstract'
+    | 'annotation'
+    | 'budget'
+    | 'organizationName'
+    | 'organizationShortName'
+    | 'organizationCode'
+    | 'organizationHead'
+    | 'organizationCity'
+    | 'organizationAddress'
+    | 'organizationIndex'
+    | 'organizationTel'
+    | 'organizationWeb'
+    | 'participatingInstitutionName'
+    | 'participatingInstitutionCountryCity'
+    | 'participatingInstitutionTel'
+    | 'participatingInstitutionEmail'
+    | 'participatingInstitutionWeb'
+    | 'leaderName'
+    | 'leaderPosition'
+    | 'leaderAcademicDegree'
+    | 'leaderTel'
+    | 'leaderMobile'
+    | 'leaderEmail'
+    | 'researchExecutors'
+    | 'financing'
+    | 'note'
+    | 'pincode'
+  > & {
+      translation?: Maybe<
+        Array<
+          Maybe<
+            { __typename?: 'ResearchProjectTranslation' } & Pick<
+              ResearchProjectTranslation,
+              'title'
+            > & {
+                key?: Maybe<
+                  Array<
+                    Maybe<{ __typename?: 'Keyword' } & Pick<Keyword, 'name'>>
+                  >
+                >
+              }
+          >
+        >
+      >
+      oecds?: Maybe<
+        Array<
+          Maybe<
+            { __typename?: 'Oecd' } & Pick<Oecd, 'code'> & {
+                translation: Array<
+                  { __typename?: 'OecdTranslation' } & Pick<
+                    OecdTranslation,
+                    'name'
+                  >
+                >
+              }
+          >
+        >
+      >
+    }
+}
 
 export type ExpertsQueryVariables = {
   languageCode?: Maybe<LanguageCode>
@@ -1308,6 +1343,33 @@ export const ResearchProjectsDocument = gql`
   ) {
     researchProjects(query: $query, first: $first, skip: $skip) {
       id
+      leaderName
+      researchExecutors
+      organizationName
+      endDate
+      translation(language: $languageCode) {
+        title
+        key {
+          name
+        }
+      }
+    }
+    countResearchProjects(query: $query)
+  }
+`
+
+@Injectable({
+  providedIn: 'root',
+})
+export class ResearchProjectsGQL extends Apollo.Query<
+  ResearchProjectsQuery,
+  ResearchProjectsQueryVariables
+> {
+  document = ResearchProjectsDocument
+}
+export const ResearchProjectDocument = gql`
+  query ResearchProject($languageCode: LanguageCode, $id: String) {
+    researchProject(id: $id) {
       inpDate
       regDate
       startDate
@@ -1356,18 +1418,17 @@ export const ResearchProjectsDocument = gql`
         }
       }
     }
-    countResearchProjects(query: $query)
   }
 `
 
 @Injectable({
   providedIn: 'root',
 })
-export class ResearchProjectsGQL extends Apollo.Query<
-  ResearchProjectsQuery,
-  ResearchProjectsQueryVariables
+export class ResearchProjectGQL extends Apollo.Query<
+  ResearchProjectQuery,
+  ResearchProjectQueryVariables
 > {
-  document = ResearchProjectsDocument
+  document = ResearchProjectDocument
 }
 export const ExpertsDocument = gql`
   query Experts(
@@ -1404,7 +1465,7 @@ export class ExpertsGQL extends Apollo.Query<
 }
 export const ExpertDocument = gql`
   query Expert($languageCode: LanguageCode, $id: String) {
-    expert(id: "ck49upori0chm0767sb664jhv") {
+    expert(id: $id) {
       email
       publications
       workExperience
@@ -1525,6 +1586,23 @@ export const ResearchProjects = gql`
   ) {
     researchProjects(query: $query, first: $first, skip: $skip) {
       id
+      leaderName
+      researchExecutors
+      organizationName
+      endDate
+      translation(language: $languageCode) {
+        title
+        key {
+          name
+        }
+      }
+    }
+    countResearchProjects(query: $query)
+  }
+`
+export const ResearchProject = gql`
+  query ResearchProject($languageCode: LanguageCode, $id: String) {
+    researchProject(id: $id) {
       inpDate
       regDate
       startDate
@@ -1573,7 +1651,6 @@ export const ResearchProjects = gql`
         }
       }
     }
-    countResearchProjects(query: $query)
   }
 `
 export const Experts = gql`
@@ -1601,7 +1678,7 @@ export const Experts = gql`
 `
 export const Expert = gql`
   query Expert($languageCode: LanguageCode, $id: String) {
-    expert(id: "ck49upori0chm0767sb664jhv") {
+    expert(id: $id) {
       email
       publications
       workExperience

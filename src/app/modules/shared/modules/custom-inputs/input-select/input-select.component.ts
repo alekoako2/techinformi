@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core'
-import { Oecd, QrjJournal } from '@graphql'
 
 @Component({
   selector: 'input-select',
@@ -7,10 +6,11 @@ import { Oecd, QrjJournal } from '@graphql'
   styleUrls: ['./input-select.component.scss'],
 })
 export class InputSelectComponent {
-  @Input() inputSelectModel: string
-  @Output() inputSelectModelChange = new EventEmitter<string>()
-  @Input() label: string
-  @Input() array: Oecd[] | QrjJournal[]
-  @Input() name: string
+  @Output() inputSelectModelChange = new EventEmitter<number | string>()
+  @Input() inputSelectModel: number | string
+
+  @Input() array: number[] | string[]
   @Input() required = false
+  @Input() label: string
+  @Input() name: string
 }

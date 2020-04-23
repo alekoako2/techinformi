@@ -217,6 +217,11 @@
     glob "7.1.2"
     yargs "15.3.0"
 
+"@angular/material-moment-adapter@^9.2.1":
+  version "9.2.1"
+  resolved "https://registry.yarnpkg.com/@angular/material-moment-adapter/-/material-moment-adapter-9.2.1.tgz#21cf436786846e5674691fb2315950bee5500811"
+  integrity sha512-i3tbL3DJQspO23cPAgW6pAvztuv2D8tkGhxl+bTUlq8FgGBqKrOa0T/maN1fik46AXZojowUVZoCG7EvV2T7nQ==
+
 "@angular/material@^9.2.0":
   version "9.2.0"
   resolved "https://registry.yarnpkg.com/@angular/material/-/material-9.2.0.tgz#1b6f0a2e115f93885d7fc2dc4b258d8c9cf6821f"

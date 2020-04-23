@@ -5,11 +5,11 @@ import { ActivatedRoute } from '@angular/router'
 import { ExpertsService } from '@services/scientists-experts-service'
 
 @Component({
-  selector: 'experts-details',
-  templateUrl: './experts-details.component.html',
-  styleUrls: ['./experts-details.component.scss'],
+  selector: 'expert-details',
+  templateUrl: './expert-details.component.html',
+  styleUrls: ['./expert-details.component.scss'],
 })
-export class ExpertsDetailsComponent {
+export class ExpertDetailsComponent {
   expert$: Observable<Expert>
 
   constructor(

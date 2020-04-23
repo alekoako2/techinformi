@@ -19,7 +19,7 @@ import { MatTooltipModule } from '@angular/material/tooltip'
 import { MatButtonModule } from '@angular/material/button'
 import { MatDialogModule } from '@angular/material/dialog'
 import { MatSelectModule } from '@angular/material/select'
-import { MatOptionModule } from '@angular/material/core'
+import { MatNativeDateModule, MatOptionModule } from '@angular/material/core'
 import { MatTableModule } from '@angular/material/table'
 import { MatBadgeModule } from '@angular/material/badge'
 import { MatChipsModule } from '@angular/material/chips'
@@ -31,6 +31,7 @@ import { MatMenuModule } from '@angular/material/menu'
 
 // Services
 import { MatPaginatorIntlService } from './services/MatPaginatorIntl/mat-paginator-intl.service'
+import { MatDatepickerModule } from '@angular/material/datepicker'
 
 @NgModule({
   declarations: [],
@@ -38,6 +39,8 @@ import { MatPaginatorIntlService } from './services/MatPaginatorIntl/mat-paginat
     CommonModule,
     MatProgressSpinnerModule,
     MatProgressBarModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     MatFormFieldModule,
     MatExpansionModule,
     MatPaginatorModule,
@@ -63,6 +66,8 @@ import { MatPaginatorIntlService } from './services/MatPaginatorIntl/mat-paginat
   exports: [
     MatProgressSpinnerModule,
     MatProgressBarModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     MatFormFieldModule,
     MatExpansionModule,
     MatPaginatorModule,

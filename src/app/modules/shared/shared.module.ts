@@ -7,6 +7,7 @@ import { FlexLayoutModule } from '@angular/flex-layout'
 // Modules
 import { HideNotImplementedDirective } from './modules/hide-not-implemented/hide-not-implemented'
 import { LayoutContainerModule } from './modules/layout-container'
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader'
 import { CustomInputsModule } from './modules/custom-inputs'
 import { MaterialModule } from './modules/material'
 import { FirebaseModule } from './modules/firebase'
@@ -23,9 +24,8 @@ import { HideMissingLanguageElementDirective } from './directives/hide-missing-l
 import { SnackbarDirective } from './directives/snackbar'
 
 // Pipes
+import { NotEmptyPipe } from './pipes/not-empty/not-empty.pipe'
 import { SanitizeHtmlPipe } from './pipes/sanitize-html'
-import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader'
-import { ScrollingModule } from '@angular/cdk/scrolling'
 
 @NgModule({
   declarations: [
@@ -39,6 +39,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling'
     SnackbarDirective,
     // Pipes
     SanitizeHtmlPipe,
+    NotEmptyPipe,
   ],
   imports: [
     CommonModule,
@@ -46,7 +47,6 @@ import { ScrollingModule } from '@angular/cdk/scrolling'
     LayoutContainerModule,
     CustomInputsModule,
     FlexLayoutModule,
-    ScrollingModule,
     MaterialModule,
     FirebaseModule,
     SpinnerModule,
@@ -60,7 +60,6 @@ import { ScrollingModule } from '@angular/cdk/scrolling'
     CustomInputsModule,
     FlexLayoutModule,
     FlexLayoutModule,
-    ScrollingModule,
     MaterialModule,
     FirebaseModule,
     SpinnerModule,
@@ -76,6 +75,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling'
     SnackbarDirective,
     // Pipes
     SanitizeHtmlPipe,
+    NotEmptyPipe,
   ],
 })
 export class SharedModule {}

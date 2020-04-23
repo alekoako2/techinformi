@@ -1,18 +1,10 @@
-import { Inject, Injectable, LOCALE_ID } from '@angular/core'
+import { Injectable } from '@angular/core'
 import { Apollo } from 'apollo-angular'
-import { first, map, tap } from 'rxjs/operators'
+import { map } from 'rxjs/operators'
 import { expertQuery, expertsQuery } from './gql/experts-query'
-import {
-  Expert,
-  ExpertQuery,
-  ExpertsQuery,
-  QrjPublication,
-  QrjPublicationQuery,
-  Scalars,
-} from '@graphql'
+import { Expert, ExpertQuery, ExpertsQuery, Scalars } from '@graphql'
 import { Observable } from 'rxjs'
 import { ApolloQueryResult } from 'apollo-client'
-import { qrjPublicationQuery } from '@services/qrj-publication-service/gql/qrj-publication-query'
 import { LanguageService } from '@services/language-service'
 
 @Injectable({

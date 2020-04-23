@@ -1,4 +1,5 @@
-<input-select matTooltip="სამეცნიერო მიმართულება (OECD)"
+<input-select-with-key matTooltip="სამეცნიერო მიმართულება (OECD)"
+              i18n-matTooltip="scientific_direction_oecd"
               i18n-label="@@scientific_direction_oecd"
               label="სამეცნიერო მიმართულება (OECD)"
               name="oecd"
@@ -6,4 +7,4 @@
               [(inputSelectModel)]="oecd"
               (selectstart)="loadOecds()"
               [array]="oecds$|async">
-</input-select>
+</input-select-with-key>
