@@ -1,7 +1,7 @@
 FROM node:12.14.1 as node
 WORKDIR /app
 COPY package.json yarn.lock /app/
-RUN npm install @angular/cli@8.3.17 -g
+RUN npm install @angular/cli@9.1.1 -g
 RUN cd /app && yarn install
 COPY .  /app
 
