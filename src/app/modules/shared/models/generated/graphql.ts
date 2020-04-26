@@ -9,6 +9,7 @@ export type Scalars = {
   Boolean: boolean
   Int: number
   Float: number
+  Date: any
 }
 
 export type AuthPayload = {
@@ -754,13 +755,13 @@ export type ResearchProjectInput = {
 
 export type ResearchProjectQueryInput = {
   principalExecutingOrganization?: Maybe<Scalars['String']>
-  yearResearchProgressStartOrEndYear?: Maybe<Scalars['String']>
+  yearResearchProgressStartOrEndYear?: Maybe<Scalars['Date']>
   leaderExecutors?: Maybe<Scalars['String']>
   keywords?: Maybe<Scalars['String']>
-  fromYear?: Maybe<Scalars['String']>
+  fromYear?: Maybe<Scalars['Date']>
   title?: Maybe<Scalars['String']>
   oecd?: Maybe<Scalars['String']>
-  toYear?: Maybe<Scalars['String']>
+  toYear?: Maybe<Scalars['Date']>
 }
 
 export type ResearchProjectTranslation = {
