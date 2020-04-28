@@ -7,10 +7,6 @@ import {
 export class CustomReuseStrategy implements RouteReuseStrategy {
   handlers: { [key: string]: DetachedRouteHandle } = {}
 
-  constructor() {
-    console.log('constructed')
-  }
-
   retrieve(route: ActivatedRouteSnapshot): DetachedRouteHandle {
     if (!route.data['shouldReuse']) {
       return null
