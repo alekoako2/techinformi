@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+  <file source-language="ka" datatype="plaintext" original="ng2.template">
     <body>
       <trans-unit id="close" datatype="html">
         <source>
@@ -18,7 +18,7 @@
           <context context-type="linenumber">2</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/qrj-publication/pages/qrj-publication-details/qrj-publication-details.component.html</context>
+          <context context-type="sourcefile">src/app/modules/qrj-publications/pages/qrj-publication-details/qrj-publication-details.component.html</context>
           <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
@@ -26,10 +26,26 @@
         <source>სამეცნიერო მიმართულება (OECD)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/shared/components/oecds-select-input/oecds-select-input.component.html</context>
-          <context context-type="linenumber">3</context>
+          <context context-type="linenumber">1</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/qrj-publication/pages/qrj-publication-details/qrj-publication-details.component.html</context>
+          <context context-type="sourcefile">src/app/modules/shared/components/oecds-select-input/oecds-select-input.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/experts/pages/experts/experts.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/experts/pages/expert-details/expert-details.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/research-projects/pages/research-project-details/research-project-details.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/qrj-publications/pages/qrj-publication-details/qrj-publication-details.component.html</context>
           <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
@@ -225,6 +241,14 @@
           <context context-type="sourcefile">src/app/modules/shared/modules/header/components/header-bottom-toolbar/header-bottom-toolbar.component.html</context>
           <context context-type="linenumber">133</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/research-projects/pages/research-projects/research-projects.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/databases/pages/databases/databases.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="scientists_experts" datatype="html">
         <source>
@@ -234,6 +258,14 @@
           <context context-type="sourcefile">src/app/modules/shared/modules/header/components/header-bottom-toolbar/header-bottom-toolbar.component.html</context>
           <context context-type="linenumber">137</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/experts/pages/experts/experts.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/databases/pages/databases/databases.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="georgian_scientific_publications" datatype="html">
         <source>
@@ -242,6 +274,14 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/shared/modules/header/components/header-bottom-toolbar/header-bottom-toolbar.component.html</context>
           <context context-type="linenumber">141</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/databases/pages/databases/databases.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/qrj-publications/pages/qrj-publications/qrj-publications.component.html</context>
+          <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
       <trans-unit id="research_organizations" datatype="html">
@@ -255,6 +295,10 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/shared/modules/header/components/header-bottom-toolbar/header-bottom-toolbar.component.html</context>
           <context context-type="linenumber">175</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/databases/pages/databases/databases.component.html</context>
+          <context context-type="linenumber">34</context>
         </context-group>
       </trans-unit>
       <trans-unit id="georgian_scientists_publications_in_high_ranking_foreign_journals" datatype="html">
@@ -323,6 +367,284 @@
           <context context-type="linenumber">2</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="authors" datatype="html">
+        <source>ავტორ(ებ)ი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/experts/pages/experts/experts.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/qrj-publications/pages/qrj-publications/qrj-publications.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/qrj-publications/pages/qrj-publications/qrj-publications.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/qrj-publications/pages/qrj-publication-details/qrj-publication-details.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="specialization" datatype="html">
+        <source>სპეციალიზაცია</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/experts/pages/experts/experts.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/experts/pages/experts/experts.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/experts/pages/expert-details/expert-details.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="author" datatype="html">
+        <source>
+                  ავტორი
+                </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/experts/pages/experts/experts.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/experts/pages/expert-details/expert-details.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="qualification" datatype="html">
+        <source>კვალიფიკაცია</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/experts/pages/expert-details/expert-details.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="academic_degree" datatype="html">
+        <source>აკადემიური ხარისხი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/experts/pages/expert-details/expert-details.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="professional_experience_Specialization" datatype="html">
+        <source>სამუშაო გამოცდილება სპეციალიზაციის სფეროში</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/experts/pages/expert-details/expert-details.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="knowledge_foreign_languages" datatype="html">
+        <source>უცხო ენების ცოდნა</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/experts/pages/expert-details/expert-details.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="working_place" datatype="html">
+        <source>სამუშაო ადგილი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/experts/pages/expert-details/expert-details.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="working_position" datatype="html">
+        <source>თანამდებობა</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/experts/pages/expert-details/expert-details.component.html</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="email" datatype="html">
+        <source>ელ. ფოსტა</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/experts/pages/expert-details/expert-details.component.html</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/contact/components/contact-info/contact-info.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/contact/components/contact-form/contact-form.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="last_publications" datatype="html">
+        <source>ბოლო პუბლიკაციები</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/experts/pages/expert-details/expert-details.component.html</context>
+          <context context-type="linenumber">74</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="search" datatype="html">
+        <source>
+    ძიება
+  </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/shared/modules/database-template/components/database-template-filters/database-template-filters.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/qrj/components/qrj-dialog/qrj-dialog.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/shared/modules/header/components/header-top-toolbar-search/header-top-toolbar-search.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="title" datatype="html">
+        <source>სათაური</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/research-projects/pages/research-projects/research-projects.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/research-projects/pages/research-projects/research-projects.component.html</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/research-projects/pages/research-project-details/research-project-details.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="leader_executors" datatype="html">
+        <source>ხელმძღვანელი/შემსრულებლები</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/research-projects/pages/research-projects/research-projects.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/research-projects/pages/research-projects/research-projects.component.html</context>
+          <context context-type="linenumber">75</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="keywords" datatype="html">
+        <source>საკვანძო სიტყვები</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/research-projects/pages/research-projects/research-projects.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/research-projects/pages/research-project-details/research-project-details.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="principal_executing_organization" datatype="html">
+        <source>ძირითადი შემსრულებელი ორგანიზაცია</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/research-projects/pages/research-projects/research-projects.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/research-projects/pages/research-projects/research-projects.component.html</context>
+          <context context-type="linenumber">82</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/research-projects/pages/research-project-details/research-project-details.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fd0dbf6eb0b8a6945efa0f0632213232b5ce5b90" datatype="html">
+        <source>წელი (კვლევის მიმდინარეობის, დაწყების ან დასრულების წელი)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/research-projects/pages/research-projects/research-projects.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <note priority="1" from="description">year_research_progress_start_or_end_year</note>
+      </trans-unit>
+      <trans-unit id="year_research_progress_start_or_end_year" datatype="html">
+        <source>წელი (კვლევის მიმდინარეობის, დაწყების ან დასრულების წელი)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/research-projects/pages/research-projects/research-projects.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="from_year" datatype="html">
+        <source>დან</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/research-projects/pages/research-projects/research-projects.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="to_year" datatype="html">
+        <source>მდე</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/research-projects/pages/research-projects/research-projects.component.html</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="work_completion_date" datatype="html">
+        <source>
+              სამუშაოს დასრულების თარიღი
+            </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/research-projects/pages/research-projects/research-projects.component.html</context>
+          <context context-type="linenumber">90</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="research_category" datatype="html">
+        <source>სამეცნიერო კვლევის კატეგორია</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/research-projects/pages/research-project-details/research-project-details.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="start_of_work" datatype="html">
+        <source>სამუშაოს დაწყების თარიღი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/research-projects/pages/research-project-details/research-project-details.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="end_of_work" datatype="html">
+        <source>სამუშაოს დასრულების თარიღი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/research-projects/pages/research-project-details/research-project-details.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="leader" datatype="html">
+        <source>ხელმძღვანელი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/research-projects/pages/research-project-details/research-project-details.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="research_executors" datatype="html">
+        <source>კვლევითი სამუშაოს შემსრულებლები</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/research-projects/pages/research-project-details/research-project-details.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="research_execution_basis" datatype="html">
+        <source>სამუშაოს შესრულების საფუძველი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/research-projects/pages/research-project-details/research-project-details.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="city" datatype="html">
+        <source>ქალაქი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/research-projects/pages/research-project-details/research-project-details.component.html</context>
+          <context context-type="linenumber">69</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="abstract" datatype="html">
+        <source>რეფერატი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/research-projects/pages/research-project-details/research-project-details.component.html</context>
+          <context context-type="linenumber">75</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/qrj-publications/pages/qrj-publication-details/qrj-publication-details.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="international_organizations" datatype="html">
         <source>
     საერთაშორისო ორგანიზაციები
@@ -350,44 +672,18 @@
           <context context-type="linenumber">23</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="institute_techinformi" datatype="html">
-        <source>საქართველოს სამეცნიერო პუბლიკაციები</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/qrj-publication/pages/qrj-publication/qrj-publication.component.html</context>
-          <context context-type="linenumber">1</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/about-us/pages/about-us-general/about-us-general.component.html</context>
-          <context context-type="linenumber">2</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="authors" datatype="html">
-        <source>ავტორ(ებ)ი</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/qrj-publication/pages/qrj-publication/qrj-publication.component.html</context>
-          <context context-type="linenumber">14</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/qrj-publication/pages/qrj-publication/qrj-publication.component.html</context>
-          <context context-type="linenumber">41</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/qrj-publication/pages/qrj-publication-details/qrj-publication-details.component.html</context>
-          <context context-type="linenumber">12</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="publication_title" datatype="html">
         <source>სტატიის დასახელება</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/qrj-publication/pages/qrj-publication/qrj-publication.component.html</context>
+          <context context-type="sourcefile">src/app/modules/qrj-publications/pages/qrj-publications/qrj-publications.component.html</context>
           <context context-type="linenumber">19</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/qrj-publication/pages/qrj-publication/qrj-publication.component.html</context>
+          <context context-type="sourcefile">src/app/modules/qrj-publications/pages/qrj-publications/qrj-publications.component.html</context>
           <context context-type="linenumber">34</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/qrj-publication/pages/qrj-publication-details/qrj-publication-details.component.html</context>
+          <context context-type="sourcefile">src/app/modules/qrj-publications/pages/qrj-publication-details/qrj-publication-details.component.html</context>
           <context context-type="linenumber">6</context>
         </context-group>
       </trans-unit>
@@ -396,22 +692,15 @@
                 წელი
               </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/qrj-publication/pages/qrj-publication/qrj-publication.component.html</context>
+          <context context-type="sourcefile">src/app/modules/qrj-publications/pages/qrj-publications/qrj-publications.component.html</context>
           <context context-type="linenumber">48</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="abstract" datatype="html">
-        <source>რეფერატი</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/qrj-publication/pages/qrj-publication-details/qrj-publication-details.component.html</context>
-          <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
       <trans-unit id="qrj" datatype="html">
         <source>ქრჟ</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/qrj-publication/pages/qrj-publication-details/qrj-publication-details.component.html</context>
-          <context context-type="linenumber">48</context>
+          <context context-type="sourcefile">src/app/modules/qrj-publications/pages/qrj-publication-details/qrj-publication-details.component.html</context>
+          <context context-type="linenumber">49</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/contact/components/contact-form/contact-form.component.html</context>
@@ -449,6 +738,13 @@
           <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="institute_techinformi" datatype="html">
+        <source>ინსტიტუტი ტექინფორმი</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/modules/about-us/pages/about-us-general/about-us-general.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="contact_information" datatype="html">
         <source>
     საკონტაქტო ინფორმაცია
@@ -465,19 +761,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/contact/components/contact-info/contact-info.component.html</context>
           <context context-type="linenumber">6</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="email" datatype="html">
-        <source>
-      ელ.ფოსტა
-    </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/contact/components/contact-info/contact-info.component.html</context>
-          <context context-type="linenumber">14</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/contact/components/contact-form/contact-form.component.html</context>
-          <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="address" datatype="html">
@@ -638,17 +921,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/home/components/home-news/home-news.component.html</context>
           <context context-type="linenumber">3</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="search" datatype="html">
-        <source>ძიება</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/qrj/components/qrj-dialog/qrj-dialog.component.html</context>
-          <context context-type="linenumber">10</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/modules/shared/modules/header/components/header-top-toolbar-search/header-top-toolbar-search.component.html</context>
-          <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
       <trans-unit id="georgian_abstract_journal" datatype="html">

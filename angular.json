@@ -5,14 +5,11 @@
   "projects": {
     "techinformi": {
       "i18n": {
+        "sourceLocale": "ka",
         "locales": {
           "en": {
             "translation": "src/locale/messages.en.xlf",
             "baseHref": "en"
-          },
-          "ka": {
-            "translation": "src/locale/messages.ka.xlf",
-            "baseHref": "ka"
           }
         }
       },

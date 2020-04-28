@@ -6,9 +6,7 @@ import {
   ResearchProject,
   ResearchProjectQuery,
   ResearchProjectQueryInput,
-  ResearchProjectQueryVariables,
   ResearchProjectsQuery,
-  ResearchProjectsQueryVariables,
   Scalars,
 } from '@graphql'
 import { LanguageService } from '@services/language-service'

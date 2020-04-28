@@ -10,7 +10,7 @@
     "sourceMap": true,
     "outDir": "./dist/out-tsc",
     "module": "esnext",
-    "target": "ES2015",
+    "target": "ES6",
     "typeRoots": [
       "node_modules/@types"
     ],
@@ -19,7 +19,7 @@
       "jest"
     ],
     "lib": [
-      "es2018",
+      "ES6",
       "dom",
       "esnext.asynciterable"
     ],

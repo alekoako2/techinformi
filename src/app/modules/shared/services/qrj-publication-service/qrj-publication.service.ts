@@ -1,6 +1,6 @@
-import { Inject, Injectable, LOCALE_ID } from '@angular/core'
+import { Injectable } from '@angular/core'
 import { Apollo } from 'apollo-angular'
-import { map, tap } from 'rxjs/operators'
+import { map } from 'rxjs/operators'
 import {
   qrjPublicationQuery,
   qrjPublicationsQuery,
