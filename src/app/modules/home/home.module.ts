@@ -15,7 +15,8 @@ import { HomeComponent } from './pages/home'
 // Components
 import { HomeVerticalNavListComponent } from './components/home-vertical-nav-list'
 import { HomeSlickCarouselComponent } from './components/home-slick-carousel'
-import { HomeNewsComponent } from './components/home-news'
+import { HomeNewsComponent } from './components/home-news';
+import { PublicationsClassifiersComponent } from './pages/publications-classifiers/publications-classifiers.component'
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { HomeNewsComponent } from './components/home-news'
     HomeSlickCarouselComponent,
     HomeNewsComponent,
     HomeComponent,
+    PublicationsClassifiersComponent,
   ],
   imports: [CommonModule, HomeRoutingModule, SlickCarouselModule, SharedModule],
   providers: [AngularFirestore],

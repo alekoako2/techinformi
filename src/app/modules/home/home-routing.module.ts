@@ -3,11 +3,18 @@ import { NgModule } from '@angular/core'
 
 // Components
 import { HomeComponent } from './pages/home'
+import { PublicationsClassifiersComponent } from './pages/publications-classifiers'
 
 const homeRoutes: Routes = [
   {
     path: '',
-    children: [{ path: '', component: HomeComponent }],
+    children: [
+      { path: '', component: HomeComponent },
+      {
+        path: 'publications-classifiers',
+        component: PublicationsClassifiersComponent,
+      },
+    ],
   },
 ]
 
