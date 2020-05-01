@@ -3,6 +3,6 @@
               name="qrjJournal"
               (inputSelectModelChange)="qrjJournalChange.emit($event)"
               [(inputSelectModel)]="qrjJournal"
-              (selectstart)="loadQrjJournals()"
-              [array]="qrjJournals$|async">
+              (selectstart)="loadQrjJournalsSelectList()"
+              [list]="qrjJournalsSelectList">
 </input-select-with-key>

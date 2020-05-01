@@ -1,6 +1,9 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core'
-import { Oecd, QrjJournal } from '@graphql'
 
+export interface InputSelectListItem {
+  key: string
+  name: string
+}
 @Component({
   selector: 'input-select-with-key',
   templateUrl: './input-select-with-key.component.html',
@@ -10,7 +13,7 @@ export class InputSelectWithKeyComponent {
   @Input() inputSelectModel: string
   @Output() inputSelectModelChange = new EventEmitter<string>()
   @Input() label: string
-  @Input() array: Oecd[] | QrjJournal[]
+  @Input() list: InputSelectListItem[]
   @Input() name: string
   @Input() required = false
 }
