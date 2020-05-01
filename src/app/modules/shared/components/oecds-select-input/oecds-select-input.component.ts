@@ -1,7 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core'
-import { Observable } from 'rxjs'
-import { Oecd } from '@graphql'
 import { OecdService } from '@services/oecd-service'
+import { InputSelectListItem } from '../../modules/custom-inputs/input-select-with-key'
+import { Oecd } from '@graphql'
+import { first } from 'rxjs/operators'
 
 @Component({
   selector: 'oecds-select-input',
@@ -12,11 +13,20 @@ export class OecdsSelectInputComponent {
   @Output() oecdChange = new EventEmitter<string>()
   @Input() oecd: string
 
-  oecds$: Observable<Oecd[]>
+  oecdsSelectList: InputSelectListItem[]
 
   constructor(private oecdService: OecdService) {}
 
-  loadOecds(): void {
-    this.oecds$ = this.oecdService.loadOecds()
+  loadOecdsSelectList(): void {
+    this.oecdService
+      .loadOecds()
+      .pipe(first())
+      .subscribe(
+        (oecds: Oecd[]) =>
+          (this.oecdsSelectList = oecds.map((oecd: Oecd) => ({
+            key: oecd.code,
+            name: oecd.translation[0].name,
+          })))
+      )
   }
 }

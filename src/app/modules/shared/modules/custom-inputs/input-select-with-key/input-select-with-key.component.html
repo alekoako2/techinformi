@@ -10,9 +10,9 @@
     <mat-option>
       -
     </mat-option>
-    <mat-option *ngFor="let i of array"
-                [value]="i.code">
-      {{i.code}} {{i.translation[0].name}}
+    <mat-option *ngFor="let listItem of list"
+                [value]="listItem.key">
+      {{listItem.key}} {{listItem.name}}
     </mat-option>
   </mat-select>
 

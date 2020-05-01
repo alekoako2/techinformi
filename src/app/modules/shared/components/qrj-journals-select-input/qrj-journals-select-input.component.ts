@@ -1,7 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core'
-import { Observable } from 'rxjs'
 import { QrjJournal } from '@graphql'
 import { QrjJournalService } from '@services/qrj-journal-service'
+import { first } from 'rxjs/operators'
+import { InputSelectListItem } from '../../modules/custom-inputs/input-select-with-key'
 
 @Component({
   selector: 'qrj-journals-select-input',
@@ -12,11 +13,22 @@ export class QrjJournalsSelectInputComponent {
   @Output() qrjJournalChange = new EventEmitter<string>()
   @Input() qrjJournal: string
 
-  qrjJournals$: Observable<QrjJournal[]>
+  qrjJournalsSelectList: InputSelectListItem[]
 
   constructor(private qrjJournalsService: QrjJournalService) {}
 
-  loadQrjJournals(): void {
-    this.qrjJournals$ = this.qrjJournalsService.loadQrjJournals()
+  loadQrjJournalsSelectList(): void {
+    this.qrjJournalsService
+      .loadQrjJournals()
+      .pipe(first())
+      .subscribe(
+        (qrjJournals: QrjJournal[]) =>
+          (this.qrjJournalsSelectList = qrjJournals.map(
+            (qrjJournal: QrjJournal) => ({
+              key: qrjJournal.code,
+              name: qrjJournal.translation[0].name,
+            })
+          ))
+      )
   }
 }

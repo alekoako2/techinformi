@@ -5,6 +5,6 @@
               name="oecd"
               (inputSelectModelChange)="oecdChange.emit($event)"
               [(inputSelectModel)]="oecd"
-              (selectstart)="loadOecds()"
-              [array]="oecds$|async">
+              (selectstart)="loadOecdsSelectList()"
+              [list]="oecdsSelectList">
 </input-select-with-key>
