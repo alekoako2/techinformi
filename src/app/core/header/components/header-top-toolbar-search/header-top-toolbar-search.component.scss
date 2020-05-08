@@ -1,0 +1,26 @@
+.search-wrapper {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  width: 100%;
+  display: flex;
+
+  input {
+    background: transparent;
+    color: white;
+    width: 100%;
+    z-index: 1;
+    border: none;
+    outline: none;
+    font-size: 14px;
+  }
+
+  ::placeholder {
+    color: lightgray;
+  }
+
+  mat-icon {
+    color: lightgray;
+    position: absolute;
+    margin-top: 7px;
+  }
+}

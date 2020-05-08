@@ -1,5 +1,5 @@
 import { Component, Inject, LOCALE_ID } from '@angular/core'
-import { QrjDialogComponent } from '../qrj-dialog/qrj-dialog.component'
+import { QrjDialogComponent } from '../qrj-dialog'
 import { MatDialog } from '@angular/material/dialog'
 
 @Component({

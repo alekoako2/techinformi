@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core'
 
 // Modules
 import { QrjRoutingModule } from './qrj-routing.module'
-import { SharedModule } from '@shared'
 
 // Pages
 import { QrjComponent } from './pages/qrj'
@@ -13,6 +12,14 @@ import { QrjComponent } from './pages/qrj'
 import { QrjDescriptionComponent } from './components/qrj-description'
 import { FilterOecdPipe } from './components/qrj-dialog/pipes'
 import { QrjDialogComponent } from './components/qrj-dialog'
+import { LayoutContainerModule } from '@shared/components/layout-container'
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatDialogModule } from '@angular/material/dialog'
+import { SpinnerModule } from '@shared/components/spinner'
+import { MatDividerModule } from '@angular/material/divider'
+import { PageTitleBarModule } from '@shared/components/page-title-bar/page-title-bar.module'
+import { FlexLayoutModule } from '@angular/flex-layout'
+import { MatInputModule } from '@angular/material/input'
 
 @NgModule({
   declarations: [
@@ -22,7 +29,19 @@ import { QrjDialogComponent } from './components/qrj-dialog'
     FilterOecdPipe,
     QrjComponent,
   ],
-  imports: [CommonModule, SharedModule, QrjRoutingModule, FormsModule],
+  imports: [
+    CommonModule,
+    QrjRoutingModule,
+    FormsModule,
+    LayoutContainerModule,
+    MatFormFieldModule,
+    MatDialogModule,
+    SpinnerModule,
+    MatDividerModule,
+    PageTitleBarModule,
+    FlexLayoutModule,
+    MatInputModule,
+  ],
   entryComponents: [QrjDialogComponent],
 })
 export class QrjModule {}

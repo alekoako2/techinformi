@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core'
 
 // Modules
 import { ContactRoutingModule } from './contact-routing.module'
-import { SharedModule } from '@shared'
 
 // Pages
 import { ContactComponent } from './pages/contact'
@@ -13,6 +12,11 @@ import { ContactComponent } from './pages/contact'
 import { ContactInfoComponent } from './components/contact-info'
 import { ContactFormComponent } from './components/contact-form'
 import { ContactMapComponent } from './components/contact-map'
+import { MatInputModule } from '@angular/material/input'
+import { MatSelectModule } from '@angular/material/select'
+import { MatButtonModule } from '@angular/material/button'
+import { FlexLayoutModule } from '@angular/flex-layout'
+import { PageTitleBarModule } from '@shared/components/page-title-bar/page-title-bar.module'
 
 @NgModule({
   declarations: [
@@ -25,8 +29,12 @@ import { ContactMapComponent } from './components/contact-map'
     ContactRoutingModule,
     ReactiveFormsModule,
     CommonModule,
-    SharedModule,
     FormsModule,
+    MatInputModule,
+    MatSelectModule,
+    MatButtonModule,
+    FlexLayoutModule,
+    PageTitleBarModule,
   ],
 })
 export class ContactModule {}

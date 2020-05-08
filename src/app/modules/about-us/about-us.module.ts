@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core'
 
 // Modules
 import { AboutUsRoutingModule } from './about-us-routing.module'
-import { SharedModule } from '@shared'
 
 // Pages
 import { AboutUsNormativeDocumentationComponent } from './pages/about-us-normative-documentation'
@@ -14,6 +13,13 @@ import { AboutUsGeneralComponent } from './pages/about-us-general'
 
 // Components
 import { AboutUsEmployeesStructureDialogComponent } from './components/about-us-employees-structure-dialog'
+import { PageTitleBarModule } from '@shared/components/page-title-bar/page-title-bar.module'
+import { LayoutContainerModule } from '@shared/components/layout-container'
+import { SpinnerModule } from '@shared/components/spinner'
+import { SanitizeHtmlModule } from '@shared/pipes/sanitize-html/sanitize-html.module'
+import { MatDialogModule } from '@angular/material/dialog'
+import { MatButtonModule } from '@angular/material/button'
+import { HideMissingLanguageElementModule } from '@shared/directives/hide-missing-language-element/hide-missing-language-element.module'
 
 @NgModule({
   declarations: [
@@ -25,6 +31,16 @@ import { AboutUsEmployeesStructureDialogComponent } from './components/about-us-
     AboutUsGeneralComponent,
   ],
   exports: [],
-  imports: [CommonModule, SharedModule, AboutUsRoutingModule],
+  imports: [
+    CommonModule,
+    MatDialogModule,
+    AboutUsRoutingModule,
+    PageTitleBarModule,
+    MatButtonModule,
+    LayoutContainerModule,
+    SpinnerModule,
+    SanitizeHtmlModule,
+    HideMissingLanguageElementModule,
+  ],
 })
 export class AboutUsModule {}

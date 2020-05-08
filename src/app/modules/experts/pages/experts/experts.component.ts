@@ -32,14 +32,16 @@ export class ExpertsComponent implements OnInit {
     this.loadExperts()
   }
 
-  loadExperts(): void {
+  loadExperts = (): void => {
     this.skeleton = true
     this.expertsService
       .loadExperts(
         {
-          fullName: this.author,
+          translation: {
+            fullName: this.author,
+            specialization: this.specialization,
+          },
           oecd: this.oecd,
-          specialization: this.specialization,
         },
         this.pageIndex,
         this.pageSize

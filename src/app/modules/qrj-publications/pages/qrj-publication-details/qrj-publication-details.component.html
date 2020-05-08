@@ -23,13 +23,13 @@
     <div class="margin-bottom-3">
       <h3 i18n="@@publication_name">გამოცემის დასახელება</h3>
       <!--      address-->
-      <a *ngIf="qrjPublication.journal.translation[0].address as address"
+      <a *ngIf="qrjPublication.qrjJournal.translation[0].address as address"
          [href]="address"
          target="_blank">
-        <span>{{qrjPublication.journal.translation[0].name}}</span>
+        <span>{{qrjPublication.qrjJournal.translation[0].name}}</span>
       </a>
-      <p *ngIf="!qrjPublication.journal.translation[0].address">
-        {{qrjPublication.journal.translation[0].name}}
+      <p *ngIf="!qrjPublication.qrjJournal.translation[0].address">
+        {{qrjPublication.qrjJournal.translation[0].name}}
       </p>
 
       <!--      Pages & Languages-->
@@ -47,7 +47,7 @@
     <!--    QRJ-->
     <div>
       <h3 i18n="@@qrj">ქრჟ</h3>
-      <span>{{qrjPublication.number}}</span>
+      <span>#{{qrjPublication.index.split('.')[0]}}</span>
     </div>
 
   </div>
