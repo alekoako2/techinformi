@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router'
 // Modules
 import { ScientificActivityModule } from './modules/scientific-activity'
 import { ExpertsModule } from './modules/experts'
-import { ResearchProjectsModule } from './modules/research-projects/research-projects.module'
+import { ResearchProjectsModule } from './modules/research-projects'
 import { ServicesPageModule } from './modules/services-page'
 import { PublicationsModule } from './modules/publications'
 import { PartnershipModule } from './modules/partnership'

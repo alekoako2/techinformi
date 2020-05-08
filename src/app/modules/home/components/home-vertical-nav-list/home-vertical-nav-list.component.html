@@ -1,82 +1,112 @@
-<div class="margin-top-5"
-     fxLayout="column">
-  <a class="white-space-normal margin-bottom-2 bold"
-     mat-flat-button
-     color="primary"
-     href="https://techinformi.ge/kvlevebi/login.php"
-     target="_blank"
-     fxFlex="100">
+<div class="margin-top-5" fxLayout="column">
+  <button
+    class="white-space-normal margin-bottom-2 bold"
+    mat-flat-button
+    color="primary"
+    onClick="window.open('https://techinformi.ge/kvlevebi/login.php')"
+    fxFlex="100"
+  >
     სამეცნიერო-კვლევითი პროექტების Online რეგისტრაცია
-  </a>
+  </button>
 
   <mat-divider></mat-divider>
 
-  <div class="vertical-nav-list-wrapper"
-       fxLayout="column">
-    <a class="white-space-normal margin-bottom-2 bold"
-       i18n="@@cajnn"
-       mat-stroked-button
-       color="primary"
-       href="https://cajnn.techinformi.ge/"
-       target="_blank"
-       fxFlex="100">
+  <div class="vertical-nav-list-wrapper" fxLayout="column">
+    <button
+      class="white-space-normal margin-bottom-2 bold"
+      i18n="@@cajnn"
+      mat-stroked-button
+      color="primary"
+      onClick="window.open('https://cajnn.techinformi.ge/')"
+      fxFlex="100"
+    >
       კავკასიის რეფერატული ჟურნალი ნანომეცნიერებასა და ნანოტექნოლოგიებში
-    </a>
-    <a class="white-space-normal margin-bottom-2 bold"
-       i18n="@@georgian_engineering_news"
-       mat-stroked-button
-       color="primary"
-       href="https://gen.techinformi.ge/"
-       target="_blank"
-       fxFlex="100">
+    </button>
+    <button
+      class="white-space-normal margin-bottom-2 bold"
+      i18n="@@georgian_engineering_news"
+      mat-stroked-button
+      color="primary"
+      onClick="window.open('https://gen.techinformi.ge/')"
+      fxFlex="100"
+    >
       საქართველოს საინჟინრო სიახლენი (GEN)
-    </a>
-    <button i18n="@@classifiers_international_databases_of_scientific_publications"
-            class="white-space-normal margin-bottom-2 bold"
-            mat-stroked-button
-            routerLink="publications-classifiers"
-            color="primary"
-            fxFlex="100">
+    </button>
+    <button
+      i18n="@@classifiers_international_databases_of_scientific_publications"
+      class="white-space-normal margin-bottom-2 bold"
+      mat-stroked-button
+      routerLink="publications-classifiers"
+      color="primary"
+      fxFlex="100"
+    >
       სამეცნიერო პუბლიკაციების საერთაშორისო ბაზების კლასიფიკატორები
     </button>
-    <button i18n="@@list_of_scientific_publications_reflected_in_georgian_abstracts_journal"
-            class="white-space-normal margin-bottom-2 bold"
-            mat-stroked-button
-            color="primary"
-            fxFlex="100">
+    <button
+      i18n="
+        @@list_of_scientific_publications_reflected_in_georgian_abstracts_journal"
+      class="white-space-normal margin-bottom-2 bold"
+      mat-stroked-button
+      color="primary"
+      onClick="window.open('https://techinformi.ge/ge/?page=content/main/qrja','_self')"
+      fxFlex="100"
+    >
       ქართულ რეფერატულ ჟურნალში ასახული სამეცნიერო გამოცემების ჩამონათვალი
     </button>
-    <button class="white-space-normal margin-bottom-2 bold"
-            i18n="@@technology_transfer_centers"
-            mat-stroked-button
-            color="primary"
-            fxFlex="100">
+    <button
+      class="white-space-normal margin-bottom-2 bold"
+      i18n="@@technology_transfer_centers"
+      mat-stroked-button
+      color="primary"
+      fxFlex="100"
+    >
       ტექნოლოგიის ტრანსფერის ცენტრები
     </button>
-    <button class="white-space-normal margin-bottom-2 bold"
-            i18n="@@international_scientific_databases"
-            mat-stroked-button
-            color="primary"
-            fxFlex="100">
+    <button
+      class="white-space-normal margin-bottom-2 bold"
+      i18n="@@international_scientific_databases"
+      mat-stroked-button
+      hideNotImplemented
+      color="primary"
+      fxFlex="100"
+    >
       საერთაშორისო სამეცნიერო ბაზები
     </button>
-    <button class="white-space-normal margin-bottom-2 bold"
-            mat-stroked-button
-            color="primary"
-            fxFlex="100">
+    <button
+      class="white-space-normal margin-bottom-2 bold"
+      mat-stroked-button
+      hideNotImplemented
+      color="primary"
+      fxFlex="100"
+    >
       DOI - ციფრული ობიექტის იდენტიფიკატორი
     </button>
-    <button class="white-space-normal margin-bottom-2 bold"
-            mat-stroked-button
-            color="primary"
-            fxFlex="100">
+    <button
+      class="white-space-normal margin-bottom-2 bold"
+      mat-stroked-button
+      color="primary"
+      onClick="window.open('https://gtu.ge/Science/research/pdf/STU_citirebis%20indeqsi_02.12.17.pdf','_self')"
+      fxFlex="100"
+    >
       სტუ-ს აკადემიური და სამეცნიერო პერსონალის ციტირების ინდექსი
     </button>
-    <button class="white-space-normal bold"
-            mat-stroked-button
-            color="primary"
-            fxFlex="100">
+    <button
+      class="white-space-normal margin-bottom-2 bold"
+      mat-stroked-button
+      color="primary"
+      onClick="window.open('http://agrovoc.uniroma2.it/agrovoc/agrovoc/en/?clang=ka','_self')"
+      fxFlex="100"
+    >
       FAO-ს მრავალენოვანი თეზაურუსი AGROVOC
+    </button>
+    <button
+      class="white-space-normal bold"
+      mat-stroked-button
+      color="primary"
+      onClick="window.open('https://techinformi.ge/ge/?page=content/main/tt_qselebi/agroinformation','_self')"
+      fxFlex="100"
+    >
+      მიმოხილვითი ინფორმაციის არქივი
     </button>
   </div>
   <mat-divider></mat-divider>

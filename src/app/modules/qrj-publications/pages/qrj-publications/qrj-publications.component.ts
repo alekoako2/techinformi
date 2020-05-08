@@ -38,8 +38,7 @@ export class QrjPublicationsComponent implements OnInit {
     this.qrjPublicationService
       .loadQrjPublications(
         {
-          author: this.author,
-          title: this.title,
+          translation: { publicationAuthor: this.author, title: this.title },
           oecd: this.oecd,
           qrjJournal: this.qrjJournal,
         },

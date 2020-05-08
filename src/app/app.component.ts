@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core'
+import { MatSidenav } from '@angular/material/sidenav'
 import { ProgressBarService } from '@services/progress-bar-service'
 import { SidenavService } from '@services/sidenav-service'
-import { MatSidenav } from '@angular/material/sidenav'
 
 @Component({
   selector: 'root',

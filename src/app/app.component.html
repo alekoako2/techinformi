@@ -1,26 +1,21 @@
 <mat-sidenav-container class="sidenav-container">
   <!--  Header Sidenav-->
-  <mat-sidenav #sidenav
-               role="navigation"
-               mode="push">
-
+  <mat-sidenav #sidenav role="navigation" mode="push">
     <header-sidenav-list></header-sidenav-list>
-
   </mat-sidenav>
 
   <mat-sidenav-content>
-
-    <mat-progress-bar mode="indeterminate" *ngIf="progressBar$|async"></mat-progress-bar>
+    <mat-progress-bar
+      mode="indeterminate"
+      *ngIf="progressBar$ | async"
+    ></mat-progress-bar>
 
     <app-header class="mat-elevation-z3 toolbars-wrapper"></app-header>
 
     <div class="margin-bottom-5 padding-bottom-3 main-outlet-wrapper">
-
       <router-outlet></router-outlet>
-
     </div>
 
-    <app-footer fxHide.lt-lg>
-    </app-footer>
+    <app-footer> </app-footer>
   </mat-sidenav-content>
 </mat-sidenav-container>

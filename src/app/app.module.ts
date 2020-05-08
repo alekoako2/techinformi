@@ -12,21 +12,23 @@ import localeKa from '@angular/common/locales/ka'
 
 registerLocaleData(localeKa, 'ka', localeKaExtra)
 
-// NPM Modules
+// Library Modules
 import { SlickCarouselModule } from 'ngx-slick-carousel'
 import { FlexLayoutModule } from '@angular/flex-layout'
 
 // Modules
 import { AppRoutingModule } from './app-routing.module'
 import { GraphQLModule } from './graphql.module'
-import { HeaderModule } from './modules/shared/modules/header'
-import { FooterModule } from './modules/shared/modules/footer'
-import { SharedModule } from '@shared'
+import { HeaderModule } from './core/header'
+import { FooterModule } from './core/footer'
 
 // Components
 import { AppComponent } from './app.component'
 import { RouteReuseStrategy } from '@angular/router'
 import { CustomReuseStrategy } from './router-strategy'
+import { MatSidenavModule } from '@angular/material/sidenav'
+import { MatProgressBarModule } from '@angular/material/progress-bar'
+import { FirebaseModule } from '@shared/modules/firebase'
 
 @NgModule({
   declarations: [AppComponent],
@@ -35,11 +37,13 @@ import { CustomReuseStrategy } from './router-strategy'
     SlickCarouselModule,
     FlexLayoutModule,
     HttpClientModule,
+    MatSidenavModule,
+    MatProgressBarModule,
     AppRoutingModule,
     BrowserModule,
     GraphQLModule,
-    SharedModule,
     HeaderModule,
+    FirebaseModule,
     FooterModule,
   ],
   providers: [

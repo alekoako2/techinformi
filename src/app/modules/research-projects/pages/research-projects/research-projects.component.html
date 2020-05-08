@@ -32,28 +32,28 @@
                   name="principal_executing_organization">
       </input-text>
       <oecds-select-input [(oecd)]="oecd"></oecds-select-input>
-      <year-picker matTooltip="წელი (კვლევის მიმდინარეობის, დაწყების ან დასრულების წელი)"
+      <input-year-picker matTooltip="წელი (კვლევის მიმდინარეობის, დაწყების ან დასრულების წელი)"
                    label="წელი (კვლევის მიმდინარეობის, დაწყების ან დასრულების წელი)"
                    i18n-matTooltip="year_research_progress_start_or_end_year"
                    i18n-label="@@year_research_progress_start_or_end_year"
                    [(date)]="year_research_progress_start_or_end_year"
                    name="year_research_progress_start_or_end_year">
-      </year-picker>
+      </input-year-picker>
       <div fxLayoutGap="16px">
-        <year-picker i18n-label="@@from_year"
+        <input-year-picker i18n-label="@@from_year"
                      [(date)]="from_year"
                      [maxDate]="to_year"
                      name="from_year"
                      label="დან"
                      fxFlex>
-        </year-picker>
-        <year-picker i18n-label="@@to_year"
+        </input-year-picker>
+        <input-year-picker i18n-label="@@to_year"
                      [(date)]="to_year"
                      [minDate]="from_year"
                      name="to_year"
                      label="მდე"
                      fxFlex>
-        </year-picker>
+        </input-year-picker>
       </div>
     </div>
 

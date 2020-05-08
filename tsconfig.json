@@ -1,6 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "strict": false,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "downlevelIteration": true,
@@ -26,19 +27,19 @@
     "baseUrl": "./",
     "paths": {
       "@graphql": [
-        "src/app/modules/shared/models/generated/graphql.ts"
+        "src/app/shared/models/generated/graphql.ts"
       ],
-      "@shared": [
-        "src/app/modules/shared/shared.module.ts"
+      "@shared/*": [
+        "src/app/shared/*"
       ],
       "@services/*": [
-        "src/app/modules/shared/services/*"
+        "src/app/shared/services/*"
       ],
       "@env": [
         "src/environments/environment.ts"
       ],
       "@models/*": [
-        "src/app/modules/shared/models/*"
+        "src/app/shared/models/*"
       ]
     }
   }

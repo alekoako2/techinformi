@@ -1,6 +1,6 @@
 import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core'
 import { AngularFirestore } from '@angular/fire/firestore'
-import { Slide } from '../../../shared/models/Slide'
+import { Slide } from '@models/Slide'
 
 // Services
 import { ProgressBarService } from '@services/progress-bar-service'
@@ -20,9 +20,9 @@ export class HomeSlickCarouselComponent implements OnInit {
     infinite: true,
     centerMode: true,
     arrows: false,
-    centerPadding: window.innerWidth <= 1300 ? 0 : 15 + '%',
+    centerPadding: window.innerWidth < 1280 ? 0 : 15 + '%',
     speed: 1000,
-    autoplay: false,
+    autoplay: true,
   }
 
   constructor(

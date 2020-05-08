@@ -1,0 +1,50 @@
+<mat-toolbar fxLayoutAlign="center" color="primary">
+  <div fxLayoutAlign="center" fxLayout="row" fxFlex="80">
+    <button
+      class="bold"
+      i18n="@@qrj"
+      onClick="window.open('https://techinformi.ge/ge/?page=footer/qrj','_self')"
+      mat-button
+    >
+      ქრჟ
+    </button>
+    <button
+      i18n="@@agro_information"
+      class="bold"
+      onClick="window.open('https://techinformi.ge/ge/?page=footer/fao','_self')"
+      mat-button
+    >
+      აგროინფორმაცია
+    </button>
+    <button
+      i18n="@@books_db"
+      class="bold"
+      onClick="window.open('https://techinformi.ge/ge/?page=footer/book','_self')"
+      mat-button
+    >
+      წიგნების ბაზა
+    </button>
+    <button routerLink="/databases" i18n="@@databases" class="bold" mat-button>
+      მონაცემთა ბაზები
+    </button>
+    <button
+      hideMissingLanguageElement
+      routerLink="/publications"
+      i18n="@@publications"
+      class="bold"
+      mat-button
+    >
+      გამოცემები
+    </button>
+    <a
+      href="http://old.techinformi.ge/"
+      fxLayoutAlign="center"
+      class="mtavruli bold"
+      fxFlexAlign="center"
+      i18n="@@old_website"
+      mat-button
+    >
+      ძველი საიტი
+    </a>
+  </div>
+</mat-toolbar>

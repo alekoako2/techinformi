@@ -1,17 +1,20 @@
 import { CommonModule } from '@angular/common'
 import { NgModule } from '@angular/core'
 
-// NPM Modules
+// Library Modules
 import { SlickCarouselModule } from 'ngx-slick-carousel'
 
 // Modules
 import { ScientificActivityRoutingModule } from './scientific-activity-routing.module'
-import { SharedModule } from '@shared'
 
 // Pages
 import { ScientificActivityPublicationsComponent } from './pages/scientific-activity-publications'
 import { ScientificActivityDirectionsComponent } from './pages/scientific-activity-directions'
 import { ScientificActivityProjectsComponent } from './pages/scientific-activity-projects'
+import { PageTitleBarModule } from '@shared/components/page-title-bar/page-title-bar.module'
+import { LayoutContainerModule } from '@shared/components/layout-container'
+import { SpinnerModule } from '@shared/components/spinner'
+import { SanitizeHtmlModule } from '@shared/pipes/sanitize-html/sanitize-html.module'
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { ScientificActivityProjectsComponent } from './pages/scientific-activity
     ScientificActivityRoutingModule,
     SlickCarouselModule,
     CommonModule,
-    SharedModule,
+    PageTitleBarModule,
+    LayoutContainerModule,
+    SpinnerModule,
+    SanitizeHtmlModule,
   ],
 })
 export class ScientificActivityModule {}

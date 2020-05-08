@@ -1,0 +1,50 @@
+import gql from 'graphql-tag'
+
+export const qrjPublicationsQuery = gql`
+  query QrjPublications(
+    $languageCode: LanguageCode
+    $query: qrjPublicationQueryInput
+    $first: Int
+    $skip: Int
+  ) {
+    qrjPublications(query: $query, first: $first, skip: $skip) {
+      id
+      year
+      translation(language: $languageCode) {
+        title
+        publicationAuthor
+      }
+    }
+    countQrjPublications(query: $query)
+  }
+`
+export const qrjPublicationQuery = gql`
+  query QrjPublication($languageCode: LanguageCode, $id: String) {
+    qrjPublication(id: $id) {
+      index
+      year
+      number
+      pages
+      inputDate
+      qrjJournal {
+        code
+        translation(language: $languageCode) {
+          name
+          address
+        }
+      }
+      oecd {
+        code
+        translation(language: $languageCode) {
+          name
+        }
+      }
+      translation(language: $languageCode) {
+        title
+        publicationAuthor
+        publicationLang
+        abstract
+      }
+    }
+  }
+`

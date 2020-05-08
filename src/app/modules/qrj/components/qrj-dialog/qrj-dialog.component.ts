@@ -1,6 +1,6 @@
 import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core'
 import { AngularFirestore } from '@angular/fire/firestore'
-import { Oecd } from '../../../shared/models/Oecd'
+import { Oecd } from '../../../../shared/models/Oecd'
 
 @Component({
   selector: 'qrj-dialog',

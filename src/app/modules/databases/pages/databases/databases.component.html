@@ -1,39 +1,65 @@
-<div fxLayoutAlign="center"
-     class="padding-3">
-  <div class="buttons-wrapper"
-       fxLayout="column"
-       fxFlex="80">
-    <div>
-      <button i18n="@@georgian_scientific_publications"
-              routerLink="./qrj-publications"
-              class="margin-right-2"
-              mat-raised-button
-              fxFlex="50">
-        საქართველოს სამეცნიერო პუბლიკაციები
-      </button>
-      <button i18n="@@scientists_experts"
-              routerLink="./experts"
-              class="margin-left-2"
-              mat-raised-button
-              fxFlex="50">
-        მეცნიერები/ექსპერტები
-      </button>
-    </div>
-    <div>
-      <button i18n="@@research_projects"
-              routerLink="./research-projects"
-              class="margin-right-2"
-              mat-raised-button
-              fxFlex="50">
-        სამეცნიერო-კვლევითი პროექტები
-      </button>
-      <button i18n="@@research_organizations"
-              routerLink="./qrj-publications"
-              class="margin-left-2"
-              mat-raised-button
-              fxFlex="50">
-        სამეცნიერო ორგანიზაციები
-      </button>
-    </div>
+<page-title-bar i18n-title="@@databases" title="მონაცემთა ბაზები">
+</page-title-bar>
+
+<layout-container class="buttons-wrapper" layoutGap="15px">
+  <div fxLayout="row" fxLayoutGap="15px" class="margin-top-3">
+    <button
+      class="list-button"
+      i18n="@@georgian_scientific_publications"
+      routerLink="./qrj-publications"
+      mat-raised-button
+      fxFlex
+    >
+      საქართველოს სამეცნიერო პუბლიკაციები
+    </button>
+    <button
+      class="list-button"
+      i18n="@@scientists_experts"
+      routerLink="./experts"
+      mat-raised-button
+      fxFlex
+    >
+      მეცნიერები/ექსპერტები
+    </button>
   </div>
-</div>
+  <div fxLayout="row" fxLayoutGap="15px">
+    <button
+      class="list-button"
+      i18n="@@research_projects"
+      mat-raised-button
+      onClick="window.open('https://techinformi.ge/ge/?page=footer/databases/scienceProjects','_self')"
+      fxFlex
+    >
+      სამეცნიერო-კვლევითი პროექტები
+    </button>
+    <button
+      class="list-button"
+      i18n="@@research_organizations"
+      mat-raised-button
+      onClick="window.open('https://techinformi.ge/ge/?page=footer/databases/scienceOrganizations','_self')"
+      fxFlex
+    >
+      სამეცნიერო ორგანიზაციები
+    </button>
+  </div>
+  <div fxLayout="row" fxLayoutGap="15px">
+    <button
+      class="list-button"
+      i18n="@@georgian_scientists_publications_in_high_ranking_foreign_journals"
+      mat-raised-button
+      (click)="openWosDialog()"
+      fxFlex
+    >
+      საქართველოს მეცნიერთა პუბლიკაციები მაღალი რეიტინგის უცხოურ ჟურნალებში
+    </button>
+    <button
+      class="list-button"
+      i18n="@@innovations_technologies"
+      mat-raised-button
+      onClick="window.open('https://techinformi.ge/ge/?page=footer/databases/innovationsTechnology','_self')"
+      fxFlex
+    >
+      ინოვაციები და ტექნოლოგიები
+    </button>
+  </div>
+</layout-container>
