@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
 import { Apollo } from 'apollo-angular'
-import { map, tap } from 'rxjs/operators'
+import { map } from 'rxjs/operators'
 import {
   qrjPublicationQuery,
   qrjPublicationsQuery,
@@ -28,15 +28,15 @@ export class QrjPublicationService {
 
   loadQrjPublications(
     query: QrjPublicationQueryInput,
-    index = 0,
-    limit = 10
+    pageIndex = 0,
+    pageSize = 10
   ): Observable<QrjPublicationsQuery> {
     return this.apollo
       .watchQuery<QrjPublicationsQuery, QrjPublicationsQueryVariables>({
         variables: {
           languageCode: this.languageService.currentLanguage,
-          first: limit,
-          skip: index * limit,
+          first: pageIndex,
+          skip: pageIndex * pageSize,
           query,
         },
         query: qrjPublicationsQuery,
