@@ -247,13 +247,12 @@ export type MutationDeleteQrjJournalArgs = {
 
 
 export type MutationCreateQrjPublicationArgs = {
-  input?: Maybe<QrjPublicationInput>;
+  input?: Maybe<QrjPublicationCreateInput>;
 };
 
 
 export type MutationUpdateQrjPublicationArgs = {
-  id: Scalars['ID'];
-  input?: Maybe<QrjPublicationInput>;
+  input?: Maybe<QrjPublicationUpdateInput>;
 };
 
 
@@ -503,13 +502,13 @@ export type QrjPublicationTranslationArgs = {
   language?: Maybe<LanguageCode>;
 };
 
-export type QrjPublicationInput = {
-  index?: Maybe<Scalars['String']>;
+export type QrjPublicationCreateInput = {
+  index: Scalars['String'];
   year?: Maybe<Scalars['String']>;
   edited?: Maybe<Scalars['Boolean']>;
   number?: Maybe<Scalars['String']>;
   pages?: Maybe<Scalars['String']>;
-  journal?: Maybe<Scalars['String']>;
+  qrjJournal?: Maybe<Scalars['String']>;
   inputDate?: Maybe<Scalars['String']>;
   oecd?: Maybe<Scalars['String']>;
   translation?: Maybe<Array<Maybe<QrjPublicationTranslationInput>>>;
@@ -540,6 +539,19 @@ export type QrjPublicationTranslationInput = {
   publicationLang?: Maybe<Scalars['String']>;
   abstract?: Maybe<Scalars['String']>;
   language?: Maybe<LanguageCode>;
+};
+
+export type QrjPublicationUpdateInput = {
+  id: Scalars['ID'];
+  index: Scalars['String'];
+  year?: Maybe<Scalars['String']>;
+  edited?: Maybe<Scalars['Boolean']>;
+  number?: Maybe<Scalars['String']>;
+  pages?: Maybe<Scalars['String']>;
+  qrjJournal?: Maybe<Scalars['String']>;
+  inputDate?: Maybe<Scalars['String']>;
+  oecd?: Maybe<Scalars['String']>;
+  translation?: Maybe<Array<Maybe<QrjPublicationTranslationInput>>>;
 };
 
 export type QrjTranslation = {
@@ -1223,7 +1235,7 @@ export const QrjJournalsDocument = gql`
     
   }
 export const QrjPublicationsDocument = gql`
-    query QrjPublications($languageCode: LanguageCode, $query: qrjPublicationQueryInput, $first: Int, $skip: Int) {
+    query QrjPublications($languageCode: LanguageCode, $query: QrjPublicationQueryInput, $first: Int, $skip: Int) {
   qrjPublications(query: $query, first: $first, skip: $skip) {
     id
     year
@@ -1452,7 +1464,7 @@ export const QrjJournals = gql`
 }
     `;
 export const QrjPublications = gql`
-    query QrjPublications($languageCode: LanguageCode, $query: qrjPublicationQueryInput, $first: Int, $skip: Int) {
+    query QrjPublications($languageCode: LanguageCode, $query: QrjPublicationQueryInput, $first: Int, $skip: Int) {
   qrjPublications(query: $query, first: $first, skip: $skip) {
     id
     year
