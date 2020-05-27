@@ -28,20 +28,21 @@ export class QrjPublicationService {
 
   loadQrjPublications(
     query: QrjPublicationQueryInput,
-    index = 0,
-    limit = 10
+    pageIndex = 0,
+    pageSize = 10
   ): Observable<QrjPublicationsQuery> {
     return this.apollo
       .watchQuery<QrjPublicationsQuery, QrjPublicationsQueryVariables>({
         variables: {
           languageCode: this.languageService.currentLanguage,
-          first: limit,
-          skip: index * limit,
+          first: pageSize,
+          skip: pageIndex * pageSize,
           query,
         },
         query: qrjPublicationsQuery,
       })
       .valueChanges.pipe(
+        tap(console.log),
         map((res: ApolloQueryResult<QrjPublicationsQuery>) => res.data)
       )
   }

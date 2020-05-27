@@ -160,7 +160,7 @@
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "qrjPublicationQueryInput",
+                  "name": "QrjPublicationQueryInput",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -183,7 +183,7 @@
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "qrjPublicationQueryInput",
+                  "name": "QrjPublicationQueryInput",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -3497,7 +3497,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "qrjPublicationQueryInput",
+        "name": "QrjPublicationQueryInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -4410,7 +4410,7 @@
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "QrjPublicationInput",
+                  "name": "QrjPublicationCreateInput",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -4429,25 +4429,11 @@
             "description": null,
             "args": [
               {
-                "name": "id",
-                "description": null,
-                "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "ID",
-                    "ofType": null
-                  }
-                },
-                "defaultValue": null
-              },
-              {
                 "name": "input",
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "QrjPublicationInput",
+                  "name": "QrjPublicationUpdateInput",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -5359,7 +5345,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "QrjPublicationInput",
+        "name": "QrjPublicationCreateInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -5367,9 +5353,13 @@
             "name": "index",
             "description": null,
             "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
             },
             "defaultValue": null
           },
@@ -5414,7 +5404,130 @@
             "defaultValue": null
           },
           {
-            "name": "journal",
+            "name": "qrjJournal",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "inputDate",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "oecd",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "translation",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "INPUT_OBJECT",
+                "name": "QrjPublicationTranslationInput",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "QrjPublicationUpdateInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "id",
+            "description": null,
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "ID",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "index",
+            "description": null,
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "year",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "edited",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "number",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "pages",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "qrjJournal",
             "description": null,
             "type": {
               "kind": "SCALAR",

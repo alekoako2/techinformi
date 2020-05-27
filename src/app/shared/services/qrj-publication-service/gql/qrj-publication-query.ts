@@ -3,7 +3,7 @@ import gql from 'graphql-tag'
 export const qrjPublicationsQuery = gql`
   query QrjPublications(
     $languageCode: LanguageCode
-    $query: qrjPublicationQueryInput
+    $query: QrjPublicationQueryInput
     $first: Int
     $skip: Int
   ) {
