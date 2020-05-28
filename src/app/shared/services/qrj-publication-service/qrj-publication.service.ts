@@ -38,11 +38,11 @@ export class QrjPublicationService {
           first: pageSize,
           skip: pageIndex * pageSize,
           query,
+          orderBy:'updatedAt_DESC'
         },
         query: qrjPublicationsQuery,
       })
       .valueChanges.pipe(
-        tap(console.log),
         map((res: ApolloQueryResult<QrjPublicationsQuery>) => res.data)
       )
   }

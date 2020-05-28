@@ -6,8 +6,9 @@ export const qrjPublicationsQuery = gql`
     $query: QrjPublicationQueryInput
     $first: Int
     $skip: Int
+    $orderBy: String
   ) {
-    qrjPublications(query: $query, first: $first, skip: $skip) {
+    qrjPublications(query: $query, first: $first, skip: $skip, orderBy:$orderBy) {
       id
       year
       translation(language: $languageCode) {
@@ -26,6 +27,7 @@ export const qrjPublicationQuery = gql`
       number
       pages
       inputDate
+      doiUrl
       qrjJournal {
         code
         translation(language: $languageCode) {
