@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 
 import { ProgressBarService } from '@services/progress-bar-service'
-import { ResearchProjectsService } from '@services/research-projects-service'
+import { ResearchProjectsService } from '@http/research-projects-service'
 import { ResearchProjectsQuery } from '@graphql'
 
 @Component({

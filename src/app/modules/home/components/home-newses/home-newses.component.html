@@ -1,0 +1,29 @@
+<h2 class="mtavruli" i18n="@@news">
+  სიახლეები
+</h2>
+
+<mat-divider></mat-divider>
+
+<div class="margin-top-3" fxLayout="column" fxLayoutGap="16px">
+  <mat-card
+    *ngFor="let news of newses"
+    class="cursor-pointer"
+    [routerLink]="transformUrl(news)"
+  >
+    <h3>
+      {{ news.translation[0].title }}
+    </h3>
+    <mat-divider></mat-divider>
+    <p class="padding-top-3">
+      {{ news.translation[0].description }}
+    </p>
+  </mat-card>
+</div>
+
+<mat-paginator
+  [pageIndex]="pageIndex"
+  [pageSize]="pageSize"
+  [length]="countNewses"
+  (page)="loadPressed($event)"
+>
+</mat-paginator>

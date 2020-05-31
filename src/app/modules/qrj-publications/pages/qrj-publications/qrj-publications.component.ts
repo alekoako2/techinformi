@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { QrjPublicationService } from '@services/qrj-publication-service'
+import { QrjPublicationService } from '@http/qrj-publication-service'
 
 import { ProgressBarService } from '@services/progress-bar-service'
 import { QrjPublicationsQuery } from '@graphql'

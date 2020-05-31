@@ -18,7 +18,7 @@ import { HomeComponent } from './pages/home'
 // Components
 import { HomeVerticalNavListComponent } from './components/home-vertical-nav-list'
 import { HomeSlickCarouselComponent } from './components/home-slick-carousel'
-import { HomeNewsComponent } from './components/home-news'
+import { HomeNewsesComponent } from './components/home-newses/home-newses.component'
 import { PublicationsClassifiersComponent } from './pages/publications-classifiers'
 import { MatPaginatorModule } from '@angular/material/paginator'
 import { PageTitleBarModule } from '@shared/components/page-title-bar/page-title-bar.module'
@@ -27,14 +27,17 @@ import { SpinnerModule } from '@shared/components/spinner'
 import { SanitizeHtmlModule } from '@shared/pipes/sanitize-html/sanitize-html.module'
 import { MatButtonModule } from '@angular/material/button'
 import { HideNotImplementedModule } from '@shared/directives/hide-not-implemented'
+import { MatCardModule } from '@angular/material/card'
+import { HomeNewsDetailsComponent } from './pages/home-news-details/home-news-details.component'
 
 @NgModule({
   declarations: [
     HomeVerticalNavListComponent,
     HomeSlickCarouselComponent,
-    HomeNewsComponent,
+    HomeNewsesComponent,
     HomeComponent,
     PublicationsClassifiersComponent,
+    HomeNewsDetailsComponent,
   ],
   imports: [
     CommonModule,
@@ -49,6 +52,7 @@ import { HideNotImplementedModule } from '@shared/directives/hide-not-implemente
     SanitizeHtmlModule,
     MatButtonModule,
     HideNotImplementedModule,
+    MatCardModule,
   ],
   providers: [AngularFirestore],
 })

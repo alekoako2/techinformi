@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core'
-import { OecdService } from '@services/oecd-service'
+import { OecdService } from '@http/oecd-service'
 import { Oecd } from '@graphql'
 import { first } from 'rxjs/operators'
 import { InputSelectListItem } from '@shared/components/custom-inputs/input-select-with-key/input-select-with-key.component'

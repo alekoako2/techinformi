@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core'
 import { Apollo } from 'apollo-angular'
-import { map, tap } from 'rxjs/operators'
+import { map } from 'rxjs/operators'
 import {
   qrjPublicationQuery,
   qrjPublicationsQuery,
-} from './gql/qrj-publication-query'
+} from './gql/qrj-publication.queries'
 import { Observable } from 'rxjs'
 import {
   QrjPublication,
@@ -15,7 +15,7 @@ import {
   Scalars,
 } from '@graphql'
 import { ApolloQueryResult } from 'apollo-client'
-import { LanguageService } from '../language-service'
+import { LanguageService } from '@services/language-service'
 
 @Injectable({
   providedIn: 'root',
@@ -38,7 +38,7 @@ export class QrjPublicationService {
           first: pageSize,
           skip: pageIndex * pageSize,
           query,
-          orderBy:'updatedAt_DESC'
+          orderBy: 'updatedAt_DESC',
         },
         query: qrjPublicationsQuery,
       })

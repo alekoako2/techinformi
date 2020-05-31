@@ -13,7 +13,7 @@ import {
 } from '@graphql'
 import { Observable } from 'rxjs'
 import { ApolloQueryResult } from 'apollo-client'
-import { LanguageService } from '../language-service'
+import { LanguageService } from '@services/language-service'
 
 @Injectable({
   providedIn: 'root',

@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core'
 import { QrjJournal } from '@graphql'
-import { QrjJournalService } from '@services/qrj-journal-service'
+import { QrjJournalService } from '@http/qrj-journal-service'
 import { first } from 'rxjs/operators'
 import { InputSelectListItem } from '@shared/components/custom-inputs/input-select-with-key/input-select-with-key.component'
 

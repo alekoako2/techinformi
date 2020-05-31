@@ -1,0 +1,11 @@
+<layout-container class="margin-top-3">
+  <mat-card *ngIf="news$ | async as news">
+    <h1>
+      {{ news.translation[0].title }}
+    </h1>
+    <h2>
+      {{ news.translation[0].description }}
+    </h2>
+    <div [innerHTML]="news.translation[0].content | sanitizeHtml"></div>
+  </mat-card>
+</layout-container>
