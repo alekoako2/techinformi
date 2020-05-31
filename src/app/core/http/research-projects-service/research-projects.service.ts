@@ -9,7 +9,7 @@ import {
   ResearchProjectsQuery,
   Scalars,
 } from '@graphql'
-import { LanguageService } from '../language-service'
+import { LanguageService } from '@services/language-service'
 
 import { ApolloQueryResult } from 'apollo-client'
 import {

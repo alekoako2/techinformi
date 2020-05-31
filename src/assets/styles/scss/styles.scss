@@ -15,6 +15,11 @@
   src: url(../fonts/bpg_nino_mtavruli_normal.ttf);
 }
 
+@font-face {
+  font-family: mtavruli_bold;
+  src: url(../fonts/bpg_nino_mtavruli_bold.ttf);
+}
+
 @import 'border-radius';
 @import 'margin';
 @import 'padding';

@@ -7,6 +7,7 @@ import { TechnologyTransferCentersModule } from './pages/technology-transfer-cen
 // Components
 import { HomeComponent } from './pages/home'
 import { PublicationsClassifiersComponent } from './pages/publications-classifiers'
+import { HomeNewsDetailsComponent } from './pages/home-news-details'
 
 const homeRoutes: Routes = [
   {
@@ -25,6 +26,10 @@ const homeRoutes: Routes = [
           ),
       },
     ],
+  },
+  {
+    path: ':title/:id',
+    component: HomeNewsDetailsComponent,
   },
 ]
 

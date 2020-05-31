@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators'
 import { Observable } from 'rxjs'
 import { Oecd, OecdsQuery, OecdsQueryVariables } from '@graphql'
 import { ApolloQueryResult } from 'apollo-client'
-import { LanguageService } from '../language-service'
+import { LanguageService } from '@services/language-service'
 
 @Injectable({
   providedIn: 'root',

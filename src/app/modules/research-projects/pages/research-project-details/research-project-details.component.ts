@@ -3,7 +3,7 @@ import { Observable } from 'rxjs'
 import { ResearchProject } from '@graphql'
 
 import { ActivatedRoute } from '@angular/router'
-import { ResearchProjectsService } from '@services/research-projects-service'
+import { ResearchProjectsService } from '@http/research-projects-service'
 
 @Component({
   selector: 'research-project-details',

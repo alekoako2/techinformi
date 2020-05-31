@@ -29,6 +29,8 @@ import { CustomReuseStrategy } from './router-strategy'
 import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatProgressBarModule } from '@angular/material/progress-bar'
 import { FirebaseModule } from '@shared/modules/firebase'
+import { MatPaginatorIntl } from '@angular/material/paginator'
+import { getGeorgianPaginatorIntl } from './georgian-paginator-intl'
 
 @NgModule({
   declarations: [AppComponent],
@@ -54,6 +56,10 @@ import { FirebaseModule } from '@shared/modules/firebase'
     {
       provide: RouteReuseStrategy,
       useClass: CustomReuseStrategy,
+    },
+    {
+      provide: MatPaginatorIntl,
+      useValue: getGeorgianPaginatorIntl(),
     },
   ],
   bootstrap: [AppComponent],

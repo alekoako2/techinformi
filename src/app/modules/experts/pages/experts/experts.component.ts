@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core'
 
 import { ExpertsQuery } from '@graphql'
 import { ProgressBarService } from '@services/progress-bar-service'
-import { ExpertsService } from '@services/scientists-experts-service/experts.service'
+import { ExpertsService } from '@http/scientists-experts-service'
 
 @Component({
   selector: 'experts',

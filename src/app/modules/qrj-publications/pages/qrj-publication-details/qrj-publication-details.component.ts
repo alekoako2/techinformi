@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import { QrjPublicationService } from '@services/qrj-publication-service'
+import { QrjPublicationService } from '@http/qrj-publication-service'
 import { ActivatedRoute } from '@angular/router'
 import { QrjPublication } from '@graphql'
 import { Observable } from 'rxjs'

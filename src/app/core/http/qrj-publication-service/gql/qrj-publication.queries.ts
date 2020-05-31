@@ -8,7 +8,12 @@ export const qrjPublicationsQuery = gql`
     $skip: Int
     $orderBy: String
   ) {
-    qrjPublications(query: $query, first: $first, skip: $skip, orderBy:$orderBy) {
+    qrjPublications(
+      query: $query
+      first: $first
+      skip: $skip
+      orderBy: $orderBy
+    ) {
       id
       year
       translation(language: $languageCode) {
@@ -19,8 +24,9 @@ export const qrjPublicationsQuery = gql`
     countQrjPublications(query: $query)
   }
 `
+
 export const qrjPublicationQuery = gql`
-  query QrjPublication($languageCode: LanguageCode, $id: String) {
+  query QrjPublication($languageCode: LanguageCode, $id: ID) {
     qrjPublication(id: $id) {
       index
       year

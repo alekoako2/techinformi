@@ -1,4 +1,4 @@
-import { Inject, Injectable, LOCALE_ID } from '@angular/core'
+import { Injectable } from '@angular/core'
 import { Apollo } from 'apollo-angular'
 import { map } from 'rxjs/operators'
 import { qrjJournalsQuery } from './gql/journal-query'

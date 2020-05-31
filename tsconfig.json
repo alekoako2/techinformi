@@ -27,7 +27,10 @@
     "baseUrl": "./",
     "paths": {
       "@graphql": [
-        "src/app/shared/models/generated/graphql.ts"
+        "src/app/shared/types/graphql/generated/graphql.types.ts"
+      ],
+      "@http/*": [
+        "src/app/core/http/*"
       ],
       "@shared/*": [
         "src/app/shared/*"

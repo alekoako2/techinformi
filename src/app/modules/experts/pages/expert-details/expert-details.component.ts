@@ -2,7 +2,7 @@ import { Component } from '@angular/core'
 import { Observable } from 'rxjs'
 import { Expert } from '@graphql'
 import { ActivatedRoute } from '@angular/router'
-import { ExpertsService } from '@services/scientists-experts-service'
+import { ExpertsService } from '@http/scientists-experts-service'
 
 @Component({
   selector: 'expert-details',
