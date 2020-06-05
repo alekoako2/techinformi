@@ -2,12 +2,21 @@
                 title="დებულება">
 </page-title-bar>
 
-<layout-container>
-  <ul class="overflow-auto padding-0">
-    <li *ngFor="let number of urls[localeId]">
-      <img src="./assets/documents/debuleba/{{ localeId }}/regulations-{{number}}.jpg"
-           width="100%"
-           alt=""/>
-    </li>
-  </ul>
+<layout-container flexWidth="30" layoutGap="16px" class="margin-top-3">
+    <button
+    class="bold padding-y-3"
+    onClick="window.open('https://drive.google.com/file/d/1wMW42vblKx6WYP7-iDYzBi9mkSKj8NpV/view?usp=sharing','_blank')"
+    mat-raised-button
+    color="primary"
+  >
+    დებულება
+  </button>
+  <button
+    class="bold padding-y-3"
+    onClick="window.open('https://drive.google.com/file/d/1zSXEzn61KA0H3W1lHHKZQdMsijyAI3Mu/view?usp=sharing','_blank')"
+    mat-raised-button
+    color="primary"
+  >
+    სენატის დადგენილება
+  </button>
 </layout-container>
