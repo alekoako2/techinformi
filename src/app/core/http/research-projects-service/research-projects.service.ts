@@ -14,6 +14,7 @@ import { LanguageService } from '@services/language-service'
 import { ApolloQueryResult } from 'apollo-client'
 import {
   researchProjectQuery,
+  // researchProjectQuery,
   researchProjectsQuery,
 } from './gql/research-projects-query'
 
@@ -27,16 +28,7 @@ export class ResearchProjectsService {
   ) {}
 
   loadResearchProjects(
-    query: ResearchProjectQueryInput = {
-      title: '',
-      leaderExecutors: '',
-      keywords: '',
-      principalExecutingOrganization: '',
-      oecd: '',
-      yearResearchProgressStartOrEndYear: null,
-      fromYear: null,
-      toYear: null,
-    },
+    query: ResearchProjectQueryInput,
     index = 0,
     limit = 12
   ): Observable<ResearchProjectsQuery> {
@@ -58,7 +50,7 @@ export class ResearchProjectsService {
       )
   }
 
-  loadResearchProject(id: Scalars['ID']): Observable<ResearchProject> {
+  loadResearchProject(id: string): Observable<ResearchProject> {
     return this.apollo
       .watchQuery<ResearchProjectQuery>({
         variables: {

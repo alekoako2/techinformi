@@ -1,16 +1,20 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core'
-import { ControlContainer, NgForm } from '@angular/forms'
+import { Component, Input, OnInit } from '@angular/core'
+import { AbstractControl, FormControl } from '@angular/forms'
 
 @Component({
   selector: 'input-text-area',
   templateUrl: './input-text-area.component.html',
   styleUrls: ['./input-text-area.component.scss'],
-  viewProviders: [{ provide: ControlContainer, useExisting: NgForm }],
 })
-export class InputTextAreaComponent {
-  @Input() inputTextAreaModel: string
-  @Output() inputTextAreaModelChange = new EventEmitter<string>()
+export class InputTextAreaComponent implements OnInit {
+  @Input() inputAbstractControl: AbstractControl
+
   @Input() placeholder: string
-  @Input() name: string
   @Input() required = false
+
+  formControl: FormControl
+
+  ngOnInit(): void {
+    this.formControl = this.inputAbstractControl as FormControl
+  }
 }

@@ -1,15 +1,21 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core'
+import { Component, Input, OnInit } from '@angular/core'
+import { AbstractControl, FormControl } from '@angular/forms'
 
 @Component({
   selector: 'input-text',
   templateUrl: './input-text.component.html',
   styleUrls: ['./input-text.component.scss'],
 })
-export class InputTextComponent {
-  @Output() inputModelChange = new EventEmitter<string>()
-  @Input() inputModel: string
+export class InputTextComponent implements OnInit {
+  @Input() inputAbstractControl: AbstractControl
+
   @Input() placeholder: string
   @Input() required = false
-  @Input() name: string
   @Input() type = 'text'
+
+  formControl: FormControl
+
+  ngOnInit(): void {
+    this.formControl = this.inputAbstractControl as FormControl
+  }
 }

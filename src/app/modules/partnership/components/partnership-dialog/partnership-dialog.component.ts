@@ -1,6 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core'
 import { MAT_DIALOG_DATA } from '@angular/material/dialog'
-import { AngularFirestore } from '@angular/fire/firestore'
 import { Observable } from 'rxjs'
 
 @Component({
@@ -13,23 +12,9 @@ export class PartnershipDialogComponent implements OnInit {
 
   list
 
-  constructor(
-    @Inject(MAT_DIALOG_DATA) public data,
-    private db: AngularFirestore
-  ) {}
+  constructor(@Inject(MAT_DIALOG_DATA) public data) {}
 
   ngOnInit(): void {
-    this.loadLists(this.data.title).subscribe((data) => {
-      this.showSpinner = false
-      this.list = data
-    })
-  }
-
-  loadLists(collection): Observable<{}> {
-    return this.db
-      .collection('page_content')
-      .doc('partnership')
-      .collection(collection)
-      .valueChanges()
+    this.showSpinner = false
   }
 }

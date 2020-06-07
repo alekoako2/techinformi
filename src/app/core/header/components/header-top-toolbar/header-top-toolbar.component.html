@@ -1,23 +1,30 @@
-<layout-container [backgroundColor]="'bg-primary'"
-                  [ltLg]="100">
+<layout-container [backgroundColor]="'bg-primary'" [ltLg]="100">
   <mat-toolbar color="primary">
-    <mat-toolbar-row fxLayoutAlign="center"
-                     id="top-toolbar">
-      <div fxFlexAlign="center"
-           fxLayoutGap="25px"
-           fxFlex="100">
-        <button fxHide.gt-md aria-label="Expend left navigation bar"
-                (click)="onToggleSidenav()"
-                mat-icon-button>
+    <mat-toolbar-row fxLayoutAlign="center" id="top-toolbar">
+      <div fxFlexAlign="center" fxLayoutGap="25px" fxFlex="100">
+        <button
+          fxHide.gt-md
+          fxFlex
+          fxLayoutAlign="start"
+          aria-label="Expend left navigation bar"
+          (click)="onToggleSidenav()"
+          mat-icon-button
+        >
           <mat-icon>
             menu
           </mat-icon>
         </button>
-        <header-top-toolbar-logo></header-top-toolbar-logo>
-        <header-top-toolbar-search fxLayoutAlign="center"
-                                   fxFlex="100">
-        </header-top-toolbar-search>
-        <header-top-toolbar-user-tools fxLayoutAlign="end">
+        <header-top-toolbar-logo
+          fxHide.gt-md
+          fxFlex
+          fxLayoutAlign="center"
+        ></header-top-toolbar-logo>
+        <!--        <header-top-toolbar-search-->
+        <!--          fxLayoutAlign="center"-->
+        <!--          fxFlex="100"-->
+        <!--        >-->
+        <!--        </header-top-toolbar-search>-->
+        <header-top-toolbar-user-tools fxHide.gt-md fxFlex fxLayoutAlign="end">
         </header-top-toolbar-user-tools>
       </div>
     </mat-toolbar-row>

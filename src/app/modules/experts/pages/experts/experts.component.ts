@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core'
 import { ExpertsQuery } from '@graphql'
 import { ProgressBarService } from '@services/progress-bar-service'
 import { ExpertsService } from '@http/scientists-experts-service'
+import { FormBuilder, FormGroup } from '@angular/forms'
 
 @Component({
   selector: 'experts',
@@ -14,34 +15,43 @@ export class ExpertsComponent implements OnInit {
 
   skeleton = true
 
-  author = ''
-  oecd: string
-  specialization: string
-
   pageIndex = 0
   pageSize = 10
 
+  expertsForm: FormGroup
+
   constructor(
     private expertsService: ExpertsService,
-    private progressBarService: ProgressBarService
+    private progressBarService: ProgressBarService,
+    private fb: FormBuilder
   ) {
     this.progressBarService.show(true)
   }
 
   ngOnInit(): void {
+    this.buildForm()
     this.loadExperts()
+  }
+
+  buildForm = (): void => {
+    this.expertsForm = this.fb.group({
+      author: [null],
+      oecd: [null],
+      specialization: [null],
+    })
   }
 
   loadExperts = (): void => {
     this.skeleton = true
+
     this.expertsService
       .loadExperts(
         {
+          oecd: this.expertsForm.get('oecd').value,
           translation: {
-            fullName: this.author,
-            specialization: this.specialization,
+            fullName: this.expertsForm.get('author').value,
+            specialization: this.expertsForm.get('specialization').value,
           },
-          oecd: this.oecd,
         },
         this.pageIndex,
         this.pageSize
