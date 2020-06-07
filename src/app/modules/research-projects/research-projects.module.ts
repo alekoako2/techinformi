@@ -15,6 +15,9 @@ import { InputYearPickerModule } from '@shared/components/custom-inputs/input-ye
 import { FlexLayoutModule } from '@angular/flex-layout'
 import { OecdsSelectInputModule } from '@shared/components/oecds-select-input/oecds-select-input.module'
 import { NotEmptyModule } from '@shared/pipes/not-empty'
+import { MatTooltipModule } from '@angular/material/tooltip'
+import { OecdsInputDisplayValueFilterAutocompleteModule } from '@shared/components/oecds-input-display-value-filter-autocomplete'
+import { InputSelectModule } from '@shared/components/custom-inputs/input-select'
 
 @NgModule({
   declarations: [ResearchProjectsComponent, ResearchProjectDetailsComponent],
@@ -29,6 +32,9 @@ import { NotEmptyModule } from '@shared/pipes/not-empty'
     FlexLayoutModule,
     OecdsSelectInputModule,
     NotEmptyModule,
+    MatTooltipModule,
+    OecdsInputDisplayValueFilterAutocompleteModule,
+    InputSelectModule,
   ],
 })
 export class ResearchProjectsModule {}

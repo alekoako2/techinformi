@@ -1,16 +1,21 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core'
+import { Component, Input, OnInit } from '@angular/core'
+import { AbstractControl, FormControl, FormGroup } from '@angular/forms'
 
 @Component({
   selector: 'input-select',
   templateUrl: './input-select.component.html',
   styleUrls: ['./input-select.component.scss'],
 })
-export class InputSelectComponent {
-  @Output() inputSelectModelChange = new EventEmitter<number | string>()
-  @Input() inputSelectModel: number | string
+export class InputSelectComponent implements OnInit {
+  @Input() inputAbstractControl: AbstractControl
 
-  @Input() array: number[] | string[]
+  @Input() options: number[] | string[]
   @Input() required = false
   @Input() label: string
-  @Input() name: string
+
+  formControl: FormControl
+
+  ngOnInit(): void {
+    this.formControl = this.inputAbstractControl as FormControl
+  }
 }

@@ -26,15 +26,16 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "dist/techinformi",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
+            "aot": true,
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.webmanifest"
             ],
             "styles": [
               "src/assets/styles/scss/styles.scss",
@@ -62,7 +63,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -74,36 +74,25 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "6kb"
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
                 }
-              ]
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "pwa/ngsw-config.json"
             },
             "en": {
-              "budgets": [
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb"
-                }
-              ],
+              "outputPath": "dist/en/",
+              "i18nMissingTranslation": "warning",
               "localize": [
                 "en"
-              ],
-              "outputPath": "dist/en/",
-              "i18nMissingTranslation": "error",
-              "aot": true
+              ]
             },
             "ka": {
-              "budgets": [
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb"
-                }
-              ],
+              "outputPath": "dist/ka/",
               "localize": [
                 "ka"
-              ],
-              "outputPath": "dist/ka/",
-              "aot": true
+              ]
             }
           }
         },
@@ -123,10 +112,6 @@
             "ka": {
               "hmr": true,
               "browserTarget": "techinformi:build:ka"
-            },
-            "hmr": {
-              "hmr": true,
-              "browserTarget": "techinformi:build:hmr"
             }
           }
         },
@@ -145,7 +130,8 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.webmanifest"
             ],
             "styles": [
               "src/styles.scss"

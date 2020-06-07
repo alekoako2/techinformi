@@ -1,6 +1,7 @@
 import {
   HashLocationStrategy,
   LocationStrategy,
+  PathLocationStrategy,
   registerLocaleData,
 } from '@angular/common'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
@@ -28,9 +29,10 @@ import { RouteReuseStrategy } from '@angular/router'
 import { CustomReuseStrategy } from './router-strategy'
 import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatProgressBarModule } from '@angular/material/progress-bar'
-import { FirebaseModule } from '@shared/modules/firebase'
 import { MatPaginatorIntl } from '@angular/material/paginator'
 import { getGeorgianPaginatorIntl } from './georgian-paginator-intl'
+import { ServiceWorkerModule } from '@angular/service-worker'
+import { environment } from '../environments/environment'
 
 @NgModule({
   declarations: [AppComponent],
@@ -45,8 +47,10 @@ import { getGeorgianPaginatorIntl } from './georgian-paginator-intl'
     BrowserModule,
     GraphQLModule,
     HeaderModule,
-    FirebaseModule,
     FooterModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+    }),
   ],
   providers: [
     {

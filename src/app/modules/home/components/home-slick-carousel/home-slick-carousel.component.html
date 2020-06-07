@@ -1,45 +1,40 @@
-<ngx-slick-carousel class="carousel bg-white"
-                    #slickModal="slick-carousel"
-                    [config]="slideConfig">
-
+<ngx-slick-carousel
+  class="carousel bg-white"
+  #slickModal="slick-carousel"
+  [config]="slideConfig"
+>
   <spinner *ngIf="showSpinner"></spinner>
 
-  <div class="slide margin-3 border-radius-1 mat-elevation-z1 animate-3 box-shadow-h-2"
-       *ngFor="let slide of slides"
-       ngxSlickItem>
-    <div class="slide-content-wrapper">
-      <div fxLayoutAlign="center"
-           class="slide-content"
-           fxLayout="column">
-        <div fxLayout.lt-sm="column"
-             class="padding-3"
-             fxLayout="row">
-          <div class="img-wrapper padding-3"
-               [fxFlex]="slide.breakpoint"
-               fxHide.lt-md>
-            <img class="border-radius-1"
-                 [src]="slide.imgUrl"
-                 width="100%"
-                 alt=""/>
-          </div>
-          <div [fxFlex]="100 - slide.breakpoint"
-               class="slide-info-wrapper">
-            <div class="mtavruli">
-              <h2 class="margin-top-0">
-                <button [routerLink]="slide.url"
-                        color="primary"
-                        tabindex="0"
-                        mat-button>
-                  {{ slide.translatedData?.title }}
-                </button>
-              </h2>
-
-              <div [innerHTML]="slide.translatedData?.text | sanitizeHtml"></div>
-            </div>
-          </div>
-        </div>
-      </div>
+  <mat-card
+    *ngFor="let slide of slides"
+    class="margin-3 padding-3"
+    fxLayout="row"
+    fxLayoutGap="16px"
+    ngxSlickItem
+  >
+    <img
+      class="border-radius-1"
+      fxFlex="30"
+      fxFlexAlign="center"
+      fxHide.lt-sm
+      [src]="slide.imgUrl"
+      width="100%"
+      alt=""
+    />
+    <div fxFlex fxFlexAlign="center">
+      <h2 class="margin-0 margin-bottom-2">
+        <button
+          [routerLink]="slide.url"
+          class="mtavruli"
+          color="primary"
+          tabindex="0"
+          mat-button
+        >
+          {{ slide.translatedData?.title }}
+        </button>
+      </h2>
+      <p [innerHTML]="slide.translatedData?.text | sanitizeHtml"></p>
     </div>
-  </div>
+  </mat-card>
 </ngx-slick-carousel>
 <mat-divider></mat-divider>

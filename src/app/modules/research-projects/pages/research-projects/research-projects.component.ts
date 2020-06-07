@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core'
 import { ProgressBarService } from '@services/progress-bar-service'
 import { ResearchProjectsService } from '@http/research-projects-service'
 import { ResearchProjectsQuery } from '@graphql'
+import { FormBuilder, FormGroup } from '@angular/forms'
 
 @Component({
   selector: 'research-project',
@@ -14,27 +15,34 @@ export class ResearchProjectsComponent implements OnInit {
 
   skeleton = true
 
-  title: string
-  leader_executors: string
-  keywords: string
-  principal_executing_organization: string
-  oecd: string
-  year_research_progress_start_or_end_year: Date
-  from_year: Date
-  to_year: Date
-
   pageIndex = 0
   pageSize = 10
 
+  researchProjectForm: FormGroup
+
   constructor(
     private researchProjectsService: ResearchProjectsService,
-    private progressBarService: ProgressBarService
+    private progressBarService: ProgressBarService,
+    private fb: FormBuilder
   ) {
     this.progressBarService.show(true)
   }
 
   ngOnInit(): void {
+    this.buildForm()
     this.loadResearchProjects()
+  }
+
+  buildForm = (): void => {
+    this.researchProjectForm = this.fb.group({
+      eTitle: [null],
+      eAuthor: [null],
+      eWords: [null],
+      eOrganization: [null],
+      eCodes: [null],
+      fromYear: [null],
+      toYear: [null],
+    })
   }
 
   loadResearchProjects(): void {
@@ -42,15 +50,13 @@ export class ResearchProjectsComponent implements OnInit {
     this.researchProjectsService
       .loadResearchProjects(
         {
-          title: this.title,
-          leaderExecutors: this.leader_executors,
-          keywords: this.keywords,
-          principalExecutingOrganization: this.principal_executing_organization,
-          oecd: this.oecd,
-          yearResearchProgressStartOrEndYear: this
-            .year_research_progress_start_or_end_year,
-          fromYear: this.from_year,
-          toYear: this.to_year,
+          eTitle: this.researchProjectForm.get('eTitle').value,
+          eAuthor: this.researchProjectForm.get('eAuthor').value,
+          eWords: this.researchProjectForm.get('eWords').value,
+          eOrganization: this.researchProjectForm.get('eOrganization').value,
+          eCodes: this.researchProjectForm.get('eCodes').value,
+          fromYear: this.researchProjectForm.get('fromYear').value,
+          toYear: this.researchProjectForm.get('toYear').value,
         },
         this.pageIndex,
         this.pageSize
@@ -74,10 +80,6 @@ export class ResearchProjectsComponent implements OnInit {
   }
 
   transformUrl(researchProject): string {
-    return (
-      researchProject.translation[0].title.split(' ').join('-') +
-      '/' +
-      researchProject.id
-    )
+    return researchProject.title.split(' ').join('-') + '/' + researchProject.id
   }
 }

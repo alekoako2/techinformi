@@ -6,7 +6,6 @@ import { HomeRoutingModule } from './home-routing.module'
 
 // Library Modules
 import { SlickCarouselModule } from 'ngx-slick-carousel'
-import { AngularFirestore } from '@angular/fire/firestore'
 import { FlexLayoutModule } from '@angular/flex-layout'
 
 // Material Modules
@@ -18,7 +17,7 @@ import { HomeComponent } from './pages/home'
 // Components
 import { HomeVerticalNavListComponent } from './components/home-vertical-nav-list'
 import { HomeSlickCarouselComponent } from './components/home-slick-carousel'
-import { HomeNewsesComponent } from './components/home-newses/home-newses.component'
+import { HomeNewsesComponent } from './components/home-newses'
 import { PublicationsClassifiersComponent } from './pages/publications-classifiers'
 import { MatPaginatorModule } from '@angular/material/paginator'
 import { PageTitleBarModule } from '@shared/components/page-title-bar/page-title-bar.module'
@@ -28,7 +27,7 @@ import { SanitizeHtmlModule } from '@shared/pipes/sanitize-html/sanitize-html.mo
 import { MatButtonModule } from '@angular/material/button'
 import { HideNotImplementedModule } from '@shared/directives/hide-not-implemented'
 import { MatCardModule } from '@angular/material/card'
-import { HomeNewsDetailsComponent } from './pages/home-news-details/home-news-details.component'
+import { HomeNewsDetailsComponent } from './pages/home-news-details'
 
 @NgModule({
   declarations: [
@@ -54,6 +53,5 @@ import { HomeNewsDetailsComponent } from './pages/home-news-details/home-news-de
     HideNotImplementedModule,
     MatCardModule,
   ],
-  providers: [AngularFirestore],
 })
 export class HomeModule {}

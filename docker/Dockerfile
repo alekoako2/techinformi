@@ -9,6 +9,6 @@ RUN cd /app && yarn build
 
 FROM nginx:1.17.10-alpine
 
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY config/nginx.conf /etc/nginx/nginx.conf
 COPY --from=node /app/dist /usr/share/nginx/html
 
