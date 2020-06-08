@@ -17,7 +17,7 @@ export class HeaderSidenavListComponent {
 
   constructor(
     private sidenavListService: SidenavListService,
-    private sidenavService: SidenavService,
+    public sidenavService: SidenavService,
     private languageService: LanguageService
   ) {}
 

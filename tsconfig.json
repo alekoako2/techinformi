@@ -9,9 +9,9 @@
     "importHelpers": true,
     "declaration": false,
     "sourceMap": true,
-    "outDir": "./dist/out-tsc",
     "module": "esnext",
     "target": "ES6",
+    "outDir": "./dist/out-tsc",
     "typeRoots": [
       "node_modules/@types"
     ],
@@ -45,5 +45,9 @@
         "src/app/shared/models/*"
       ]
     }
+  },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
   }
 }

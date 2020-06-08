@@ -1,6 +1,11 @@
-<layout-container [backgroundColor]="'bg-white'" [ltLg]="100">
-  <mat-toolbar class="bg-white" fxLayoutAlign="center">
+<layout-container backgroundColor="bg-primary" flexWidth="80" [ltLg]="100">
+  <mat-toolbar fxLayoutAlign="center" color="primary">
     <div class="height-100" fxLayout="row">
+      <header-top-toolbar-logo
+        fxFlex
+        fxFlexAlign="center"
+      ></header-top-toolbar-logo>
+
       <!--      About Us-->
       <button [matMenuTriggerFor]="about_us" i18n="@@about_us" mat-button>
         ჩვენს შესახებ
@@ -259,6 +264,9 @@
       >
         კონტაქტი
       </button>
+
+      <header-top-toolbar-user-tools fxFlex fxFlexAlign="center">
+      </header-top-toolbar-user-tools>
     </div>
   </mat-toolbar>
 </layout-container>

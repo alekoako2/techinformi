@@ -3,6 +3,7 @@ import { QrjPublicationService } from '@http/qrj-publication-service'
 
 import { ProgressBarService } from '@services/progress-bar-service'
 import { QrjPublicationsQuery } from '@graphql'
+import { FormBuilder, FormGroup } from '@angular/forms'
 
 @Component({
   selector: 'qrj-publications',
@@ -14,23 +15,31 @@ export class QrjPublicationsComponent implements OnInit {
 
   skeleton = true
 
-  author = ''
-  title: string
-  oecd: string
-  qrjJournal: string
-
   pageIndex = 0
   pageSize = 10
 
+  qrjPublicationsForm: FormGroup
+
   constructor(
     private qrjPublicationService: QrjPublicationService,
-    private progressBarService: ProgressBarService
+    private progressBarService: ProgressBarService,
+    private fb: FormBuilder
   ) {
     this.progressBarService.show(true)
   }
 
   ngOnInit(): void {
+    this.buildForm()
     this.loadQrjPublications()
+  }
+
+  buildForm = (): void => {
+    this.qrjPublicationsForm = this.fb.group({
+      author: [null],
+      title: [null],
+      oecd: [null],
+      qrjJournal: [null],
+    })
   }
 
   loadQrjPublications(): void {
@@ -38,9 +47,12 @@ export class QrjPublicationsComponent implements OnInit {
     this.qrjPublicationService
       .loadQrjPublications(
         {
-          translation: { publicationAuthor: this.author, title: this.title },
-          oecd: this.oecd,
-          qrjJournal: this.qrjJournal,
+          translation: {
+            publicationAuthor: this.qrjPublicationsForm.get('author').value,
+            title: this.qrjPublicationsForm.get('title').value,
+          },
+          oecd: this.qrjPublicationsForm.get('oecd').value,
+          qrjJournal: this.qrjPublicationsForm.get('qrjJournal').value,
         },
         this.pageIndex,
         this.pageSize

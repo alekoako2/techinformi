@@ -14,6 +14,7 @@ import { OecdsSelectInputModule } from '@shared/components/oecds-select-input/oe
 import { FlexLayoutModule } from '@angular/flex-layout'
 import { LayoutContainerModule } from '@shared/components/layout-container'
 import { SanitizeHtmlModule } from '@shared/pipes/sanitize-html/sanitize-html.module'
+import { OecdsInputDisplayValueFilterAutocompleteModule } from '@shared/components/oecds-input-display-value-filter-autocomplete'
 
 @NgModule({
   declarations: [ExpertsComponent, ExpertDetailsComponent],
@@ -27,6 +28,7 @@ import { SanitizeHtmlModule } from '@shared/pipes/sanitize-html/sanitize-html.mo
     FlexLayoutModule,
     LayoutContainerModule,
     SanitizeHtmlModule,
+    OecdsInputDisplayValueFilterAutocompleteModule,
   ],
 })
 export class ExpertsModule {}

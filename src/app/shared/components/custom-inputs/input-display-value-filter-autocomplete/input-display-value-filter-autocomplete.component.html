@@ -1,0 +1,35 @@
+<mat-form-field fxFlex>
+  <input type="text" [formControl]="formControl" hidden />
+
+  <input
+    type="text"
+    matInput
+    [formControl]="autocompleteInputControl"
+    [placeholder]="placeholder"
+    [required]="required"
+    [matAutocomplete]="auto"
+  />
+
+  <button
+    matSuffix
+    mat-button
+    mat-icon-button
+    aria-label="Clear"
+    *ngIf="inputAbstractControl?.value"
+    (click)="
+      inputAbstractControl?.reset(null); autocompleteInputControl.reset(null)
+    "
+  >
+    <mat-icon>close</mat-icon>
+  </button>
+
+  <mat-autocomplete
+    #auto="matAutocomplete"
+    [displayWith]="displayFn"
+    (optionSelected)="optionSelected($event)"
+  >
+    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+      {{ option.content }}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>

@@ -7,18 +7,20 @@ export const researchProjectsQuery = gql`
     $skip: Int
     $query: ResearchProjectQueryInput
   ) {
-    researchProjects(query: $query, first: $first, skip: $skip) {
+    researchProjects(
+      language: $languageCode
+      query: $query
+      first: $first
+      skip: $skip
+    ) {
       id
-      leaderName
-      researchExecutors
-      organizationName
-      endDate
-      translation(language: $languageCode) {
-        title
-        key {
-          name
-        }
-      }
+      title
+      author
+      eWords
+      organization
+      kvlev_mimart_kodi
+      fromYear
+      toYear
     }
 
     countResearchProjects(query: $query)
@@ -26,55 +28,66 @@ export const researchProjectsQuery = gql`
 `
 
 export const researchProjectQuery = gql`
-  query ResearchProject($languageCode: LanguageCode, $id: ID) {
-    researchProject(id: $id) {
-      inpDate
-      regDate
-      startDate
-      endDate
-      regNumb
-      research
-      researchDirection
-      researchExecutionBasis
-      abstract
-      annotation
-      budget
-      organizationName
-      organizationShortName
-      organizationCode
-      organizationHead
-      organizationCity
-      organizationAddress
-      organizationIndex
-      organizationTel
-      organizationWeb
-      participatingInstitutionName
-      participatingInstitutionCountryCity
-      participatingInstitutionTel
-      participatingInstitutionEmail
-      participatingInstitutionWeb
-      leaderName
-      leaderPosition
-      leaderAcademicDegree
-      leaderTel
-      leaderMobile
-      leaderEmail
-      researchExecutors
+  query ResearchProject($id: String, $languageCode: LanguageCode) {
+    researchProject(id: $id, language: $languageCode) {
+      id
+      toYear
+      eWords
+      final
+      title
+      author
+      organization
+      fromYear
+      inp_tarigi
+      reg_tarigi
+      reg_numb
+      geo_dasaxeleba
+      eng_dasaxeleba
+      kvleva
+      kvlev_mimart
+      kvlev_mimart_kodi
+      kvlev_mimart_kodi2
+      kvlev_mimart_kodi3
+      geo_key
+      eng_key
+      safudz
+      referati
+      anotaciaeng
+      start_samushao_tarigi
+      end_samushao_tarigi
+      biujeti
+      org_dasaxeleba
+      org_short_dasaxeleba
+      org_kodi
+      org_ufrosi
+      org_qalaqi
+      org_misamarti
+      org_indexi
+      org_telefoni
+      org_webi
+      tan_dasaxeleba
+      tan_qvekana_qalaqi
+      tan_telefoni
+      tan_email
+      tan_webi
+      xel_gvari_saxeli
+      xel_tanamdeboba
+      xel_xarisxi
+      xel_bin_telefoni
+      xel_sam_telefoni
+      xel_email
+      shemsruleblebis
       financing
-      note
-      pincode
-      translation(language: $languageCode) {
-        title
-        key {
-          name
-        }
-      }
-      oecds {
-        code
-        translation(language: $languageCode) {
-          name
-        }
-      }
+      shenishvna
+      PINCODE
+      username
+      oecd1
+      oecd2
+      oecd3
+      org_dasaxeleba_eng
+      org_short_dasaxeleba_eng
+      org_email
+      xel_gvari_saxeli_eng
     }
   }
 `

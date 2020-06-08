@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 
 @Component({
   selector: 'app-technology-transfer-centers',
   templateUrl: './technology-transfer-centers.component.html',
-  styleUrls: ['./technology-transfer-centers.component.scss']
+  styleUrls: ['./technology-transfer-centers.component.scss'],
 })
 export class TechnologyTransferCentersComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

@@ -15,6 +15,8 @@ import { OecdsSelectInputModule } from '@shared/components/oecds-select-input/oe
 import { QrjJournalsSelectInputModule } from '@shared/components/qrj-journals-select-input/qrj-journals-select-input.module'
 import { FlexLayoutModule } from '@angular/flex-layout'
 import { SpinnerModule } from '@shared/components/spinner'
+import { OecdsInputDisplayValueFilterAutocompleteModule } from '@shared/components/oecds-input-display-value-filter-autocomplete'
+import { QrjJournalsInputDisplayValueFilterAutocompleteModule } from '@shared/components/qrj-journals-input-display-value-filter-autocomplete'
 
 @NgModule({
   declarations: [QrjPublicationsComponent, QrjPublicationDetailsComponent],
@@ -29,6 +31,8 @@ import { SpinnerModule } from '@shared/components/spinner'
     QrjJournalsSelectInputModule,
     FlexLayoutModule,
     SpinnerModule,
+    OecdsInputDisplayValueFilterAutocompleteModule,
+    QrjJournalsInputDisplayValueFilterAutocompleteModule,
   ],
 })
 export class QrjPublicationsModule {}

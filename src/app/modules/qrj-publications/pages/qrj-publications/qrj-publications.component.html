@@ -1,70 +1,76 @@
-<page-title-bar title="საქართველოს სამეცნიერო პუბლიკაციები"
-                i18n-title="@@georgian_scientific_publications">
+<page-title-bar
+  title="საქართველოს სამეცნიერო პუბლიკაციები"
+  i18n-title="@@georgian_scientific_publications"
+>
 </page-title-bar>
 
 <layout-container layoutStyle="column" flexWidth="80" ltLg="100">
-  <database-template (loadPressed)="loadPressed($event)"
-                     (searchPressed)="searchPressed()"
-                     [pageIndex]="pageIndex"
-                     [pageSize]="pageSize"
-                     [length]="qrjPublications?.countQrjPublications"
-                     [skeleton]="skeleton">
+  <database-template
+    (loadPressed)="loadPressed($event)"
+    (searchPressed)="searchPressed()"
+    [pageIndex]="pageIndex"
+    [pageSize]="pageSize"
+    [length]="qrjPublications?.countQrjPublications"
+    [skeleton]="skeleton"
+  >
     <div filters>
-      <input-text i18n-placeholder="@@authors"
-                  placeholder="ავტორ(ებ)ი"
-                  [(inputModel)]="author"
-                  name="author">
+      <input-text
+        i18n-placeholder="@@authors"
+        placeholder="ავტორ(ებ)ი"
+        [inputAbstractControl]="qrjPublicationsForm.get('author')"
+      >
       </input-text>
-      <input-text i18n-placeholder="@@publication_title"
-                  placeholder="სტატიის დასახელება"
-                  [(inputModel)]="title"
-                  name="title">
+      <input-text
+        i18n-placeholder="@@publication_title"
+        placeholder="სტატიის დასახელება"
+        [inputAbstractControl]="qrjPublicationsForm.get('title')"
+      >
       </input-text>
-      <oecds-select-input [(oecd)]="oecd"></oecds-select-input>
-      <qrj-journals-select-input [(qrjJournal)]="qrjJournal"></qrj-journals-select-input>
+      <oecds-input-display-value-filter-autocomplete
+        [inputAbstractControl]="qrjPublicationsForm.get('oecd')"
+      >
+      </oecds-input-display-value-filter-autocomplete>
+
+      <qrj-journals-input-display-value-filter-autocomplete
+        [inputAbstractControl]="qrjPublicationsForm.get('qrjJournal')"
+      >
+      </qrj-journals-input-display-value-filter-autocomplete>
     </div>
 
     <div list>
-      <database-template-list-item *ngFor="let item of qrjPublications?.qrjPublications"
-                                   [routerLink]="transformUrl(item)">
+      <database-template-list-item
+        *ngFor="let item of qrjPublications?.qrjPublications"
+        [routerLink]="transformUrl(item)"
+      >
         <div header>
-          <div class="padding-x-2"
-               fxFlex="60">
-                  <span i18n="@@publication_title"
-                        class="mtavruli">
-                  სტატიის დასახელება
-                </span>
+          <div class="padding-x-2" fxFlex="60">
+            <span i18n="@@publication_title" class="mtavruli">
+              სტატიის დასახელება
+            </span>
           </div>
-          <div class="padding-x-2"
-               fxFlex="30">
-                  <span i18n="@@authors"
-                        class="mtavruli">
-                ავტორ(ებ)ი
-              </span>
+          <div class="padding-x-2" fxFlex="30">
+            <span i18n="@@authors" class="mtavruli">
+              ავტორ(ებ)ი
+            </span>
           </div>
-          <div class="padding-x-2"
-               fxFlex="10">
-                  <span i18n="@@year"
-                        class="mtavruli">
-                წელი
-              </span>
+          <div class="padding-x-2" fxFlex="10">
+            <span i18n="@@year" class="mtavruli">
+              წელი
+            </span>
           </div>
         </div>
         <div body>
-          <div class="padding-x-2"
-               fxFlex="60">
+          <div class="padding-x-2" fxFlex="60">
             <p class="text-overflow-ellipses-2 margin-bottom-0">
               {{ item.translation[0].title }}
             </p>
           </div>
-          <div class="padding-x-2"
-               fxFlex="30">
+          <div class="padding-x-2" fxFlex="30">
             <p class="text-overflow-ellipses-2 margin-bottom-0">
               {{ (item?.translation)[0]?.publicationAuthor }}
             </p>
           </div>
-          <div class="padding-x-2"
-               fxFlex="10">
+          <div class="padding-x-2" fxFlex="10">
             <p class="text-overflow-ellipses-2 margin-bottom-0">
               {{ item?.year }}
             </p>
@@ -72,6 +78,5 @@
         </div>
       </database-template-list-item>
     </div>
-
   </database-template>
 </layout-container>

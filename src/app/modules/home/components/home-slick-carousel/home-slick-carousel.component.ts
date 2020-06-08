@@ -1,5 +1,4 @@
-import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core'
-import { AngularFirestore } from '@angular/fire/firestore'
+import { Component, OnInit } from '@angular/core'
 import { Slide } from '@models/Slide'
 
 // Services
@@ -22,38 +21,43 @@ export class HomeSlickCarouselComponent implements OnInit {
     arrows: false,
     centerPadding: window.innerWidth < 1280 ? 0 : 15 + '%',
     speed: 1000,
-    autoplay: true,
+    autoplay: false,
   }
 
-  constructor(
-    @Inject(LOCALE_ID) public localeId: string,
-    private db: AngularFirestore,
-    private progressBarService: ProgressBarService
-  ) {
-    this.progressBarService.show(true)
+  constructor(private progressBarService: ProgressBarService) {
+    // this.progressBarService.show(true)
+    this.showSpinner = false
   }
 
   ngOnInit(): void {
-    this.db
-      .collection('slides')
-      .snapshotChanges()
-      .subscribe((slides) => {
-        slides.map((slide) => {
-          const slideKey = slide.payload.doc.id
-          this.db
-            .collection('slides_translation')
-            .doc(this.localeId)
-            .collection('slides')
-            .doc(slideKey)
-            .valueChanges()
-            .subscribe((translatedData) => {
-              this.showSpinner = false
-              this.progressBarService.show(false)
-              const newSlide: Slide = slide.payload.doc.data() as Slide
-              newSlide.translatedData = translatedData
-              this.slides.push(newSlide)
-            })
-        })
-      })
+    this.slides = [
+      {
+        imgUrl: './assets/images/content/slides/qrj.png',
+        url: 'https://techinformi.ge/ge/?page=footer/qrj',
+        translatedData: {
+          title: 'ქართული რეფერატული ჟურნალი (ქრჟ)',
+          text:
+            'ქართული რეფერატული ჟურნალი (ქრჟ) ტექინფორმში 2000 წლიდან გამოდის. ის             ერთადერთი რეფერატული ჟურნალია საქართველოში, რომელიც თავს უყრის სამეცნიერო-ტექნიკური სფეროს 100-მდე             დასახელების პერიოდულ გამოცემებში ასახულ პუბლიკაციების რეფერატებს. ქრჟ პოლითემატურია, რეფერატები დალაგებულია             ეკონომიკური თანამშრომლობისა და განვითარების ორგანიზაციის (OECD) სამეცნიერო დარგების კლასიფიკატორის მიხედვით.',
+        },
+      },
+      {
+        imgUrl: './assets/images/content/slides/techinformi.jpg',
+        url: '/about-us/general',
+        translatedData: {
+          title: 'ინსტიტუტი ტექინფორმი',
+          text:
+            'საქართველოს ტექნიკური უნივერსიტეტის ინსტიტუტი ტექინფორმი წარმოადგენს საქართველოში სამეცნიერო-ტექნიკური               ინფორმაციის დარგში მოთავე ორგანიზაციას. იგი მრავალდარგოვანი და დარგთაშორისი საინფორმაციო ცენტრია.               ტექინფორმი ახორციელებს სამეცნიერო-ტექნიკური ინფორმაციის ძიების, შეგროვების, კლასიფიკაციის, ანალიზისა და               სინთეზის, შენახვისა და გავრცელების სფეროში სამეცნიერო- კვლევით, ტექნოლოგიურ და პრაქტიკულ საქმიანობას.',
+        },
+      },
+      {
+        imgUrl: './assets/images/content/slides/db.png',
+        url: '/about-us/general',
+        translatedData: {
+          title: 'ინსტიტუტი ტექინფორმი',
+          text:
+            'საქართველოს ტექნიკური უნივერსიტეტის ინსტიტუტი ტექინფორმი წარმოადგენს საქართველოში სამეცნიერო-ტექნიკური               ინფორმაციის დარგში მოთავე ორგანიზაციას. იგი მრავალდარგოვანი და დარგთაშორისი საინფორმაციო ცენტრია.               ტექინფორმი ახორციელებს სამეცნიერო-ტექნიკური ინფორმაციის ძიების, შეგროვების, კლასიფიკაციის, ანალიზისა და               სინთეზის, შენახვისა და გავრცელების სფეროში სამეცნიერო- კვლევით, ტექნოლოგიურ და პრაქტიკულ საქმიანობას.',
+        },
+      },
+    ]
   }
 }
