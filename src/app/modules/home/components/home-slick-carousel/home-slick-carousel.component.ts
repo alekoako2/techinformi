@@ -14,14 +14,33 @@ export class HomeSlickCarouselComponent implements OnInit {
   slides: Slide[] = []
 
   slideConfig = {
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    infinite: true,
     centerMode: true,
-    arrows: false,
-    centerPadding: window.innerWidth < 1280 ? 0 : 15 + '%',
-    speed: 1000,
+    centerPadding: '60px',
+    adaptiveHeight: true,
+    infinite: true,
+    slidesToShow: 1,
+    pauseOnHover: true,
     autoplay: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          arrows: false,
+          centerMode: false,
+          centerPadding: '40px',
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: '40px',
+          slidesToShow: 1,
+        },
+      },
+    ],
   }
 
   constructor(private progressBarService: ProgressBarService) {
