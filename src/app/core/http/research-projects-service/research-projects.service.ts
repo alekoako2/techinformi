@@ -37,7 +37,7 @@ export class ResearchProjectsService {
         variables: {
           languageCode: this.languageService.currentLanguage,
           first: limit,
-          skip: index * limit,
+          skip: index,
           query: { ...query },
         },
         query: researchProjectsQuery,

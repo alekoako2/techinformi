@@ -1,17 +1,23 @@
-<database-template-paginator (loadPressed)="loadPressed.emit($event)"
-                             [pageIndex]="pageIndex"
-                             [pageSize]="pageSize"
-                             [length]="length">
-
+<database-template-paginator
+  (loadPressed)="loadPressed.emit($event)"
+  [pageIndex]="pageIndex"
+  [pageSize]="pageSize"
+  [length]="length"
+>
 </database-template-paginator>
-<div fxLayout="row" fxLayoutGap="16px">
-  <database-template-filters fxFlex="30"
-  (searchPressed)="searchPressed.emit()">
+<layout-container layoutStyle="row" flexWidth="100" layoutGap="16px">
+  <database-template-filters
+    fxFlex
+    (searchPressed)="searchPressed.emit(); pressed = true"
+  >
     <ng-content select="[filters]"></ng-content>
   </database-template-filters>
-  <database-template-list fxFlex="70"
-                          [count]="length"
-                          [skeleton]="skeleton">
+  <database-template-list
+    *ngIf="pressed"
+    fxFlex="70"
+    [count]="length"
+    [skeleton]="skeleton"
+  >
     <ng-content select="[list]"></ng-content>
   </database-template-list>
-</div>
+</layout-container>
