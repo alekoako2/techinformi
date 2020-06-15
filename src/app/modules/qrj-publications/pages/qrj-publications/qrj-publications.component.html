@@ -26,15 +26,13 @@
         [inputAbstractControl]="qrjPublicationsForm.get('title')"
       >
       </input-text>
-      <oecds-input-display-value-filter-autocomplete
+      <oecds-select-input
         [inputAbstractControl]="qrjPublicationsForm.get('oecd')"
-      >
-      </oecds-input-display-value-filter-autocomplete>
-
-      <qrj-journals-input-display-value-filter-autocomplete
+      ></oecds-select-input>
+      <qrj-journals-select-input
         [inputAbstractControl]="qrjPublicationsForm.get('qrjJournal')"
       >
-      </qrj-journals-input-display-value-filter-autocomplete>
+      </qrj-journals-select-input>
     </div>
 
     <div list>
