@@ -21,7 +21,7 @@ export class HomeSlickCarouselComponent implements OnInit {
     arrows: false,
     centerPadding: window.innerWidth < 1280 ? 0 : 15 + '%',
     speed: 1000,
-    autoplay: false,
+    autoplay: true,
   }
 
   constructor(private progressBarService: ProgressBarService) {

@@ -7,7 +7,7 @@
 <div class="margin-top-3" fxLayout="column" fxLayoutGap="16px">
   <mat-card
     *ngFor="let news of newses"
-    class="cursor-pointer"
+    class="cursor-pointer animate__animated animate__fadeIn"
     [routerLink]="transformUrl(news)"
   >
     <h3>
