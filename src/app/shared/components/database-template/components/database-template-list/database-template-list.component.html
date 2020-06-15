@@ -1,15 +1,17 @@
 <div class="list-wrapper padding-x-1">
-
   <div *ngIf="count === 0">
     ჩანაწერები ვერ მოინახა
   </div>
   <div *ngIf="skeleton">
-    <ngx-skeleton-loader *ngFor="let index of arr"
-                         [theme]="theme">
+    <ngx-skeleton-loader
+      class="animate__animated animate__fadeIn"
+      *ngFor="let index of arr"
+      [theme]="theme"
+    >
     </ngx-skeleton-loader>
   </div>
 
   <div *ngIf="!skeleton">
-    <ng-content></ng-content>
+    <ng-content class="animate__animated animate__fadeIn"></ng-content>
   </div>
 </div>
