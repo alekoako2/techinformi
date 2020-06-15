@@ -18,4 +18,6 @@ export class DatabaseTemplateComponent {
   @Input() length = 0
 
   @Input() skeleton = true
+
+  pressed = false
 }

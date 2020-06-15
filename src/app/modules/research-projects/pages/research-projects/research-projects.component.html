@@ -38,10 +38,10 @@
         [inputAbstractControl]="researchProjectForm.get('eOrganization')"
       >
       </input-text>
-      <oecds-input-display-value-filter-autocomplete
+      <oecds-select-input
         [inputAbstractControl]="researchProjectForm.get('eCodes')"
       >
-      </oecds-input-display-value-filter-autocomplete>
+      </oecds-select-input>
 
       <!--      <input-select-->
       <!--        matTooltip="წელი (კვლევის მიმდინარეობის, დაწყების ან დასრულების წელი)"-->
@@ -58,6 +58,7 @@
         <input-select
           i18n-label="@@from_year"
           [inputAbstractControl]="researchProjectForm.get('fromYear')"
+          [options]="numbersRange(1980, 50)"
           label="დან"
           fxFlex
         >
@@ -65,6 +66,7 @@
         <input-select
           i18n-label="@@to_year"
           [inputAbstractControl]="researchProjectForm.get('toYear')"
+          [options]="numbersRange(1980, 50)"
           label="მდე"
           fxFlex
         >

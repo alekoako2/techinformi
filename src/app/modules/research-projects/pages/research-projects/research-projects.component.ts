@@ -61,11 +61,18 @@ export class ResearchProjectsComponent implements OnInit {
         this.pageIndex,
         this.pageSize
       )
-      .subscribe((res: ResearchProjectsQuery) => {
-        this.data = res
-        this.skeleton = false
-        this.progressBarService.show(false)
-      })
+      .subscribe(
+        (res: ResearchProjectsQuery) => {
+          this.data = res
+          this.skeleton = false
+          this.progressBarService.show(false)
+        },
+        () => {
+          this.data = { countResearchProjects: 0 } as ResearchProjectsQuery
+          this.skeleton = false
+          this.progressBarService.show(false)
+        }
+      )
   }
 
   loadPressed(event): void {
@@ -82,4 +89,7 @@ export class ResearchProjectsComponent implements OnInit {
   transformUrl(researchProject): string {
     return researchProject.title.split(' ').join('-') + '/' + researchProject.id
   }
+
+  numbersRange = (startFrom: number, n: number): string[] =>
+    [...Array(n).keys()].map((i) => (i + startFrom).toString())
 }

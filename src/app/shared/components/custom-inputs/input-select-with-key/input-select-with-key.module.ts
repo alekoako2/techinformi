@@ -1,7 +1,7 @@
 // Native Modules
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 // Library Modules
 import { FlexLayoutModule } from '@angular/flex-layout'
@@ -29,6 +29,7 @@ import { SpinnerModule } from '@shared/components/spinner'
     // Material Modules
     MatSelectModule,
     SpinnerModule,
+    ReactiveFormsModule,
   ],
   exports: [
     // Components

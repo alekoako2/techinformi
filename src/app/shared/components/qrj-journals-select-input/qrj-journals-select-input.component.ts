@@ -3,6 +3,7 @@ import { QrjJournal } from '@graphql'
 import { first } from 'rxjs/operators'
 import { InputSelectListItem } from '@shared/components/custom-inputs/input-select-with-key/input-select-with-key.component'
 import { QrjJournalService } from '@http/qrj-journal-service'
+import { AbstractControl } from '@angular/forms'
 
 @Component({
   selector: 'qrj-journals-select-input',
@@ -10,12 +11,13 @@ import { QrjJournalService } from '@http/qrj-journal-service'
   styleUrls: ['./qrj-journals-select-input.component.scss'],
 })
 export class QrjJournalsSelectInputComponent {
-  @Output() qrjJournalChange = new EventEmitter<string>()
-  @Input() qrjJournal: string
+  @Input() inputAbstractControl: AbstractControl
 
   qrjJournalsSelectList: InputSelectListItem[]
 
-  constructor(private qrjJournalsService: QrjJournalService) {}
+  constructor(private qrjJournalsService: QrjJournalService) {
+    this.loadQrjJournalsSelectList()
+  }
 
   loadQrjJournalsSelectList(): void {
     this.qrjJournalsService
